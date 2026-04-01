@@ -64,14 +64,14 @@ const worldsItems = [
     title: 'Quads BENDA',
     description: 'Modèles route et tout-terrain, adaptés au loisir comme à un usage polyvalent.',
     href: '/quads',
-    image: featuredQuads[0]?.data.image ?? '/media/global/quad-fosses.jpg',
+    image: '/media/global/quad-fosses.jpg',
     cta: 'Découvrir les quads',
   },
   {
     title: 'Leds & accessoires',
     description: 'Améliorez votre visibilité et équipez votre véhicule avec du matériel fiable.',
     href: '/leds',
-    image: featuredLeds[0]?.data.image ?? '/media/global/led-fosses.png',
+    image: '/media/global/led-fosses.png',
     cta: 'Voir les équipements',
   },
   {
@@ -79,8 +79,6 @@ const worldsItems = [
     description: 'Opportunités, arrivages et modèles disponibles immédiatement.',
     href: '/promos',
     image:
-      featuredQuads.find((item) => item.data.promo)?.data.image ??
-      featuredLeds.find((item) => item.data.promo)?.data.image ??
       '/media/global/quad-benda.jpg',
     cta: 'Voir les promos',
     badge: 'À découvrir',
