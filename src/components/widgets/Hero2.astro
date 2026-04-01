@@ -75,12 +75,12 @@ const {
       <div class="basis-1/2">
         {
           image && (
-            <div class="relative m-auto max-w-5xl intersect-once intersect-no-queue motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
+            <div class="heroImageWrapper relative m-auto max-w-5xl intersect-once intersect-no-queue motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
               {typeof image === 'string' ? (
                 <Fragment set:html={image} />
               ) : (
                 <Image
-                  class="mx-auto rounded-md w-full"
+                  class="heroImage w-full object-cover contrast-110 brightness-105"
                   widths={[400, 768, 1024, 2040]}
                   sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
                   loading="eager"
@@ -96,3 +96,202 @@ const {
     </div>
   </div>
 </section>
+
+<style>
+  .heroImageWrapper {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .heroImageWrapper::before {
+    content: '';
+    position: absolute;
+    inset: -6%;
+    background:
+      radial-gradient(circle at 62% 48%, rgba(225, 6, 0, 0.14), transparent 24%),
+      radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.04), transparent 38%);
+    filter: blur(28px);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .heroImageWrapper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at center, transparent 62%, rgba(0, 0, 0, 0.08) 82%, rgba(0, 0, 0, 0.16) 100%),
+      linear-gradient(to bottom, transparent 72%, rgba(0, 0, 0, 0.12) 90%, rgba(0, 0, 0, 0.22) 100%);
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  .heroImageWrapper :global(img),
+  .heroImage {
+    position: relative;
+    z-index: 2;
+    border-radius: 18px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+  }
+
+  
+</style>
+
+<style>
+  :global(.heroMiniGalleryWrap) {
+    margin-top: 2rem;
+    max-width: 100%;
+  }
+
+  :global(.heroMiniGalleryHeader) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.9rem;
+  }
+
+  :global(.heroMiniGalleryLabel) {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.58);
+  }
+
+  :global(.heroMiniGalleryControls) {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  :global(.heroMiniGalleryBtn) {
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.03);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition:
+      background 0.2s ease,
+      border-color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  :global(.heroMiniGalleryBtn:hover) {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(225, 6, 0, 0.45);
+    transform: translateY(-1px);
+  }
+
+  :global(.heroMiniGallery) {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  :global(.heroMiniGallery::-webkit-scrollbar) {
+    display: none;
+  }
+
+  :global(.heroMiniCard) {
+    flex: 0 0 min(240px, 78%);
+    scroll-snap-align: start;
+    overflow: hidden;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
+    text-decoration: none;
+    display: block;
+    transition:
+      transform 0.2s ease,
+      border-color 0.2s ease,
+      background 0.2s ease;
+  }
+
+  :global(.heroMiniCard:hover) {
+    transform: translateY(-3px);
+    border-color: rgba(225, 6, 0, 0.55);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  :global(.heroMiniCard img) {
+    width: 100%;
+    height: 138px;
+    object-fit: cover;
+    display: block;
+  }
+
+  :global(.heroMiniCardBody) {
+    padding: 0.9rem 1rem 1rem;
+  }
+
+  :global(.heroMiniCardEyebrow) {
+    margin: 0 0 0.35rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.58);
+  }
+
+  :global(.heroMiniCardTitle) {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1.2;
+  }
+
+  @media (min-width: 1024px) {
+    :global(.heroMiniCard) {
+      flex-basis: 220px;
+    }
+  }
+</style>
+
+
+<script is:inline>
+  function initHeroMiniGallery() {
+    const galleries = document.querySelectorAll('[data-hero-gallery]');
+
+    galleries.forEach((gallery) => {
+      const wrap = gallery.closest('.heroMiniGalleryWrap');
+      if (!wrap) return;
+
+      const prevBtn = wrap.querySelector('[data-hero-gallery-prev]');
+      const nextBtn = wrap.querySelector('[data-hero-gallery-next]');
+      const firstCard = gallery.querySelector('.heroMiniCard');
+
+      const getScrollAmount = () => {
+        if (!firstCard) return 260;
+        const cardWidth = firstCard.getBoundingClientRect().width;
+        const gap = 16;
+        return cardWidth + gap;
+      };
+
+      prevBtn?.addEventListener('click', () => {
+        gallery.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+      });
+
+      nextBtn?.addEventListener('click', () => {
+        gallery.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initHeroMiniGallery);
+  } else {
+    initHeroMiniGallery();
+  }
+
+  document.addEventListener('astro:after-swap', initHeroMiniGallery);
+</script>

@@ -1,0 +1,142 @@
+---
+import { getCollection, render } from 'astro:content';
+import PageLayout from '~/layouts/PageLayout.astro';
+import { getLedUrl } from '~/utils/catalog';
+
+export async function getStaticPaths() {
+  const leds = await getCollection('led', ({ data }) => !data.draft);
+
+  return leds.map((item) => ({
+    params: { slug: item.data.slug ?? item.id },
+    props: { item },
+  }));
+}
+
+const { item } = Astro.props;
+const { Content } = await render(item);
+
+const metadata = {
+  title: item.data.seo?.title ?? `${item.data.title} | LED Automotive`,
+  description:
+    item.data.seo?.description ??
+    item.data.description ??
+    item.data.excerpt ??
+    'Découvrez ce produit chez LED Automotive.',
+};
+
+const relatedEntries = (await getCollection('led', ({ data }) => !data.draft))
+  .filter((entry) => entry.id !== item.id)
+  .sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999))
+  .slice(0, 3);
+---
+
+<PageLayout metadata={metadata}>
+  <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="grid gap-10 lg:grid-cols-2">
+      <div>
+        <img
+          src={item.data.image}
+          alt={item.data.title}
+          class="w-full rounded-2xl border border-gray-800 object-cover"
+        />
+
+        {item.data.gallery && item.data.gallery.length > 1 && (
+          <div class="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-4">
+            {item.data.gallery.map((image) => (
+              <img
+                src={image}
+                alt={item.data.title}
+                class="h-28 w-full rounded-xl border border-gray-800 object-cover"
+              />
+            ))}
+          </div>
+        )}
+      </div>
+
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-wider text-primary">
+          {item.data.category ?? 'Produit'}
+        </p>
+
+        <h1 class="mt-2 text-4xl font-bold tracking-tight text-white md:text-5xl">
+          {item.data.title}
+        </h1>
+
+        {item.data.excerpt && (
+          <p class="mt-4 text-lg text-muted">{item.data.excerpt}</p>
+        )}
+
+        {item.data.priceLabel && (
+          <p class="mt-6 text-3xl font-bold text-primary">{item.data.priceLabel}</p>
+        )}
+
+        <div class="mt-8">
+          <a
+            href="/contact"
+            class="inline-flex rounded-full bg-primary px-6 py-3 font-semibold text-white transition hover:opacity-90"
+          >
+            {item.data.ctaLabel ?? 'Demander un devis'}
+          </a>
+        </div>
+
+        {item.data.specs && item.data.specs.length > 0 && (
+          <div class="mt-10 space-y-3 rounded-2xl border border-gray-800 bg-black/30 p-6">
+            {item.data.specs.map((spec) => (
+              <div class="border-b border-gray-800 pb-3 last:border-b-0">
+                <p class="text-sm text-muted">{spec.label}</p>
+                <p class="font-medium text-white">{spec.value}</p>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {item.data.compatibleWith && item.data.compatibleWith.length > 0 && (
+          <div class="mt-8">
+            <p class="text-sm font-semibold uppercase tracking-wider text-primary">Compatible avec</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              {item.data.compatibleWith.map((value) => (
+                <span class="rounded-full border border-gray-700 px-3 py-1 text-sm text-white">
+                  {value}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+
+    {item.data.description && (
+      <section class="mt-16 max-w-4xl">
+        <h2 class="text-2xl font-bold text-white">Description</h2>
+        <p class="mt-4 text-base leading-8 text-muted">{item.data.description}</p>
+      </section>
+    )}
+
+    <section class="prose prose-invert mt-16 max-w-4xl">
+      <Content />
+    </section>
+
+    {relatedEntries.length > 0 && (
+      <section class="mt-16">
+        <h2 class="text-2xl font-bold text-white">Autres produits</h2>
+
+        <div class="mt-8 grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
+          {relatedEntries.map((entry) => (
+            <a
+              href={getLedUrl(entry)}
+              class="overflow-hidden rounded-2xl border border-gray-800 bg-black/30 transition hover:border-primary"
+            >
+              <img src={entry.data.image} alt={entry.data.title} class="h-56 w-full object-cover" />
+              <div class="p-5">
+                <h3 class="text-lg font-semibold text-white">{entry.data.title}</h3>
+                {entry.data.priceLabel && (
+                  <p class="mt-2 text-primary">{entry.data.priceLabel}</p>
+                )}
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+  </section>
+</PageLayout>

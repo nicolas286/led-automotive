@@ -1,39 +1,35 @@
 site:
-  name: AstroWind
+  name: Led Automotive
   site: 'https://astrowind.vercel.app'
   base: '/'
   trailingSlash: false
 
-  googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
+  googleSiteVerificationId: 
 
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: Quad BENDA & LED auto à Fosses-la-Ville
+    template: '%s | LED AUTOMOTIVE'
+  description: "Quads BENDA, éclairage LED auto et accessoires à Fosses-la-Ville. Demandez un essai ou un devis rapidement avec LED Automotive."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: LED AUTOMOTIVE
     images:
       - url: '~/assets/images/default.png'
         width: 1200
         height: 628
     type: website
-  twitter:
-    handle: '@arthelokyo'
-    site: '@arthelokyo'
-    cardType: summary_large_image
 
 i18n:
-  language: en
+  language: fr
   textDirection: ltr
 
 apps:
   blog:
-    isEnabled: true
+    isEnabled: false
     postsPerPage: 6
 
     post:
@@ -69,4 +65,4 @@ analytics:
       id: null # or "G-XXXXXXXXXX"
 
 ui:
-  theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
+  theme: 'dark:only'
