@@ -10,7 +10,7 @@ metadata:
 
 Conformément au Règlement Général sur la Protection des Données (RGPD), nous vous informons sur la manière dont vos données personnelles sont collectées et utilisées lorsque vous consultez ce site.
 
-Ce site a pour objectif de présenter les services de prothèse dentaire de **Olivier Van Oostveldt** et de faciliter la prise de contact pour toute demande de réparation ou d’urgence dentaire.  
+Ce site a pour objectif de présenter les services de Cédric Jaumotte et de faciliter la prise de contact.
 Nous ne collectons que les données strictement nécessaires à ces finalités.
 
 # Responsable du traitement
@@ -23,22 +23,12 @@ Nous ne collectons que les données strictement nécessaires à ces finalités.
 # Base juridique du traitement
 
 - Le traitement des données transmises via le formulaire de contact repose sur **l’exécution de mesures précontractuelles** (article 6.1.b du RGPD).  
-- L’analyse statistique du site via **Google Analytics** repose sur **votre consentement** (article 6.1.a).  
-- Le suivi publicitaire Google Ads repose également sur **votre consentement explicite**, recueilli lors de l’affichage du bandeau cookies.  
 
 # Données collectées
 
 ## Lors de votre navigation
 
-Lorsque vous acceptez les cookies, nous utilisons **Google Analytics 4** et **Google Ads** pour mesurer l’audience du site et optimiser nos campagnes publicitaires.
-
-Ces outils peuvent collecter :  
-- votre adresse IP (anonymisée en partie),  
-- des informations sur le navigateur, l’appareil et les pages visitées,  
-- des données d’interaction (clics, durée de session, conversions).  
-
-Les cookies publicitaires peuvent être utilisés pour mesurer l’efficacité de nos campagnes Google Ads et pour proposer des annonces pertinentes.  
-Vous pouvez à tout moment **retirer votre consentement** via le bandeau cookies.
+Nous ne recueillons pas de données de navigation.
 
 ## Lorsque vous utilisez un formulaire de contact
 
@@ -48,8 +38,6 @@ Elles ne sont jamais transmises à des tiers sans votre accord explicite, sauf o
 # Durée de conservation
 
 - Données issues des formulaires : conservées **12 mois maximum** après le dernier contact.  
-- Données analytiques Google Analytics : **14 mois** maximum (paramétrage standard GA4).  
-- Données issues des cookies publicitaires Google Ads : selon les durées fixées par Google, conformément à leur politique de confidentialité.
 
 # Utilisation des données
 
@@ -75,17 +63,7 @@ Pour exercer vos droits, contactez-nous à l’adresse suivante :
 
 # Cookies et outils de mesure
 
-Nous utilisons deux outils principaux :
-
-### Google Analytics 4  
-Cet outil nous aide à comprendre comment les visiteurs utilisent notre site afin d’améliorer leur expérience.  
-Les données sont anonymisées et stockées sur des serveurs situés dans l’Union européenne lorsque cela est possible.  
-[En savoir plus sur la politique de confidentialité de Google](https://policies.google.com/privacy).
-
-### Google Ads  
-Nous utilisons le suivi des conversions pour mesurer l’efficacité de nos campagnes et améliorer la pertinence des annonces diffusées.  
-Ce suivi repose uniquement sur votre consentement via le bandeau cookies.  
-[En savoir plus sur la politique de confidentialité de Google Ads](https://policies.google.com/technologies/ads).
+Nous n'utilisons pas de cookies publicitaires. 
 
 # Contact
 
