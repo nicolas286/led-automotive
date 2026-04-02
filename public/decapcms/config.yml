@@ -3,6 +3,7 @@ backend:
   branch: main
 
 local_backend: true
+locale: 'fr'
 
 media_folder: "public/media/uploads"
 public_folder: "/media/uploads"
