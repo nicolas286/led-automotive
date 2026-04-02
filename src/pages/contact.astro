@@ -1,0 +1,360 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import ContactWidget from '~/components/widgets/Contact.astro';
+
+const metadata = {
+  title: 'Contact | LED Automotive',
+  description:
+    'Contactez LED Automotive à Fosses-la-Ville pour un renseignement, un devis ou une demande d’essai de quad BENDA.',
+  ignoreTitleTemplate: true,
+};
+
+const contactInputs = [
+  {
+    type: 'text',
+    name: 'name',
+    label: 'Nom',
+    autocomplete: 'name',
+    placeholder: 'Votre nom',
+  },
+  {
+    type: 'email',
+    name: 'email',
+    label: 'Email',
+    autocomplete: 'email',
+    placeholder: 'votre@email.com',
+  },
+  {
+    type: 'tel',
+    name: 'phone',
+    label: 'Téléphone',
+    autocomplete: 'tel',
+    placeholder: 'Votre numéro',
+  },
+];
+
+const contactTextarea = {
+  name: 'message',
+  label: 'Message',
+  placeholder:
+    'Expliquez-nous votre demande : modèle qui vous intéresse, besoin en équipement LED, demande d’essai, etc.',
+  rows: 6,
+};
+
+const infoBlocks = [
+  {
+    title: 'Un contact simple et direct',
+    text: "Vous avez une question sur un quad BENDA, un accessoire LED ou une disponibilité ? Envoyez-nous un message et nous vous répondrons rapidement, avec des infos claires et utiles.",
+  },
+  {
+    title: 'Demande d’essai ou renseignement produit',
+    text: "Vous pouvez nous contacter pour demander un essai, obtenir plus d’informations sur un modèle, vérifier une disponibilité ou simplement être conseillé selon votre besoin et votre usage.",
+  },
+  {
+    title: 'Entreprise locale à Fosses-la-Ville',
+    text: "Chez LED Automotive, on privilégie le contact humain, la proximité et les échanges simples. Pas de discours compliqué : on vous aide à trouver la bonne solution.",
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    tagline="Contact"
+    title="Parlons de votre projet ou de votre futur quad"
+    subtitle="Une question, une demande d’essai ou un besoin en équipement LED ? Contactez-nous directement."
+    callToAction={{
+      text: 'Appeler maintenant',
+      href: 'tel:+32499610628',
+      icon: 'lucide:phone',
+      variant: 'primary',
+    }}
+    callToAction2={{
+      text: 'Voir les quads',
+      href: '/quads',
+    }}
+  />
+
+  <section class="not-prose mx-auto max-w-7xl px-4 pb-8 sm:px-6 lg:px-8">
+    <div class="infoSplitGrid">
+      <div class="infoSplitContent">
+        {infoBlocks.map((block) => (
+          <article class="infoTextCard">
+            <h2 class="infoTextCardTitle">{block.title}</h2>
+            <p class="infoTextCardText">{block.text}</p>
+          </article>
+        ))}
+      </div>
+
+      <aside class="infoCtaCard">
+        <p class="infoCtaEyebrow">Contact direct</p>
+        <h2 class="infoCtaTitle">LED Automotive</h2>
+        <p class="infoCtaText">
+          Basés à Fosses-la-Ville, nous répondons à vos demandes concernant les quads BENDA,
+          les équipements LED et les essais.
+        </p>
+
+        <div class="contactAsideMeta">
+          <p>
+            <strong>Téléphone :</strong><br />
+            <a href="tel:+32499610628">+32 499 61 06 28</a>
+          </p>
+
+          <p>
+            <strong>Localisation :</strong><br />
+            Fosses-la-Ville
+          </p>
+        </div>
+
+        <div class="infoCtaActions">
+          <a class="contactPrimaryLink" href="tel:+32499610628">Appeler maintenant</a>
+          <a class="contactSecondaryLink" href="/quads">Voir les quads</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="not-prose mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
+    <div class="contactFormShell">
+      <div class="contactFormIntro">
+        <p class="contactFormEyebrow">Nous écrire</p>
+        <h2 class="contactFormTitle">Envoyez-nous votre demande</h2>
+        <p class="contactFormText">
+          Décrivez votre besoin et nous reviendrons vers vous rapidement.
+        </p>
+      </div>
+
+      <ContactWidget
+        id="contact-form"
+        inputs={contactInputs}
+        textarea={contactTextarea}
+        button='Envoyer la demande'
+        disclaimer.label="En nous contactant, vous acceptez que vos données soient utilisées uniquement pour traiter votre demande."
+      />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .infoSplitGrid {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .infoSplitContent {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .infoTextCard,
+  .infoCtaCard,
+  .contactFormShell {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 1.5rem;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+  }
+
+  .infoTextCard {
+    padding: 1.75rem;
+  }
+
+  .infoTextCardTitle {
+    font-size: 1.5rem;
+    line-height: 1.15;
+    font-weight: 700;
+    color: white;
+  }
+
+  .infoTextCardText {
+    margin-top: 1rem;
+    font-size: 0.98rem;
+    line-height: 1.9;
+    color: rgb(203 213 225);
+  }
+
+  .infoCtaCard {
+    padding: 1.75rem;
+    align-self: start;
+    position: sticky;
+    top: 6rem;
+  }
+
+  .infoCtaEyebrow,
+  .contactFormEyebrow {
+    margin: 0;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgb(var(--color-primary, 225 6 0));
+  }
+
+  .infoCtaTitle,
+  .contactFormTitle {
+    margin-top: 0.75rem;
+    font-size: 1.75rem;
+    line-height: 1.15;
+    font-weight: 700;
+    color: white;
+  }
+
+  .infoCtaText,
+  .contactFormText {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: rgb(203 213 225);
+  }
+
+  .contactAsideMeta {
+    margin-top: 1.25rem;
+    display: grid;
+    gap: 1rem;
+    color: rgb(203 213 225);
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .contactAsideMeta strong {
+    color: white;
+  }
+
+  .contactAsideMeta a {
+    color: rgb(203 213 225);
+    text-decoration: none;
+  }
+
+  .contactAsideMeta a:hover {
+    color: white;
+  }
+
+  .infoCtaActions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+
+  .contactPrimaryLink,
+  .contactSecondaryLink {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3rem;
+    padding: 0.85rem 1.2rem;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    transition:
+      transform 0.2s ease,
+      background 0.2s ease,
+      border-color 0.2s ease,
+      color 0.2s ease;
+  }
+
+  .contactPrimaryLink {
+    background: rgb(var(--color-primary, 225 6 0));
+    color: white;
+  }
+
+  .contactPrimaryLink:hover {
+    transform: translateY(-1px);
+  }
+
+  .contactSecondaryLink {
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: white;
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .contactSecondaryLink:hover {
+    transform: translateY(-1px);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .contactFormShell {
+    padding: 1.75rem;
+  }
+
+  .contactFormIntro {
+    max-width: 42rem;
+    margin-bottom: 1.5rem;
+  }
+
+  :global(.contactFormShell .max-w-xl) {
+    max-width: 100%;
+  }
+
+  :global(.contactFormShell .bg-white),
+  :global(.contactFormShell .dark\:bg-slate-900) {
+    background: transparent !important;
+  }
+
+  :global(.contactFormShell .shadow) {
+    box-shadow: none !important;
+  }
+
+  :global(.contactFormShell .border),
+  :global(.contactFormShell .border-gray-200),
+  :global(.contactFormShell .dark\:border-gray-700) {
+    border: 0 !important;
+  }
+
+  :global(.contactFormShell .p-4),
+  :global(.contactFormShell .sm\:p-6),
+  :global(.contactFormShell .lg\:p-8) {
+    padding: 0 !important;
+  }
+
+  @media (min-width: 960px) {
+    .infoSplitGrid {
+      grid-template-columns: minmax(0, 2fr) minmax(320px, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  /* INPUTS */
+:global(input),
+:global(textarea),
+:global(select) {
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.35);
+  color: white;
+  padding: 0.85rem 1rem;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+/* placeholder */
+:global(input::placeholder),
+:global(textarea::placeholder) {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* focus */
+:global(input:focus),
+:global(textarea:focus),
+:global(select:focus) {
+  border-color: rgb(var(--color-primary, 225 6 0));
+  box-shadow: 0 0 0 2px rgba(225, 6, 0, 0.25);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* labels */
+:global(label) {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* spacing entre champs */
+:global(form > div) {
+  margin-bottom: 1rem;
+}
+</style>
