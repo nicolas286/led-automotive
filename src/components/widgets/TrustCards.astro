@@ -1,0 +1,174 @@
+---
+import { Icon } from 'astro-icon/components';
+
+export interface TrustCardItem {
+  title: string;
+  description: string;
+  icon?: string;
+  href?: string;
+}
+
+interface Props {
+  items: TrustCardItem[];
+  title?: string;
+  subtitle?: string;
+  id?: string;
+}
+
+const { items = [], title, subtitle, id } = Astro.props;
+---
+
+<section class="trustCardsSection not-prose" {...id ? { id } : {}}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    {(title || subtitle) && (
+      <div class="trustCardsIntro">
+        {title && <h2 class="trustCardsTitle">{title}</h2>}
+        {subtitle && <p class="trustCardsSubtitle">{subtitle}</p>}
+      </div>
+    )}
+
+    <div class="trustCardsGrid">
+      {items.map((item) => {
+        const Tag = item.href ? 'a' : 'div';
+
+        return (
+          <Tag
+            class:list={['trustCard', item.href && 'trustCardLink']}
+            {...(item.href ? { href: item.href } : {})}
+          >
+            <div class="trustCardIconWrap" aria-hidden="true">
+              <Icon
+                name={item.icon || 'lucide:shield-check'}
+                class="trustCardIcon"
+              />
+            </div>
+
+            <div class="trustCardBody">
+              <h3 class="trustCardItemTitle">{item.title}</h3>
+              <p class="trustCardDescription">{item.description}</p>
+            </div>
+          </Tag>
+        );
+      })}
+    </div>
+  </div>
+</section>
+
+<style>
+  .trustCardsSection {
+    position: relative;
+    padding: 3.5rem 0 1rem;
+  }
+
+  .trustCardsIntro {
+    max-width: 48rem;
+    margin: 0 auto 1.75rem;
+    text-align: center;
+  }
+
+  .trustCardsTitle {
+    margin: 0 0 0.75rem;
+    font-size: clamp(1.8rem, 2.4vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: white;
+    letter-spacing: -0.02em;
+  }
+
+  .trustCardsSubtitle {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.68);
+  }
+
+  .trustCardsGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .trustCard {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    min-height: 100%;
+    padding: 1.15rem 1.1rem;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(6px);
+    transition:
+      transform 0.2s ease,
+      border-color 0.2s ease,
+      background 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .trustCardLink {
+    text-decoration: none;
+  }
+
+  .trustCard:hover {
+    transform: translateY(-3px);
+    border-color: rgba(225, 6, 0, 0.45);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.16);
+  }
+
+  .trustCardIconWrap {
+    flex: 0 0 auto;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+      radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.14), transparent 60%),
+      rgba(225, 6, 0, 0.12);
+    border: 1px solid rgba(225, 6, 0, 0.2);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+
+  .trustCardIcon {
+    width: 1.3rem;
+    height: 1.3rem;
+    color: white;
+  }
+
+  .trustCardBody {
+    min-width: 0;
+  }
+
+  .trustCardItemTitle {
+    margin: 0 0 0.35rem;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: white;
+  }
+
+  .trustCardDescription {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.68);
+  }
+
+  @media (min-width: 640px) {
+    .trustCardsGrid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .trustCardsSection {
+      padding: 4.5rem 0 1.5rem;
+    }
+
+    .trustCardsGrid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+</style>

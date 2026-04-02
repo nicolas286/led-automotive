@@ -1,6 +1,8 @@
 ---
 import { getCollection, render } from 'astro:content';
 import PageLayout from '~/layouts/PageLayout.astro';
+import ProductCard from '~/components/widgets/ProductCard.astro';
+import ProductDetailHero from '~/components/widgets/ProductDetailHero.astro';
 import { getLedUrl } from '~/utils/catalog';
 
 export async function getStaticPaths() {
@@ -28,112 +30,96 @@ const relatedEntries = (await getCollection('led', ({ data }) => !data.draft))
   .filter((entry) => entry.id !== item.id)
   .sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999))
   .slice(0, 3);
+
+const shortSpecs =
+  item.data.specs?.slice(0, 4) ?? [];
 ---
 
 <PageLayout metadata={metadata}>
   <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-    <div class="grid gap-10 lg:grid-cols-2">
-      <div>
-        <img
-          src={item.data.image}
-          alt={item.data.title}
-          class="w-full rounded-2xl border border-gray-800 object-cover"
-        />
+   <ProductDetailHero
+      brand={item.data.category ?? 'Produit'}
+      title={item.data.title}
+      excerpt={item.data.excerpt}
+      priceLabel={item.data.priceLabel}
+      promoPriceLabel={item.data.promoPriceLabel}
+      image={item.data.image}
+      gallery={item.data.gallery ?? []}
+      primaryCtaHref="/contact"
+      primaryCtaText={item.data.ctaLabel ?? 'Demander un devis'}
+      secondaryCtaHref="/infos-contact"
+      secondaryCtaText="Nous contacter"
+      shortSpecs={shortSpecs}
+    />
 
-        {item.data.gallery && item.data.gallery.length > 1 && (
-          <div class="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-4">
-            {item.data.gallery.map((image) => (
-              <img
-                src={image}
-                alt={item.data.title}
-                class="h-28 w-full rounded-xl border border-gray-800 object-cover"
-              />
-            ))}
-          </div>
-        )}
-      </div>
+    {item.data.specs && item.data.specs.length > 4 && (
+      <section class="mt-16">
+        <h2 class="text-2xl font-bold text-white md:text-3xl">
+          Caractéristiques
+        </h2>
 
-      <div>
-        <p class="text-sm font-semibold uppercase tracking-wider text-primary">
-          {item.data.category ?? 'Produit'}
-        </p>
-
-        <h1 class="mt-2 text-4xl font-bold tracking-tight text-white md:text-5xl">
-          {item.data.title}
-        </h1>
-
-        {item.data.excerpt && (
-          <p class="mt-4 text-lg text-muted">{item.data.excerpt}</p>
-        )}
-
-        {item.data.priceLabel && (
-          <p class="mt-6 text-3xl font-bold text-primary">{item.data.priceLabel}</p>
-        )}
-
-        <div class="mt-8">
-          <a
-            href="/contact"
-            class="inline-flex rounded-full bg-primary px-6 py-3 font-semibold text-white transition hover:opacity-90"
-          >
-            {item.data.ctaLabel ?? 'Demander un devis'}
-          </a>
-        </div>
-
-        {item.data.specs && item.data.specs.length > 0 && (
-          <div class="mt-10 space-y-3 rounded-2xl border border-gray-800 bg-black/30 p-6">
+        <div class="mt-8 rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-6 shadow-[0_18px_40px_rgba(0,0,0,0.18)]">
+          <div class="space-y-3">
             {item.data.specs.map((spec) => (
-              <div class="border-b border-gray-800 pb-3 last:border-b-0">
-                <p class="text-sm text-muted">{spec.label}</p>
+              <div class="border-b border-white/10 pb-3 last:border-b-0 last:pb-0">
+                <p class="text-sm text-slate-400">{spec.label}</p>
                 <p class="font-medium text-white">{spec.value}</p>
               </div>
             ))}
           </div>
-        )}
-
-        {item.data.compatibleWith && item.data.compatibleWith.length > 0 && (
-          <div class="mt-8">
-            <p class="text-sm font-semibold uppercase tracking-wider text-primary">Compatible avec</p>
-            <div class="mt-3 flex flex-wrap gap-2">
-              {item.data.compatibleWith.map((value) => (
-                <span class="rounded-full border border-gray-700 px-3 py-1 text-sm text-white">
-                  {value}
-                </span>
-              ))}
-            </div>
-          </div>
-        )}
-      </div>
-    </div>
-
-    {item.data.description && (
-      <section class="mt-16 max-w-4xl">
-        <h2 class="text-2xl font-bold text-white">Description</h2>
-        <p class="mt-4 text-base leading-8 text-muted">{item.data.description}</p>
+        </div>
       </section>
     )}
 
-    <section class="prose prose-invert mt-16 max-w-4xl">
+    {item.data.compatibleWith && item.data.compatibleWith.length > 0 && (
+      <section class="mt-16">
+        <h2 class="text-2xl font-bold text-white md:text-3xl">
+          Compatible avec
+        </h2>
+
+        <div class="mt-6 flex flex-wrap gap-3">
+          {item.data.compatibleWith.map((value) => (
+            <span class="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-white shadow-[0_10px_24px_rgba(0,0,0,0.16)]">
+              {value}
+            </span>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {item.data.description && (
+      <section class="mt-16 max-w-4xl">
+        <h2 class="text-2xl font-bold text-white md:text-3xl">
+          Description
+        </h2>
+        <p class="mt-4 text-base leading-8 text-slate-300">
+          {item.data.description}
+        </p>
+      </section>
+    )}
+
+    <section class="prose prose-invert mt-16 max-w-4xl prose-p:text-slate-300 prose-li:text-slate-300 prose-headings:text-white">
       <Content />
     </section>
 
     {relatedEntries.length > 0 && (
       <section class="mt-16">
-        <h2 class="text-2xl font-bold text-white">Autres produits</h2>
+        <h2 class="text-2xl font-bold text-white md:text-3xl">
+          Autres produits
+        </h2>
 
-        <div class="mt-8 grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
+        <div class="mt-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
           {relatedEntries.map((entry) => (
-            <a
+            <ProductCard
               href={getLedUrl(entry)}
-              class="overflow-hidden rounded-2xl border border-gray-800 bg-black/30 transition hover:border-primary"
-            >
-              <img src={entry.data.image} alt={entry.data.title} class="h-56 w-full object-cover" />
-              <div class="p-5">
-                <h3 class="text-lg font-semibold text-white">{entry.data.title}</h3>
-                {entry.data.priceLabel && (
-                  <p class="mt-2 text-primary">{entry.data.priceLabel}</p>
-                )}
-              </div>
-            </a>
+              title={entry.data.title}
+              image={entry.data.image}
+              description={entry.data.excerpt}
+              priceLabel={entry.data.priceLabel}
+              promoPriceLabel={entry.data.promoPriceLabel}
+              badge={entry.data.promo ? 'Promo' : undefined}
+              eyebrow={entry.data.category ?? 'Produit'}
+            />
           ))}
         </div>
       </section>

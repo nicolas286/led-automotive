@@ -1,0 +1,156 @@
+---
+import Button from '~/components/ui/Button.astro';
+
+interface ContentBlock {
+  title: string;
+  text: string;
+}
+
+interface Props {
+  blocks?: ContentBlock[];
+  asideEyebrow?: string;
+  asideTitle?: string;
+  asideText?: string;
+  primaryCtaHref?: string;
+  primaryCtaText?: string;
+  secondaryCtaHref?: string;
+  secondaryCtaText?: string;
+}
+
+const {
+  blocks = [],
+  asideEyebrow,
+  asideTitle,
+  asideText,
+  primaryCtaHref,
+  primaryCtaText,
+  secondaryCtaHref,
+  secondaryCtaText,
+} = Astro.props;
+---
+
+<section class="not-prose mx-auto max-w-7xl px-4 pb-8 sm:px-6 lg:px-8">
+  <div class="infoSplitGrid">
+    <div class="infoSplitContent">
+      {blocks.map((block) => (
+        <article class="infoTextCard">
+          <h2 class="infoTextCardTitle">{block.title}</h2>
+          <p class="infoTextCardText">{block.text}</p>
+        </article>
+      ))}
+    </div>
+
+    <aside class="infoCtaCard">
+      {asideEyebrow && (
+        <p class="infoCtaEyebrow">{asideEyebrow}</p>
+      )}
+
+      {asideTitle && (
+        <h2 class="infoCtaTitle">{asideTitle}</h2>
+      )}
+
+      {asideText && (
+        <p class="infoCtaText">{asideText}</p>
+      )}
+
+      {(primaryCtaHref || secondaryCtaHref) && (
+        <div class="infoCtaActions">
+          {primaryCtaHref && primaryCtaText && (
+            <Button href={primaryCtaHref} variant="primary" class="w-full justify-center">
+              {primaryCtaText}
+            </Button>
+          )}
+
+          {secondaryCtaHref && secondaryCtaText && (
+            <Button href={secondaryCtaHref} class="w-full justify-center">
+              {secondaryCtaText}
+            </Button>
+          )}
+        </div>
+      )}
+    </aside>
+  </div>
+</section>
+
+<style>
+  .infoSplitGrid {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .infoSplitContent {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .infoTextCard,
+  .infoCtaCard {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 1.5rem;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+  }
+
+  .infoTextCard {
+    padding: 1.75rem;
+  }
+
+  .infoTextCardTitle {
+    font-size: 1.5rem;
+    line-height: 1.15;
+    font-weight: 700;
+    color: white;
+  }
+
+  .infoTextCardText {
+    margin-top: 1rem;
+    font-size: 0.98rem;
+    line-height: 1.9;
+    color: rgb(203 213 225);
+  }
+
+  .infoCtaCard {
+    padding: 1.75rem;
+    align-self: start;
+    position: sticky;
+    top: 6rem;
+  }
+
+  .infoCtaEyebrow {
+    margin: 0;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgb(var(--color-primary, 225 6 0));
+  }
+
+  .infoCtaTitle {
+    margin-top: 0.75rem;
+    font-size: 1.75rem;
+    line-height: 1.15;
+    font-weight: 700;
+    color: white;
+  }
+
+  .infoCtaText {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: rgb(203 213 225);
+  }
+
+  .infoCtaActions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+
+  @media (min-width: 960px) {
+    .infoSplitGrid {
+      grid-template-columns: minmax(0, 2fr) minmax(320px, 1fr);
+      gap: 2rem;
+    }
+  }
+</style>

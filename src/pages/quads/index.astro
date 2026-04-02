@@ -1,6 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
 import PageLayout from '~/layouts/PageLayout.astro';
+import CatalogHero from '~/components/widgets/CatalogHero.astro';
+import ProductCard from '~/components/widgets/ProductCard.astro';
+import InfoSplitSection from '~/components/widgets/InfoSplitSection.astro';
 import { getQuadUrl } from '~/utils/catalog';
 
 const quads = (await getCollection('quad', ({ data }) => !data.draft)).sort(
@@ -8,60 +11,63 @@ const quads = (await getCollection('quad', ({ data }) => !data.draft)).sort(
 );
 
 const metadata = {
-  title: 'Quads BENDA | LED Automotive',
+  title: 'Quads BENDA en Belgique | LED Automotive',
   description:
-    'Découvrez nos quads BENDA disponibles chez LED Automotive à Fosses-la-Ville. Demandez un essai ou plus d’informations.',
+    'Découvrez nos quads BENDA disponibles chez LED Automotive à Fosses-la-Ville, en Belgique. Consultez les modèles, leurs caractéristiques et demandez un essai.',
 };
+
+const quadInfoBlocks = [
+  {
+    title: 'Pourquoi choisir un quad BENDA ?',
+    text:
+      'Les quads BENDA séduisent par leur style, leur polyvalence et leur positionnement adapté à celles et ceux qui recherchent un véhicule à la fois plaisant à conduire et capable de s’adapter à différents usages. Selon le modèle, vous pouvez profiter d’un quad pensé pour la route, les loisirs ou une utilisation mixte.',
+  },
+  {
+    title: 'Essai quad à Fosses-la-Ville',
+    text:
+      'Chez LED Automotive, nous vous accueillons en Belgique, à Fosses-la-Ville, pour vous présenter nos quads BENDA et vous aider à trouver le modèle le plus adapté à votre besoin. Vous pouvez consulter les fiches produits, nous contacter pour obtenir plus d’informations ou demander un essai selon les disponibilités.',
+  },
+  {
+    title: 'Vente de quads en Belgique avec accompagnement local',
+    text:
+      'Notre approche est simple : proposer des quads et équipements fiables, avec un interlocuteur local, disponible et capable de vous conseiller clairement. Cette page vous permet de découvrir les modèles BENDA disponibles, leurs caractéristiques principales et les opportunités en cours.',
+  },
+];
 ---
 
 <PageLayout metadata={metadata}>
   <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-    <div class="mb-10">
-      <p class="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">Catalogue</p>
-      <h1 class="text-4xl font-bold tracking-tight text-heading md:text-5xl">Quads BENDA</h1>
-      <p class="mt-4 max-w-2xl text-lg text-muted">
-        Découvrez notre sélection de quads BENDA. Consultez les caractéristiques et demandez un essai rapidement.
-      </p>
-    </div>
+    <CatalogHero
+      eyebrow="Catalogue quads"
+      title="Quads BENDA en Belgique"
+      intro="Découvrez notre sélection de quads BENDA disponibles chez LED Automotive à Fosses-la-Ville. Consultez les modèles, comparez les caractéristiques et demandez un essai rapidement."
+      body="Que vous cherchiez un quad pour la route, le loisir ou un usage plus polyvalent, nous vous accompagnons avec des conseils clairs, un service local et des modèles sélectionnés avec soin."
+    />
 
-    <div class="grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
-      {quads.map((quad) => (
-        <a
-          href={getQuadUrl(quad)}
-          class="group overflow-hidden rounded-2xl border border-gray-800 bg-black/40 transition hover:-translate-y-1 hover:border-primary"
-        >
-          <img
-            src={quad.data.image}
-            alt={quad.data.title}
-            class="h-64 w-full object-cover"
-          />
-
-          <div class="p-6">
-            <div class="flex items-start justify-between gap-4">
-              <h2 class="text-xl font-bold text-white group-hover:text-primary">
-                {quad.data.title}
-              </h2>
-              {quad.data.promo && (
-                <span class="rounded-full bg-primary px-3 py-1 text-xs font-semibold text-white">
-                  Promo
-                </span>
-              )}
-            </div>
-
-            {quad.data.excerpt && (
-              <p class="mt-3 text-sm text-muted">{quad.data.excerpt}</p>
-            )}
-
-            {quad.data.priceLabel && (
-              <p class="mt-4 text-lg font-semibold text-primary">{quad.data.priceLabel}</p>
-            )}
-
-            <div class="mt-6 inline-flex items-center text-sm font-medium text-white group-hover:text-primary">
-              Voir la fiche
-            </div>
-          </div>
-        </a>
-      ))}
-    </div>
+    <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+  {quads.map((quad) => (
+    <ProductCard
+      href={getQuadUrl(quad)}
+      title={quad.data.title}
+      image={quad.data.image}
+      description={quad.data.excerpt}
+      priceLabel={quad.data.priceLabel}
+      promoPriceLabel={quad.data.promoPriceLabel}
+      badge={quad.data.promo ? 'Promo' : undefined}
+      eyebrow="Quad BENDA"
+    />
+  ))}
+</div>
   </section>
+
+  <InfoSplitSection
+    blocks={quadInfoBlocks}
+    asideEyebrow="Besoin d’un conseil ?"
+    asideTitle="Demandez un essai ou plus d’infos"
+    asideText="Vous hésitez entre plusieurs quads BENDA ? Nous pouvons vous orienter selon votre usage, votre budget et les modèles disponibles."
+    primaryCtaHref="/contact"
+    primaryCtaText="Demander un essai"
+    secondaryCtaHref="/infos-contact"
+    secondaryCtaText="Nous contacter"
+  />
 </PageLayout>

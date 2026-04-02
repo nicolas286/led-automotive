@@ -1,0 +1,60 @@
+---
+import Button from '~/components/ui/Button.astro';
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+}
+
+const {
+  title = "Venez essayer un quad près de chez vous",
+  subtitle = "Essai possible sur place, conseils personnalisés et réponse rapide.",
+} = Astro.props;
+---
+
+<section class="ctaSection not-prose">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center">
+    <h2 class="ctaTitle">{title}</h2>
+    <p class="ctaSubtitle">{subtitle}</p>
+
+    <div class="ctaActions">
+      <Button href="/contact" variant="primary">
+        Demander un essai
+      </Button>
+
+      <Button href="/quads" variant="secondary">
+        Voir les quads en stock
+      </Button>
+    </div>
+  </div>
+</section>
+
+<style>
+  .ctaSection {
+    position: relative;
+    padding: 4rem 0 5rem;
+  }
+
+  .ctaTitle {
+    font-size: clamp(2rem, 2.5vw, 2.8rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: white;
+    letter-spacing: -0.02em;
+  }
+
+  .ctaSubtitle {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 36rem;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+  }
+
+  .ctaActions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+</style>

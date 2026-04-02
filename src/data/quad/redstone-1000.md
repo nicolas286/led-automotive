@@ -5,6 +5,7 @@ model: "Redstone 1000"
 excerpt: "L’exploration du futur, réinventée par BENDA."
 description: "Le Redstone 1000 est l’un des quads les plus puissants de sa catégorie, pensé pour la route comme pour le tout-terrain."
 priceLabel: "11.999 € TTC"
+promoPriceLabel: "10.500 € TTC"
 featured: true
 order: 1
 image: "/media/quads/redstone-1000/main.png"

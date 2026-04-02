@@ -1,0 +1,106 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  phone: string;
+  message?: string;
+}
+
+const {
+  phone,
+  message = 'Bonjour, je souhaite avoir des informations sur vos quads et équipements.',
+} = Astro.props;
+
+const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+---
+
+<a
+  href={whatsappUrl}
+  class="whatsAppFloat"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Contacter sur WhatsApp"
+>
+  <span class="whatsAppTooltip">Écrire sur WhatsApp</span>
+  <span class="whatsAppIconWrap" aria-hidden="true">
+    <Icon name="lucide:message-circle" class="whatsAppIcon" />
+  </span>
+</a>
+
+<style>
+  .whatsAppFloat {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 60;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    text-decoration: none;
+  }
+
+  .whatsAppTooltip {
+    display: none;
+    padding: 0.65rem 0.85rem;
+    border-radius: 999px;
+    background: rgba(10, 10, 10, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: white;
+    font-size: 0.9rem;
+    line-height: 1;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+    white-space: nowrap;
+  }
+
+  .whatsAppIconWrap {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1f8f4e, #25d366);
+    box-shadow:
+      0 12px 30px rgba(37, 211, 102, 0.28),
+      0 4px 12px rgba(0, 0, 0, 0.24);
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      filter 0.2s ease;
+  }
+
+  .whatsAppIcon {
+    width: 1.4rem;
+    height: 1.4rem;
+    color: white;
+  }
+
+  .whatsAppFloat:hover .whatsAppIconWrap {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow:
+      0 16px 36px rgba(37, 211, 102, 0.34),
+      0 6px 14px rgba(0, 0, 0, 0.26);
+    filter: brightness(1.04);
+  }
+
+  .whatsAppFloat:hover .whatsAppTooltip {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  @media (max-width: 640px) {
+    .whatsAppFloat {
+      right: 0.85rem;
+      bottom: 0.85rem;
+    }
+
+    .whatsAppTooltip {
+      display: none !important;
+    }
+
+    .whatsAppIconWrap {
+      width: 3.25rem;
+      height: 3.25rem;
+    }
+  }
+</style>

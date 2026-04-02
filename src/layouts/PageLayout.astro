@@ -2,6 +2,7 @@
 import Layout from '~/layouts/Layout.astro';
 import Header from '~/components/widgets/Header.astro';
 import Footer from '~/components/widgets/Footer.astro';
+import WhatsAppFloatingButton from '~/components/widgets/WhatsAppFloatingButton.astro';
 
 import { getHeaderData, footerData } from '~/navigation';
 
@@ -25,4 +26,8 @@ const headerData = await getHeaderData();
   <slot name="footer">
     <Footer {...footerData} />
   </slot>
+  <WhatsAppFloatingButton
+  phone="32499610628"
+  message="Bonjour, je souhaite avoir des infos sur vos quads et équipements."
+/>
 </Layout>

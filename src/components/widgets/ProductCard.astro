@@ -1,0 +1,89 @@
+---
+interface Props {
+  title: string;
+  href: string;
+  image: string;
+  description?: string;
+  priceLabel?: string;
+  promoPriceLabel?: string;
+  badge?: string;
+  eyebrow?: string;
+  ctaText?: string;
+}
+
+const {
+  title,
+  href,
+  image,
+  description,
+  priceLabel,
+  promoPriceLabel,
+  badge,
+  eyebrow,
+  ctaText = 'Voir la fiche',
+} = Astro.props;
+
+const isPromo = !!promoPriceLabel;
+---
+
+<a
+  href={href}
+  class="productCard group overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.02] transition duration-300 hover:-translate-y-1 hover:border-primary/60"
+>
+  <div class="productCardMedia">
+    <img
+      src={image}
+      alt={title}
+      class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.04]"
+      loading="lazy"
+    />
+    <div class="productCardOverlay"></div>
+
+    {badge && (
+      <span class="absolute left-4 top-4 z-[2] rounded-full border border-white/15 bg-black/55 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-white/85 backdrop-blur-sm">
+        {badge}
+      </span>
+    )}
+  </div>
+
+  <div class="p-6">
+    {eyebrow && (
+      <p class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">
+        {eyebrow}
+      </p>
+    )}
+
+    <h2 class="mt-2 text-2xl font-bold text-white transition group-hover:text-primary">
+      {title}
+    </h2>
+
+    {description && (
+      <p class="mt-3 text-sm leading-7 text-slate-300">
+        {description}
+      </p>
+    )}
+
+    {/* 🔥 PRIX */}
+    {(priceLabel || promoPriceLabel) && (
+      <div class="mt-4 flex items-center gap-3">
+        {isPromo && priceLabel && (
+          <span class="text-sm text-slate-400 line-through">
+            {priceLabel}
+          </span>
+        )}
+
+        <span class:list={[
+          'text-lg font-semibold',
+          isPromo ? 'text-primary' : 'text-primary'
+        ]}>
+          {promoPriceLabel ?? priceLabel}
+        </span>
+      </div>
+    )}
+
+    <div class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-white transition group-hover:text-primary">
+      <span>{ctaText}</span>
+      <span aria-hidden="true">→</span>
+    </div>
+  </div>
+</a>

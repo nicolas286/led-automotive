@@ -1,6 +1,8 @@
 ---
 import { getCollection, render } from 'astro:content';
 import PageLayout from '~/layouts/PageLayout.astro';
+import ProductCard from '~/components/widgets/ProductCard.astro';
+import ProductDetailHero from '~/components/widgets/ProductDetailHero.astro';
 import { getQuadUrl } from '~/utils/catalog';
 
 export async function getStaticPaths() {
@@ -32,88 +34,47 @@ const relatedEntries = (await getCollection('quad', ({ data }) => !data.draft))
 
 <PageLayout metadata={metadata}>
   <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-    <div class="grid gap-10 lg:grid-cols-2">
-      <div>
-        <img
-          src={quad.data.image}
-          alt={quad.data.title}
-          class="w-full rounded-2xl border border-gray-800 object-cover"
-        />
-
-        {quad.data.gallery && quad.data.gallery.length > 1 && (
-          <div class="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-4">
-            {quad.data.gallery.map((image) => (
-              <img
-                src={image}
-                alt={quad.data.title}
-                class="h-28 w-full rounded-xl border border-gray-800 object-cover"
-              />
-            ))}
-          </div>
-        )}
-      </div>
-
-      <div>
-        <p class="text-sm font-semibold uppercase tracking-wider text-primary">
-          {quad.data.brand ?? 'BENDA'}
-        </p>
-
-        <h1 class="mt-2 text-4xl font-bold tracking-tight text-white md:text-5xl">
-          {quad.data.title}
-        </h1>
-
-        {quad.data.excerpt && (
-          <p class="mt-4 text-lg text-muted">{quad.data.excerpt}</p>
-        )}
-
-        {quad.data.priceLabel && (
-          <p class="mt-6 text-3xl font-bold text-primary">{quad.data.priceLabel}</p>
-        )}
-
-        <div class="mt-8">
-          <a
-            href="/contact"
-            class="inline-flex rounded-full bg-primary px-6 py-3 font-semibold text-white transition hover:opacity-90"
-          >
-            {quad.data.ctaLabel ?? 'Demander un essai'}
-          </a>
-        </div>
-
-        {quad.data.shortSpecs && quad.data.shortSpecs.length > 0 && (
-          <div class="mt-10 grid gap-4 sm:grid-cols-2">
-            {quad.data.shortSpecs.map((spec) => (
-              <div class="rounded-2xl border border-gray-800 bg-black/30 p-4">
-                <p class="text-sm text-muted">{spec.label}</p>
-                <p class="mt-1 font-semibold text-white">{spec.value}</p>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
-    </div>
+    <ProductDetailHero
+      brand={quad.data.brand ?? 'BENDA'}
+      title={quad.data.title}
+      excerpt={quad.data.excerpt}
+      priceLabel={quad.data.priceLabel}
+      promoPriceLabel={quad.data.promoPriceLabel}
+      image={quad.data.image}
+      gallery={quad.data.gallery ?? []}
+      primaryCtaHref="/contact"
+      primaryCtaText={quad.data.ctaLabel ?? 'Demander un essai'}
+      secondaryCtaHref="/infos-contact"
+      secondaryCtaText="Nous contacter"
+      shortSpecs={quad.data.shortSpecs ?? []}
+    />
 
     {quad.data.description && (
       <section class="mt-16 max-w-4xl">
-        <h2 class="text-2xl font-bold text-white">Description</h2>
-        <p class="mt-4 text-base leading-8 text-muted">{quad.data.description}</p>
+        <h2 class="text-2xl font-bold text-white md:text-3xl">Description</h2>
+        <p class="mt-4 text-base leading-8 text-slate-300">{quad.data.description}</p>
       </section>
     )}
 
     {quad.data.technicalSpecs && quad.data.technicalSpecs.length > 0 && (
       <section class="mt-16">
-        <h2 class="text-2xl font-bold text-white">Caractéristiques techniques</h2>
+        <h2 class="text-2xl font-bold text-white md:text-3xl">
+          Caractéristiques techniques
+        </h2>
 
-        <div class="mt-8 grid gap-8 lg:grid-cols-2">
+        <div class="mt-8 grid gap-6 lg:grid-cols-2">
           {quad.data.technicalSpecs.map((section) => (
-            <div class="rounded-2xl border border-gray-800 bg-black/30 p-6">
+            <div class="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-6 shadow-[0_18px_40px_rgba(0,0,0,0.18)]">
               {section.section && (
-                <h3 class="mb-4 text-xl font-semibold text-primary">{section.section}</h3>
+                <h3 class="mb-5 text-xl font-semibold text-primary">
+                  {section.section}
+                </h3>
               )}
 
               <div class="space-y-3">
                 {section.items.map((item) => (
-                  <div class="border-b border-gray-800 pb-3 last:border-b-0">
-                    <p class="text-sm text-muted">{item.label}</p>
+                  <div class="border-b border-white/10 pb-3 last:border-b-0 last:pb-0">
+                    <p class="text-sm text-slate-400">{item.label}</p>
                     <p class="font-medium text-white">{item.value}</p>
                   </div>
                 ))}
@@ -126,11 +87,13 @@ const relatedEntries = (await getCollection('quad', ({ data }) => !data.draft))
 
     {quad.data.standardEquipment && quad.data.standardEquipment.length > 0 && (
       <section class="mt-16">
-        <h2 class="text-2xl font-bold text-white">Équipements de série</h2>
+        <h2 class="text-2xl font-bold text-white md:text-3xl">
+          Équipements de série
+        </h2>
 
         <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {quad.data.standardEquipment.map((item) => (
-            <div class="rounded-2xl border border-gray-800 bg-black/30 p-4 text-white">
+            <div class="rounded-[1.25rem] border border-white/10 bg-white/[0.03] p-4 text-white shadow-[0_18px_40px_rgba(0,0,0,0.18)]">
               ✓ {item}
             </div>
           ))}
@@ -138,28 +101,28 @@ const relatedEntries = (await getCollection('quad', ({ data }) => !data.draft))
       </section>
     )}
 
-    <section class="prose prose-invert mt-16 max-w-4xl">
+    <section class="prose prose-invert mt-16 max-w-4xl prose-p:text-slate-300 prose-li:text-slate-300 prose-headings:text-white">
       <Content />
     </section>
 
     {relatedEntries.length > 0 && (
       <section class="mt-16">
-        <h2 class="text-2xl font-bold text-white">Autres quads</h2>
+        <h2 class="text-2xl font-bold text-white md:text-3xl">
+          Autres quads
+        </h2>
 
-        <div class="mt-8 grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
+        <div class="mt-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
           {relatedEntries.map((item) => (
-            <a
+            <ProductCard
               href={getQuadUrl(item)}
-              class="overflow-hidden rounded-2xl border border-gray-800 bg-black/30 transition hover:border-primary"
-            >
-              <img src={item.data.image} alt={item.data.title} class="h-56 w-full object-cover" />
-              <div class="p-5">
-                <h3 class="text-lg font-semibold text-white">{item.data.title}</h3>
-                {item.data.priceLabel && (
-                  <p class="mt-2 text-primary">{item.data.priceLabel}</p>
-                )}
-              </div>
-            </a>
+              title={item.data.title}
+              image={item.data.image}
+              description={item.data.excerpt}
+              priceLabel={item.data.priceLabel}
+              promoPriceLabel={item.data.promoPriceLabel}
+              badge={item.data.promo ? 'Promo' : undefined}
+              eyebrow="Quad BENDA"
+            />
           ))}
         </div>
       </section>
