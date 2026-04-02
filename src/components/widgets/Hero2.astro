@@ -103,29 +103,6 @@ const {
     isolation: isolate;
   }
 
-  .heroImageWrapper::before {
-    content: '';
-    position: absolute;
-    inset: -6%;
-    background:
-      radial-gradient(circle at 62% 48%, rgba(225, 6, 0, 0.14), transparent 24%),
-      radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.04), transparent 38%);
-    filter: blur(28px);
-    z-index: 1;
-    pointer-events: none;
-  }
-
-  .heroImageWrapper::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(circle at center, transparent 62%, rgba(0, 0, 0, 0.08) 82%, rgba(0, 0, 0, 0.16) 100%),
-      linear-gradient(to bottom, transparent 72%, rgba(0, 0, 0, 0.12) 90%, rgba(0, 0, 0, 0.22) 100%);
-    z-index: 3;
-    pointer-events: none;
-  }
-
   .heroImageWrapper :global(img),
   .heroImage {
     position: relative;
