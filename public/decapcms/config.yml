@@ -104,7 +104,6 @@ collections:
       - { label: "Titre", name: "title", widget: "string" }
       - { label: "Marque", name: "brand", widget: "string", required: false, default: "BENDA" }
       - { label: "Modèle", name: "model", widget: "string", required: false }
-      - { label: "Slug", name: "slug", widget: "string", hint: "Utilisé pour l’URL", required: true }
 
       - { label: "Extrait", name: "excerpt", widget: "text", required: false }
       - { label: "Description courte", name: "description", widget: "text", required: false }
@@ -207,7 +206,6 @@ collections:
     public_folder: "/media/led/{{slug}}"
     fields:
       - { label: "Titre", name: "title", widget: "string" }
-      - { label: "Slug", name: "slug", widget: "string", hint: "Utilisé pour l’URL", required: true }
 
       - { label: "Extrait", name: "excerpt", widget: "text", required: false }
       - { label: "Description courte", name: "description", widget: "text", required: false }
