@@ -36,8 +36,9 @@ const {
   shortSpecs = [],
 } = Astro.props;
 
-const visibleGallery = gallery.filter((img) => img && img !== image);
 const isPromo = !!promoPriceLabel;
+
+const normalizedGallery = [...new Set([image, ...gallery].filter(Boolean))];
 ---
 
 <div class="grid gap-10 lg:grid-cols-2 lg:items-start">
@@ -50,10 +51,13 @@ const isPromo = !!promoPriceLabel;
       />
     </div>
 
-    {visibleGallery.length > 0 && (
+    {normalizedGallery.length > 1 && (
       <div class="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-4">
-        {visibleGallery.map((galleryImage) => (
-          <div class="productDetailThumb">
+        {normalizedGallery.map((galleryImage) => (
+          <div class:list={[
+            'productDetailThumb',
+            galleryImage === image && 'productDetailThumbActive',
+          ]}>
             <img
               src={galleryImage}
               alt={title}
@@ -140,6 +144,22 @@ const isPromo = !!promoPriceLabel;
     border-radius: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.1);
     background: rgba(255, 255, 255, 0.02);
+    opacity: 0.78;
+    transition:
+      opacity 0.2s ease,
+      border-color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .productDetailThumb:hover {
+    opacity: 1;
+    transform: translateY(-1px);
+    border-color: rgba(225, 6, 0, 0.45);
+  }
+
+  .productDetailThumbActive {
+    opacity: 1;
+    border-color: rgba(225, 6, 0, 0.55);
   }
 
   .productDetailSpecCard {
