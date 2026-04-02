@@ -1,8 +1,11 @@
 backend:
-  name: led-automotive
+  name: git-gateway
   branch: main
 
 local_backend: true
+
+media_folder: "public/media/uploads"
+public_folder: "/media/uploads"
 
 publish_mode: editorial_workflow
 
