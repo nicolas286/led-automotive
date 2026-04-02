@@ -113,7 +113,6 @@ collections:
       - { label: "Prix affiché", name: "priceLabel", widget: "string", required: false }
       - { label: "Prix promo affiché", name: "promoPriceLabel", widget: "string", required: false }
       - { label: "En promo", name: "promo", widget: "boolean", required: false, default: false }
-      - { label: "En solde", name: "onSale", widget: "boolean", required: false, default: false }
 
       - { label: "Mis en avant", name: "featured", widget: "boolean", required: false, default: false }
       - { label: "Ordre", name: "order", widget: "number", required: false, value_type: "int" }
@@ -217,7 +216,6 @@ collections:
       - { label: "Prix affiché", name: "priceLabel", widget: "string", required: false }
       - { label: "Prix promo affiché", name: "promoPriceLabel", widget: "string", required: false }
       - { label: "En promo", name: "promo", widget: "boolean", required: false, default: false }
-      - { label: "En solde", name: "onSale", widget: "boolean", required: false, default: false }
 
       - { label: "Mis en avant", name: "featured", widget: "boolean", required: false, default: false }
       - { label: "Ordre", name: "order", widget: "number", required: false, value_type: "int" }

@@ -89,7 +89,6 @@ const quadCollection = defineCollection({
     price: z.number().optional(),
     priceLabel: z.string().optional(), // ex: "11.999 € TTC"
     promoPriceLabel: z.string().optional(),
-    onSale: z.boolean().optional(),
     promo: z.boolean().optional(),
 
     featured: z.boolean().optional(),
@@ -150,7 +149,6 @@ const ledCollection = defineCollection({
     price: z.number().optional(),
     priceLabel: z.string().optional(),
     promoPriceLabel: z.string().optional(),
-    onSale: z.boolean().optional(),
     promo: z.boolean().optional(),
 
     featured: z.boolean().optional(),
