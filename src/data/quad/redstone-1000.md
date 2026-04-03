@@ -4,30 +4,32 @@ brand: BENDA
 model: Redstone 1000
 slug: redstone-1000
 excerpt: L’exploration du futur, réinventée par BENDA.
-description: Le Redstone 1000 est l’un des quads les plus puissants de sa
-  catégorie, pensé pour la route comme pour le tout-terrain.
-priceLabel: 11.999 € TTC
-promoPriceLabel: 10.500 € TTC
-promo: true
+description: Le Redstone 1000 Edition Premium est un quad haut de gamme conçu pour ceux qui veulent à la fois puissance, confort et polyvalence.
+  Avec son bicylindre en V de 102 cv, sa transmission 2x4 / 4x4 et ses suspensions à grand débattement, il est aussi à l’aise en usage loisir qu’en terrain exigeant.
+  Son niveau d’équipement complet (ABS, écran TFT, modes de conduite, treuil, poignées chauffantes…) en fait un véhicule prêt à l’emploi, sans compromis.
+promo: false
+priceLabel: 11.999,00€
 featured: true
 order: 1
 image: /media/quads/redstone-1000/main.png
 gallery:
   - /media/quads/redstone-1000/main.png
-  - https://led-automotive.be/wp-content/uploads/2026/03/DSC08705-1024x683-1.jpg
+  - /media/quads/redstone-1000/1.png
+  - /media/quads/redstone-1000/2.jpg
+  - /media/quads/redstone-1000/3.png
 category: Quad
 subcategory: Loisir
 available: true
 ctaLabel: Demander un essai
 shortSpecs:
-  - label: Cylindrée
-    value: 1000 cm3
+  - label: Moteur
+    value: Bicylindre en V – 1000 cm3
   - label: Puissance
-    value: 102 cv à 7500 tr/min
+    value: 102 cv
   - label: Couple
-    value: 98.3 N·m à 6500 tr/min
-  - label: Norme moteur
-    value: Euro 5+
+    value: 98.3 N·m
+  - label: Transmission
+    value: 2x4 / 4x4 avec différentiel
 technicalSpecs:
   - section: Moteur
     items:
@@ -55,6 +57,10 @@ technicalSpecs:
         value: 26 x 11 x 14 pouces
       - label: Freinage
         value: Double disque 220 mm
+      - label: Suspension avant
+        value: Double bras triangulaire avec barre stabilisatrice, course 230 mm, amortisseurs à gaz réglables
+      - label: Suspension arrière
+        value: Bras oscillant indépendant à torsion, course 250 mm, amortisseurs à gaz réglables
   - section: Dimensions, poids et capacités
     items:
       - label: Dimensions
@@ -67,6 +73,12 @@ technicalSpecs:
         value: 440 kg
       - label: Capacité du réservoir
         value: 30 litres
+  - section: Transmission
+    items:
+      - label: Boîte
+        value: CVT (L / H / N / R / P) – CVTech
+      - label: Transmission
+        value: 2x4 / 4x4 sélectionnable avec blocage de différentiel
 standardEquipment:
   - Freinage ABS
   - Dossier renforcé pour le passager
@@ -78,7 +90,7 @@ standardEquipment:
   - Système Beadlock
   - Blocage du différentiel arrière
   - Jantes aluminium 14 pouces
-  - Treuil avant 3500 lbs
+  - Treuil avant 3500 lbs avec corde nylon
   - Changement de modes 2/4 roues motrices
   - Écran TFT 7 pouces
   - Modes de conduite Standard / Work / Sport

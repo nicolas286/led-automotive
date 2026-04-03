@@ -1,5 +1,5 @@
 site:
-  name: Led Automotive
+  name: Ced Motorsports by Led Automotive
   site: 'https://astrowind.vercel.app'
   base: '/'
   trailingSlash: false
@@ -9,14 +9,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: Quad BENDA & LED auto à Fosses-la-Ville
-    template: '%s | LED AUTOMOTIVE'
-  description: "Quads BENDA, éclairage LED auto et accessoires à Fosses-la-Ville. Demandez un essai ou un devis rapidement avec LED Automotive."
+    default: Quads BENDA & LED auto à Fosses-la-Ville
+    template: '%s | CED MOTORSPORTS BY LED AUTOMOTIVE'
+  description: "Quads BENDA, éclairage LED auto et accessoires à Fosses-la-Ville. Demandez un essai ou un devis rapidement avec CED MOTORSPORTS."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: LED AUTOMOTIVE
+    site_name: CED MOTORSPORTS BY LED AUTOMOTIVE
     images:
       - url: '~/assets/images/default.png'
         width: 1200

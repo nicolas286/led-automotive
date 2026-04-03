@@ -38,7 +38,7 @@ const contactTextarea = {
   name: 'message',
   label: 'Message',
   placeholder:
-    'Expliquez-nous votre demande : modèle qui vous intéresse, besoin en équipement LED, demande d’essai, etc.',
+    'Expliquez-nous votre demande : modèle qui vous intéresse, demande d’essai, disponibilité, équipement LED, etc.',
   rows: 6,
 };
 
@@ -61,8 +61,8 @@ const infoBlocks = [
 <Layout metadata={metadata}>
   <HeroText
     tagline="Contact"
-    title="Parlons de votre projet ou de votre futur quad"
-    subtitle="Une question, une demande d’essai ou un besoin en équipement LED ? Contactez-nous directement."
+    title="Une question ? Un essai ? Contactez-nous."
+    subtitle="Appelez-nous ou envoyez votre demande via le formulaire."
     callToAction={{
       text: 'Appeler maintenant',
       href: 'tel:+32499610628',
@@ -70,31 +70,21 @@ const infoBlocks = [
       variant: 'primary',
     }}
     callToAction2={{
-      text: 'Voir les quads',
-      href: '/quads',
+      text: 'Nous écrire',
+      href: '#contact-form',
     }}
   />
 
-  <section class="not-prose mx-auto max-w-7xl px-4 pb-8 sm:px-6 lg:px-8">
-    <div class="infoSplitGrid">
-      <div class="infoSplitContent">
-        {infoBlocks.map((block) => (
-          <article class="infoTextCard">
-            <h2 class="infoTextCardTitle">{block.title}</h2>
-            <p class="infoTextCardText">{block.text}</p>
-          </article>
-        ))}
-      </div>
-
-      <aside class="infoCtaCard">
-        <p class="infoCtaEyebrow">Contact direct</p>
-        <h2 class="infoCtaTitle">LED Automotive</h2>
-        <p class="infoCtaText">
-          Basés à Fosses-la-Ville, nous répondons à vos demandes concernant les quads BENDA,
-          les équipements LED et les essais.
+  <section class="not-prose mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
+    <div class="contactMainGrid">
+      <aside class="contactQuickCard">
+        <p class="contactQuickEyebrow">Contact direct</p>
+        <h2 class="contactQuickTitle">LED Automotive</h2>
+        <p class="contactQuickText">
+          Pour un renseignement, un devis ou une demande d’essai.
         </p>
 
-        <div class="contactAsideMeta">
+        <div class="contactQuickMeta">
           <p>
             <strong>Téléphone :</strong><br />
             <a href="tel:+32499610628">+32 499 61 06 28</a>
@@ -106,53 +96,145 @@ const infoBlocks = [
           </p>
         </div>
 
-        <div class="infoCtaActions">
-          <a class="contactPrimaryLink" href="tel:+32499610628">Appeler maintenant</a>
-          <a class="contactSecondaryLink" href="/quads">Voir les quads</a>
-        </div>
+        <a class="contactPrimaryLink" href="tel:+32499610628">Appeler maintenant</a>
       </aside>
+
+      <div class="contactFormShell">
+        <div class="contactFormIntro">
+          <p class="contactFormEyebrow">Formulaire</p>
+          <h2 class="contactFormTitle">Envoyez-nous votre demande</h2>
+          <p class="contactFormText">
+            Décrivez simplement votre besoin et nous vous recontactons rapidement.
+          </p>
+        </div>
+
+        <ContactWidget
+          id="contact-form"
+          inputs={contactInputs}
+          textarea={contactTextarea}
+          button="Envoyer la demande"
+          disclaimer.label="En nous contactant, vous acceptez que vos données soient utilisées uniquement pour traiter votre demande."
+        />
+      </div>
     </div>
   </section>
 
-  <section class="not-prose mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
-    <div class="contactFormShell">
-      <div class="contactFormIntro">
-        <p class="contactFormEyebrow">Nous écrire</p>
-        <h2 class="contactFormTitle">Envoyez-nous votre demande</h2>
-        <p class="contactFormText">
-          Décrivez votre besoin et nous reviendrons vers vous rapidement.
-        </p>
-      </div>
-
-      <ContactWidget
-        id="contact-form"
-        inputs={contactInputs}
-        textarea={contactTextarea}
-        button='Envoyer la demande'
-        disclaimer.label="En nous contactant, vous acceptez que vos données soient utilisées uniquement pour traiter votre demande."
-      />
+  <section class="not-prose mx-auto max-w-7xl px-4 pb-8 sm:px-6 lg:px-8">
+    <div class="infoBlocksGrid">
+      {infoBlocks.map((block) => (
+        <article class="infoTextCard">
+          <h2 class="infoTextCardTitle">{block.title}</h2>
+          <p class="infoTextCardText">{block.text}</p>
+        </article>
+      ))}
     </div>
   </section>
 </Layout>
 
 <style>
-  .infoSplitGrid {
+  .contactMainGrid {
     display: grid;
     gap: 1.5rem;
   }
 
-  .infoSplitContent {
-    display: grid;
-    gap: 1.5rem;
-  }
-
-  .infoTextCard,
-  .infoCtaCard,
-  .contactFormShell {
+  .contactQuickCard,
+  .contactFormShell,
+  .infoTextCard {
     border: 1px solid rgba(255, 255, 255, 0.08);
     background: rgba(255, 255, 255, 0.03);
     border-radius: 1.5rem;
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+  }
+
+  .contactQuickCard {
+    padding: 1.75rem;
+    align-self: start;
+  }
+
+  .contactQuickEyebrow,
+  .contactFormEyebrow {
+    margin: 0;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgb(var(--color-primary, 225 6 0));
+  }
+
+  .contactQuickTitle,
+  .contactFormTitle {
+    margin-top: 0.75rem;
+    font-size: 1.75rem;
+    line-height: 1.15;
+    font-weight: 700;
+    color: white;
+  }
+
+  .contactQuickText,
+  .contactFormText {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: rgb(203 213 225);
+  }
+
+  .contactQuickMeta {
+    margin-top: 1.25rem;
+    display: grid;
+    gap: 1rem;
+    color: rgb(203 213 225);
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .contactQuickMeta strong {
+    color: white;
+  }
+
+  .contactQuickMeta a {
+    color: rgb(203 213 225);
+    text-decoration: none;
+  }
+
+  .contactQuickMeta a:hover {
+    color: white;
+  }
+
+  .contactPrimaryLink {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3rem;
+    margin-top: 1.5rem;
+    padding: 0.85rem 1.2rem;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    transition:
+      transform 0.2s ease,
+      background 0.2s ease,
+      border-color 0.2s ease,
+      color 0.2s ease;
+    background: rgb(var(--color-primary, 225 6 0));
+    color: white;
+  }
+
+  .contactPrimaryLink:hover {
+    transform: translateY(-1px);
+  }
+
+  .contactFormShell {
+    padding: 1.75rem;
+  }
+
+  .contactFormIntro {
+    max-width: 42rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .infoBlocksGrid {
+    display: grid;
+    gap: 1.5rem;
   }
 
   .infoTextCard {
@@ -160,7 +242,7 @@ const infoBlocks = [
   }
 
   .infoTextCardTitle {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     line-height: 1.15;
     font-weight: 700;
     color: white;
@@ -171,115 +253,6 @@ const infoBlocks = [
     font-size: 0.98rem;
     line-height: 1.9;
     color: rgb(203 213 225);
-  }
-
-  .infoCtaCard {
-    padding: 1.75rem;
-    align-self: start;
-    position: sticky;
-    top: 6rem;
-  }
-
-  .infoCtaEyebrow,
-  .contactFormEyebrow {
-    margin: 0;
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: rgb(var(--color-primary, 225 6 0));
-  }
-
-  .infoCtaTitle,
-  .contactFormTitle {
-    margin-top: 0.75rem;
-    font-size: 1.75rem;
-    line-height: 1.15;
-    font-weight: 700;
-    color: white;
-  }
-
-  .infoCtaText,
-  .contactFormText {
-    margin-top: 1rem;
-    font-size: 0.95rem;
-    line-height: 1.8;
-    color: rgb(203 213 225);
-  }
-
-  .contactAsideMeta {
-    margin-top: 1.25rem;
-    display: grid;
-    gap: 1rem;
-    color: rgb(203 213 225);
-    font-size: 0.95rem;
-    line-height: 1.7;
-  }
-
-  .contactAsideMeta strong {
-    color: white;
-  }
-
-  .contactAsideMeta a {
-    color: rgb(203 213 225);
-    text-decoration: none;
-  }
-
-  .contactAsideMeta a:hover {
-    color: white;
-  }
-
-  .infoCtaActions {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    margin-top: 1.5rem;
-  }
-
-  .contactPrimaryLink,
-  .contactSecondaryLink {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 3rem;
-    padding: 0.85rem 1.2rem;
-    border-radius: 999px;
-    font-weight: 600;
-    text-decoration: none;
-    transition:
-      transform 0.2s ease,
-      background 0.2s ease,
-      border-color 0.2s ease,
-      color 0.2s ease;
-  }
-
-  .contactPrimaryLink {
-    background: rgb(var(--color-primary, 225 6 0));
-    color: white;
-  }
-
-  .contactPrimaryLink:hover {
-    transform: translateY(-1px);
-  }
-
-  .contactSecondaryLink {
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    color: white;
-    background: rgba(255, 255, 255, 0.02);
-  }
-
-  .contactSecondaryLink:hover {
-    transform: translateY(-1px);
-    background: rgba(255, 255, 255, 0.05);
-  }
-
-  .contactFormShell {
-    padding: 1.75rem;
-  }
-
-  .contactFormIntro {
-    max-width: 42rem;
-    margin-bottom: 1.5rem;
   }
 
   :global(.contactFormShell .max-w-xl) {
@@ -308,53 +281,54 @@ const infoBlocks = [
   }
 
   @media (min-width: 960px) {
-    .infoSplitGrid {
-      grid-template-columns: minmax(0, 2fr) minmax(320px, 1fr);
+    .contactMainGrid {
+      grid-template-columns: minmax(320px, 0.9fr) minmax(0, 1.8fr);
       gap: 2rem;
+      align-items: start;
+    }
+
+    .infoBlocksGrid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
     }
   }
 
-  /* INPUTS */
-:global(input),
-:global(textarea),
-:global(select) {
-  width: 100%;
-  border-radius: 0.75rem;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(0, 0, 0, 0.35);
-  color: white;
-  padding: 0.85rem 1rem;
-  font-size: 0.95rem;
-  outline: none;
-  transition: all 0.2s ease;
-}
+  :global(input),
+  :global(textarea),
+  :global(select) {
+    width: 100%;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(0, 0, 0, 0.35);
+    color: white;
+    padding: 0.85rem 1rem;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.2s ease;
+  }
 
-/* placeholder */
-:global(input::placeholder),
-:global(textarea::placeholder) {
-  color: rgba(255, 255, 255, 0.45);
-}
+  :global(input::placeholder),
+  :global(textarea::placeholder) {
+    color: rgba(255, 255, 255, 0.45);
+  }
 
-/* focus */
-:global(input:focus),
-:global(textarea:focus),
-:global(select:focus) {
-  border-color: rgb(var(--color-primary, 225 6 0));
-  box-shadow: 0 0 0 2px rgba(225, 6, 0, 0.25);
-  background: rgba(0, 0, 0, 0.5);
-}
+  :global(input:focus),
+  :global(textarea:focus),
+  :global(select:focus) {
+    border-color: rgb(var(--color-primary, 225 6 0));
+    box-shadow: 0 0 0 2px rgba(225, 6, 0, 0.25);
+    background: rgba(0, 0, 0, 0.5);
+  }
 
-/* labels */
-:global(label) {
-  display: block;
-  margin-bottom: 0.35rem;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.75);
-}
+  :global(label) {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.75);
+  }
 
-/* spacing entre champs */
-:global(form > div) {
-  margin-bottom: 1rem;
-}
+  :global(form > div) {
+    margin-bottom: 1rem;
+  }
 </style>
