@@ -113,6 +113,6 @@ export const footerData = {
     { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
   ],
   footNote: `
-    © LED Automotive · Fosses-la-Ville · Tous droits réservés. Site web réalité par <a href="www.feralwebdesign.be" target="_blank">Féral</a>.
+    © LED Automotive · Fosses-la-Ville · Tous droits réservés. Site web réalisé par <a href="www.feralwebdesign.be" target="_blank">Féral</a>.
   `,
 };
