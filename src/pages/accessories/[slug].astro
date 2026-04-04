@@ -1,0 +1,143 @@
+---
+import { getCollection, render } from 'astro:content';
+import PageLayout from '~/layouts/PageLayout.astro';
+import ProductCard from '~/components/widgets/ProductCard.astro';
+import ProductDetailHero from '~/components/widgets/ProductDetailHero.astro';
+import { getAccessoryUrl, getQuadUrl } from '~/utils/catalog';
+
+export async function getStaticPaths() {
+  const accessories = await getCollection('accessory', ({ data }) => !data.draft);
+
+  return accessories.map((item) => ({
+    params: { slug: item.data.slug ?? item.id },
+    props: { item },
+  }));
+}
+
+const { item } = Astro.props;
+const { Content } = await render(item);
+
+const metadata = {
+  title: item.data.seo?.title ?? `${item.data.title} | LED Automotive`,
+  description:
+    item.data.seo?.description ??
+    item.data.description ??
+    item.data.excerpt ??
+    'Découvrez cet accessoire chez LED Automotive.',
+};
+
+const relatedEntries = (await getCollection('accessory', ({ data }) => !data.draft))
+  .filter((entry) => entry.id !== item.id)
+  .sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999))
+  .slice(0, 3);
+
+const compatibleQuadEntries =
+  item.data.compatibleQuads && item.data.compatibleQuads.length > 0
+    ? (await getCollection('quad', ({ data }) => !data.draft))
+        .filter((entry) =>
+          item.data.compatibleQuads?.includes(entry.data.slug ?? entry.id)
+        )
+        .sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999))
+    : [];
+
+const shortSpecs = item.data.specs?.slice(0, 4) ?? [];
+---
+
+<PageLayout metadata={metadata}>
+  <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <ProductDetailHero
+      brand="Accessoire"
+      title={item.data.title}
+      excerpt={item.data.excerpt}
+      priceLabel={item.data.priceLabel}
+      promoPriceLabel={item.data.promoPriceLabel}
+      image={item.data.image}
+      gallery={item.data.gallery ?? []}
+      primaryCtaHref="/contact"
+      primaryCtaText={item.data.ctaLabel ?? 'Demander un devis'}
+      secondaryCtaHref="/contact"
+      secondaryCtaText="Nous contacter"
+      shortSpecs={shortSpecs}
+    />
+
+    {item.data.specs && item.data.specs.length > 4 && (
+      <section class="mt-16">
+        <h2 class="text-2xl font-bold text-white md:text-3xl">
+          Caractéristiques
+        </h2>
+
+        <div class="mt-8 rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-6 shadow-[0_18px_40px_rgba(0,0,0,0.18)]">
+          <div class="space-y-3">
+            {item.data.specs.map((spec) => (
+              <div class="border-b border-white/10 pb-3 last:border-b-0 last:pb-0">
+                <p class="text-sm text-slate-400">{spec.label}</p>
+                <p class="font-medium text-white">{spec.value}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    {compatibleQuadEntries.length > 0 && (
+      <section class="mt-16">
+        <h2 class="text-2xl font-bold text-white md:text-3xl">
+          Compatible avec ces quads
+        </h2>
+
+        <div class="mt-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+          {compatibleQuadEntries.map((entry) => (
+            <ProductCard
+              href={getQuadUrl(entry)}
+              title={entry.data.title}
+              image={entry.data.image}
+              description={entry.data.excerpt}
+              priceLabel={entry.data.priceLabel}
+              promoPriceLabel={entry.data.promoPriceLabel}
+              badge={entry.data.promo ? 'Promo' : undefined}
+              eyebrow={entry.data.category ?? 'Quad'}
+            />
+          ))}
+        </div>
+      </section>
+    )}
+
+    {item.data.description && (
+      <section class="mt-16 max-w-4xl">
+        <h2 class="text-2xl font-bold text-white md:text-3xl">
+          Description
+        </h2>
+        <p class="mt-4 text-base leading-8 text-slate-300">
+          {item.data.description}
+        </p>
+      </section>
+    )}
+
+    <section class="prose prose-invert mt-16 max-w-4xl prose-p:text-slate-300 prose-li:text-slate-300 prose-headings:text-white">
+      <Content />
+    </section>
+
+    {relatedEntries.length > 0 && (
+      <section class="mt-16">
+        <h2 class="text-2xl font-bold text-white md:text-3xl">
+          Autres accessoires
+        </h2>
+
+        <div class="mt-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+          {relatedEntries.map((entry) => (
+            <ProductCard
+              href={getAccessoryUrl(entry)}
+              title={entry.data.title}
+              image={entry.data.image}
+              description={entry.data.excerpt}
+              priceLabel={entry.data.priceLabel}
+              promoPriceLabel={entry.data.promoPriceLabel}
+              badge={entry.data.promo ? 'Promo' : undefined}
+              eyebrow="Accessoire"
+            />
+          ))}
+        </div>
+      </section>
+    )}
+  </section>
+</PageLayout>

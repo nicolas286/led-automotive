@@ -181,8 +181,50 @@ const ledCollection = defineCollection({
   }),
 });
 
+const accessoryCollection = defineCollection({
+  loader: glob({ pattern: ['*.md', '*.mdx'], base: 'src/data/accessory' }),
+  schema: z.object({
+    draft: z.boolean().optional(),
+
+    title: z.string(),
+    slug: z.string().optional(),
+
+    excerpt: z.string().optional(),
+    description: z.string().optional(),
+
+    price: z.number().optional(),
+    priceLabel: z.string().optional(),
+    promoPriceLabel: z.string().optional(),
+    promo: z.boolean().optional(),
+
+    featured: z.boolean().optional(),
+    order: z.number().optional(),
+
+    image: z.string(),
+    gallery: z.array(z.string()).optional(),
+
+    available: z.boolean().optional(),
+    ctaLabel: z.string().optional().default('Demander un devis'),
+
+    compatibleQuads: z.array(z.string()).optional(),
+
+    specs: z
+      .array(
+        z.object({
+          label: z.string(),
+          value: z.string(),
+        })
+      )
+      .optional(),
+
+    seo: seoDefinition(),
+    metadata: metadataDefinition(),
+  }),
+});
+
 export const collections = {
   post: postCollection,
   quad: quadCollection,
   led: ledCollection,
+  accessory: accessoryCollection,
 };

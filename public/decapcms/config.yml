@@ -281,3 +281,88 @@ collections:
               - { label: "Follow", name: "follow", widget: "boolean", required: false, default: true }
 
       - { label: "Contenu additionnel", name: "body", widget: "markdown", required: false }
+
+    - name: "accessory"
+    label: "Accessoires"
+    label_singular: "Accessoire"
+    folder: "src/data/accessory"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    summary: "{{title}}"
+    media_folder: "public/media/accessories/{{slug}}"
+    public_folder: "/media/accessories/{{slug}}"
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string", required: false }
+
+      - { label: "Extrait", name: "excerpt", widget: "text", required: false }
+      - { label: "Description", name: "description", widget: "text", required: false }
+
+      - { label: "Prix numérique", name: "price", widget: "number", required: false, value_type: "float" }
+      - { label: "Prix affiché", name: "priceLabel", widget: "string", required: false }
+      - { label: "Prix promo affiché", name: "promoPriceLabel", widget: "string", required: false }
+      - { label: "En promo", name: "promo", widget: "boolean", required: false, default: false }
+
+      - { label: "Mis en avant", name: "featured", widget: "boolean", required: false, default: false }
+      - { label: "Ordre", name: "order", widget: "number", required: false, value_type: "int" }
+
+      - { label: "Image principale", name: "image", widget: "image" }
+      - label: "Galerie"
+        name: "gallery"
+        widget: "list"
+        required: false
+        field: { label: "Image", name: "image", widget: "image" }
+
+      - { label: "Disponible", name: "available", widget: "boolean", required: false, default: true }
+      - { label: "Label CTA", name: "ctaLabel", widget: "string", required: false, default: "Demander un devis" }
+
+      - label: "Quads compatibles"
+        name: "compatibleQuads"
+        widget: "relation"
+        collection: "quad"
+        search_fields: ["title", "slug", "brand", "model"]
+        value_field: "slug"
+        display_fields: ["title"]
+        multiple: true
+        required: false
+
+      - label: "Caractéristiques"
+        name: "specs"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Label", name: "label", widget: "string" }
+          - { label: "Valeur", name: "value", widget: "string" }
+
+      - label: "SEO simple"
+        name: "seo"
+        widget: "object"
+        required: false
+        collapsed: true
+        fields:
+          - { label: "Meta title", name: "title", widget: "string", required: false }
+          - { label: "Meta description", name: "description", widget: "text", required: false }
+
+      - label: "Metadata avancées"
+        name: "metadata"
+        widget: "object"
+        required: false
+        collapsed: true
+        fields:
+          - { label: "Meta title", name: "title", widget: "string", required: false }
+          - { label: "Ignorer le template de titre", name: "ignoreTitleTemplate", widget: "boolean", required: false, default: false }
+          - { label: "Canonical", name: "canonical", widget: "string", required: false }
+          - { label: "Description", name: "description", widget: "text", required: false }
+
+          - label: "Robots"
+            name: "robots"
+            widget: "object"
+            required: false
+            collapsed: true
+            fields:
+              - { label: "Index", name: "index", widget: "boolean", required: false, default: true }
+              - { label: "Follow", name: "follow", widget: "boolean", required: false, default: true }
+
+      - { label: "Contenu additionnel", name: "body", widget: "markdown", required: false }
