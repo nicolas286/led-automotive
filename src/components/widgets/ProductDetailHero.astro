@@ -42,7 +42,7 @@ const galleryId = `gallery-${title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
 ---
 
 <div class="grid gap-10 lg:grid-cols-2 lg:items-start" data-product-gallery-root={galleryId}>
-  <div>
+  <div class="order-2 lg:order-1">
     <div class="productDetailMainImage">
       <img
         src={image}
@@ -78,7 +78,7 @@ const galleryId = `gallery-${title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
     )}
   </div>
 
-  <div>
+  <div class="order-1 lg:order-2">
     {brand && (
       <p class="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
         {brand}

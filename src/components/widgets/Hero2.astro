@@ -59,17 +59,17 @@ const {
             )
           }
 
-         {
+        {
   (actions || socialLink) && (
     <div class="intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
-      <div class="w-fit mx-auto lg:mx-0">
+      <div class="w-full sm:w-fit mx-auto lg:mx-0">
         {
           actions && (
-            <div class="flex flex-row justify-center lg:justify-start gap-4">
+            <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 w-full sm:w-auto">
               {Array.isArray(actions) ? (
                 actions.map((action) => (
-                  <div class="flex-shrink-0">
-                    <Button {...(action || {})} />
+                  <div class="w-full sm:w-auto sm:flex-shrink-0">
+                    <Button {...(action || {})} class="w-full sm:w-auto" />
                   </div>
                 ))
               ) : (
