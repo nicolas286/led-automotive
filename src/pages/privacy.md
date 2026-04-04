@@ -16,7 +16,7 @@ Nous ne collectons que les données strictement nécessaires à ces finalités.
 # Responsable du traitement
 
 **Dénomination** : Cédric Jaumotte
-**Adresse du laboratoire** : Rue de Nèvremont 75, 5070 Fosses-la-Ville, Belgique
+**Adresse** : Rue de Nèvremont 75, 5070 Fosses-la-Ville, Belgique
 **Téléphone** : +32 499 61 06 28
 **E-mail** : ced.automotive@gmail.com
 
