@@ -282,7 +282,7 @@ collections:
 
       - { label: "Contenu additionnel", name: "body", widget: "markdown", required: false }
 
-    - name: "accessory"
+  - name: "accessory"
     label: "Accessoires"
     label_singular: "Accessoire"
     folder: "src/data/accessory"
