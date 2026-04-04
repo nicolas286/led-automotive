@@ -2,36 +2,32 @@
 import { Icon } from 'astro-icon/components';
 
 interface Props {
-  phone: string;
-  message?: string;
+  pageUrl: string;
 }
 
-const {
-  phone,
-  message = 'Bonjour, je souhaite avoir des informations sur vos quads et équipements.',
-} = Astro.props;
+const { pageUrl } = Astro.props;
 
-const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+const messengerUrl = `https://m.me/${pageUrl}`;
 ---
 
 <a
-  href={whatsappUrl}
-  class="whatsAppFloat"
+  href={messengerUrl}
+  class="messengerFloat"
   target="_blank"
   rel="noopener noreferrer"
-  aria-label="Contacter sur WhatsApp"
+  aria-label="Contacter sur Messenger"
 >
-  <span class="whatsAppTooltip">Écrire sur WhatsApp</span>
-  <span class="whatsAppIconWrap" aria-hidden="true">
-    <Icon name="mdi:whatsapp" class="whatsAppIcon" />
+  <span class="messengerTooltip">Écrire sur Messenger</span>
+  <span class="messengerIconWrap" aria-hidden="true">
+    <Icon name="logos:messenger" class="messengerIcon" />
   </span>
 </a>
 
 <style>
-  .whatsAppFloat {
+  .messengerFloat {
     position: fixed;
     right: 1rem;
-    bottom: 1rem;
+    bottom: 5.2rem; /* 👈 au-dessus du bouton WhatsApp */
     z-index: 60;
     display: inline-flex;
     align-items: center;
@@ -39,7 +35,7 @@ const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`
     text-decoration: none;
   }
 
-  .whatsAppTooltip {
+  .messengerTooltip {
     display: none;
     padding: 0.65rem 0.85rem;
     border-radius: 999px;
@@ -52,16 +48,16 @@ const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`
     white-space: nowrap;
   }
 
-  .whatsAppIconWrap {
+  .messengerIconWrap {
     width: 3.5rem;
     height: 3.5rem;
     border-radius: 999px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #1f8f4e, #25d366);
+    background: linear-gradient(135deg, #1877f2, #a033ff);
     box-shadow:
-      0 12px 30px rgba(37, 211, 102, 0.28),
+      0 12px 30px rgba(24, 119, 242, 0.28),
       0 4px 12px rgba(0, 0, 0, 0.24);
     transition:
       transform 0.2s ease,
@@ -69,36 +65,36 @@ const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`
       filter 0.2s ease;
   }
 
-  .whatsAppIcon {
+  .messengerIcon {
     width: 1.4rem;
     height: 1.4rem;
     color: white;
   }
 
-  .whatsAppFloat:hover .whatsAppIconWrap {
+  .messengerFloat:hover .messengerIconWrap {
     transform: translateY(-2px) scale(1.03);
     box-shadow:
-      0 16px 36px rgba(37, 211, 102, 0.34),
+      0 16px 36px rgba(24, 119, 242, 0.34),
       0 6px 14px rgba(0, 0, 0, 0.26);
     filter: brightness(1.04);
   }
 
-  .whatsAppFloat:hover .whatsAppTooltip {
+  .messengerFloat:hover .messengerTooltip {
     display: inline-flex;
     align-items: center;
   }
 
   @media (max-width: 640px) {
-    .whatsAppFloat {
+    .messengerFloat {
       right: 0.85rem;
-      bottom: 0.85rem;
+      bottom: 4.7rem; /* ajusté mobile */
     }
 
-    .whatsAppTooltip {
+    .messengerTooltip {
       display: none !important;
     }
 
-    .whatsAppIconWrap {
+    .messengerIconWrap {
       width: 3.25rem;
       height: 3.25rem;
     }

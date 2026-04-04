@@ -7,8 +7,7 @@ import Worlds from '~/components/widgets/Worlds.astro';
 import ProductShowcase from '~/components/widgets/ProductShowcase.astro';
 import TrustCards from '~/components/widgets/TrustCards.astro';
 import Cta from '~/components/widgets/Cta.astro';
-
-
+import { Icon } from 'astro-icon/components';
 
 const metadata = {
   title: 'Quads BENDA & équipements LED à Fosses-la-Ville | LED Automotive',
@@ -54,7 +53,6 @@ const featuredQuadCards = featuredQuads.slice(0, 3).map((item) => ({
   badge: item.data.promo ? 'Promo' : undefined,
 }));
 
-
 const featuredLedCards = featuredLeds.slice(0, 3).map((item) => ({
   title: item.data.title,
   description: item.data.excerpt ?? item.data.description,
@@ -85,8 +83,7 @@ const worldsItems = [
     title: 'Offres promo',
     description: 'Opportunités, arrivages et modèles disponibles immédiatement.',
     href: '/promos',
-    image:
-      '/media/global/quad-benda.jpg',
+    image: '/media/global/quad-benda.jpg',
     cta: 'Voir les promos',
     badge: 'À découvrir',
   },
@@ -117,95 +114,106 @@ const trustItems = [
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-
   <Hero2
-  actions={[
+    actions={[
       {
-    variant: 'primary',
-    text: 'Appeler maintenant',
-    href: 'tel:+32499610628',
-    icon: 'lucide:phone',
-  },
-    {
-  text: 'Demander un essai',
-  href: '/contact',
-},
-  ]}
-  image={{ src: '~/assets/images/led-automotive.jpeg', alt: 'Quads BENDA à Fosses-la-Ville' }}
->
-<Fragment slot="title">
-  Prenez le contrôle<span class="xl:hidden">&nbsp;</span><br class="hidden xl:inline" />sur route et tout-terrain
+        variant: 'primary',
+        text: 'Appeler maintenant',
+        href: 'tel:+32499610628',
+        icon: 'lucide:phone',
+      },
+      {
+        text: 'Demander un essai',
+        href: '/contact',
+      },
+    ]}
+    image={{ src: '~/assets/images/led-automotive.jpeg', alt: 'Quads BENDA à Fosses-la-Ville' }}
+  >
+    <Fragment slot="title">
+      Prenez le contrôle<span class="xl:hidden">&nbsp;</span><br class="hidden xl:inline" />sur route et tout-terrain
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="block mb-2 font-semibold">
+        Quads BENDA & équipements LED à Fosses-la-Ville
+      </span>
+      Essai rapide, conseils personnalisés, matériel fiable.
+      <br class="hidden sm:inline" />
+      Prenez la route ou sortez des sentiers.
+    </Fragment>
+
+    <Fragment slot="socialLink">
+  <a
+    href="https://www.facebook.com/profile.php?id=61563294435406"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition mx-auto lg:mx-0"
+  >
+    <span class="flex h-8 w-8 items-center justify-center rounded-full bg-[#1877F2] text-white">
+      <Icon name="logos:facebook" class="h-4 w-4" />
+    </span>
+    <span>Voir nos quads en action</span>
+  </a>
 </Fragment>
 
-  <Fragment slot="subtitle">
-    <span class="block mb-2 font-semibold">
-      Quads BENDA & équipements LED à Fosses-la-Ville
-    </span>
-    Essai rapide, conseils personnalisés, matériel fiable.
-    <br class="hidden sm:inline" />
-    Prenez la route ou sortez des sentiers.
-  </Fragment>
+    <Fragment slot="content">
+      {featuredItems.length > 0 && (
+        <div class="heroMiniGalleryWrap">
+          <div class="heroMiniGalleryHeader">
+            <p class="heroMiniGalleryLabel">À découvrir</p>
 
-  <Fragment slot="content">
-    {featuredItems.length > 0 && (
-      <div class="heroMiniGalleryWrap">
-        <div class="heroMiniGalleryHeader">
-          <p class="heroMiniGalleryLabel">À découvrir</p>
+            <div class="heroMiniGalleryControls">
+              <button type="button" class="heroMiniGalleryBtn" data-hero-gallery-prev aria-label="Précédent">
+                ←
+              </button>
+              <button type="button" class="heroMiniGalleryBtn" data-hero-gallery-next aria-label="Suivant">
+                →
+              </button>
+            </div>
+          </div>
 
-          <div class="heroMiniGalleryControls">
-            <button type="button" class="heroMiniGalleryBtn" data-hero-gallery-prev aria-label="Précédent">
-              ←
-            </button>
-            <button type="button" class="heroMiniGalleryBtn" data-hero-gallery-next aria-label="Suivant">
-              →
-            </button>
+          <div class="heroMiniGallery" data-hero-gallery>
+            {featuredItems.map((item) => (
+              <a href={item.href} class="heroMiniCard">
+                <img src={item.image} alt={item.title} />
+                <div class="heroMiniCardBody">
+                  <p class="heroMiniCardEyebrow">{item.eyebrow}</p>
+                  <p class="heroMiniCardTitle">{item.title}</p>
+                </div>
+              </a>
+            ))}
           </div>
         </div>
+      )}
+    </Fragment>
+  </Hero2>
 
-        <div class="heroMiniGallery" data-hero-gallery>
-          {featuredItems.map((item) => (
-            <a href={item.href} class="heroMiniCard">
-              <img src={item.image} alt={item.title} />
-              <div class="heroMiniCardBody">
-                <p class="heroMiniCardEyebrow">{item.eyebrow}</p>
-                <p class="heroMiniCardTitle">{item.title}</p>
-              </div>
-            </a>
-          ))}
-        </div>
-      </div>
-    )}
-  </Fragment>
-</Hero2>
+  <Worlds items={worldsItems} />
 
- <Worlds items={worldsItems} />
+  <ProductShowcase
+    tagline="Quads à découvrir"
+    title="Nos quads à découvrir"
+    subtitle="Une sélection de quads BENDA mis en avant."
+    items={featuredQuadCards}
+    ctaHref="/quads"
+    ctaText="Voir tous les quads"
+  />
 
-<ProductShowcase
-  tagline="Quads à découvrir"
-  title="Nos quads à découvrir"
-  subtitle="Une sélection de quads BENDA mis en avant."
-  items={featuredQuadCards}
-  ctaHref="/quads"
-  ctaText="Voir tous les quads"
-/>
+  <ProductShowcase
+    tagline="Leds à découvrir"
+    title="Nos leds & accessoires à découvrir"
+    subtitle="Retrouvez une sélection de leds et accessoires mis en avant."
+    items={featuredLedCards}
+    ctaHref="/leds"
+    ctaText="Voir tous les équipements"
+  />
 
-<ProductShowcase
-  tagline="Leds à découvrir"
-  title="Nos leds & accessoires à découvrir"
-  subtitle="Retrouvez une sélection de leds et accessoires mis en avant."
-  items={featuredLedCards}
-  ctaHref="/leds"
-  ctaText="Voir tous les équipements"
-/>
+  <TrustCards
+    id="reassurance"
+    title="Un service simple, local et fiable"
+    subtitle="Basés à Fosses-la-Ville, nous vous offrons des conseils clairs et un suivi de proximité."
+    items={trustItems}
+  />
 
-
-<TrustCards
-  id="reassurance"
-  title="Un service simple, local et fiable"
-  subtitle="Basés à Fosses-la-Ville, nous vous offrons des conseils clairs et un suivi de proximité."
-  items={trustItems}
-/>
-
-<Cta/>
+  <Cta />
 </Layout>

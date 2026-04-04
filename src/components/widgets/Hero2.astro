@@ -11,6 +11,7 @@ const {
 
   content = await Astro.slots.render('content'),
   actions = await Astro.slots.render('actions'),
+  socialLink = await Astro.slots.render('socialLink'),
   image = await Astro.slots.render('image'),
 
   id,
@@ -24,8 +25,10 @@ const {
       {bg ? <Fragment set:html={bg} /> : null}
     </slot>
   </div>
+
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
     <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
+
     <div class="py-12 md:py-20 lg:py-0 lg:flex lg:items-center lg:h-screen lg:gap-8">
       <div class="basis-1/2 text-center lg:text-left pb-10 md:pb-16 mx-auto">
         {
@@ -36,6 +39,7 @@ const {
             />
           )
         }
+
         {
           title && (
             <h1
@@ -44,6 +48,7 @@ const {
             />
           )
         }
+
         <div class="max-w-3xl mx-auto lg:max-w-none">
           {
             subtitle && (
@@ -54,24 +59,42 @@ const {
             )
           }
 
-          {
-            actions && (
-              <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4 lg:justify-start lg:m-0 lg:max-w-7xl intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
-                {Array.isArray(actions) ? (
-                  actions.map((action) => (
-                    <div class="flex w-full sm:w-auto">
-                      <Button {...(action || {})} class="w-full sm:mb-0" />
-                    </div>
-                  ))
-                ) : (
-                  <Fragment set:html={actions} />
-                )}
-              </div>
-            )
-          }
+         {
+  (actions || socialLink) && (
+    <div class="intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
+      <div class="w-fit mx-auto lg:mx-0">
+        {
+          actions && (
+            <div class="flex flex-row justify-center lg:justify-start gap-4">
+              {Array.isArray(actions) ? (
+                actions.map((action) => (
+                  <div class="flex-shrink-0">
+                    <Button {...(action || {})} />
+                  </div>
+                ))
+              ) : (
+                <Fragment set:html={actions} />
+              )}
+            </div>
+          )
+        }
+
+        {
+          socialLink && (
+            <div class="mt-4 flex justify-center">
+              <Fragment set:html={socialLink} />
+            </div>
+          )
+        }
+      </div>
+    </div>
+  )
+}
         </div>
+
         {content && <Fragment set:html={content} />}
       </div>
+
       <div class="basis-1/2">
         {
           image && (
@@ -110,8 +133,6 @@ const {
     border-radius: 18px;
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
   }
-
-  
 </style>
 
 <style>
@@ -233,7 +254,6 @@ const {
     }
   }
 </style>
-
 
 <script is:inline>
   function initHeroMiniGallery() {

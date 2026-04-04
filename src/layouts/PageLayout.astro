@@ -3,6 +3,7 @@ import Layout from '~/layouts/Layout.astro';
 import Header from '~/components/widgets/Header.astro';
 import Footer from '~/components/widgets/Footer.astro';
 import WhatsAppFloatingButton from '~/components/widgets/WhatsAppFloatingButton.astro';
+import MessengerFloatingButton from '~/components/widgets/MessengerFloatingButton.astro';
 
 import { getHeaderData, footerData } from '~/navigation';
 
@@ -30,4 +31,5 @@ const headerData = await getHeaderData();
   phone="32499610628"
   message="Bonjour, je souhaite avoir des infos sur vos quads et équipements."
 />
+<MessengerFloatingButton pageUrl="61563294435406" />
 </Layout>

@@ -109,8 +109,7 @@ export const footerData = {
     { text: 'Politique de confidentialité', href: '/privacy' },
   ],
   socialLinks: [
-    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
-    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
+    { ariaLabel: 'Facebook', icon: 'logos:facebook', href: 'https://www.facebook.com/profile.php?id=61563294435406' },
   ],
   footNote: `
     © LED Automotive · Fosses-la-Ville · Tous droits réservés. Site web réalisé par <a href="www.feralwebdesign.be" target="_blank">Féral</a>.
