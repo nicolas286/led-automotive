@@ -9,12 +9,12 @@ description: Le Redstone 550 First Châssis Court est un quad accessible et
 priceLabel: 6.599 € TTC
 featured: true
 order: 4
-image: /media/quads/redstone-550-first/main.jpg
+image: /media/quads/redstone-550-first/main.webp
 gallery:
-  - /media/quads/redstone-550-first/main.jpg
-  - /media/quads/redstone-550-first/1.png
-  - /media/quads/redstone-550-first/2.png
-  - /media/quads/redstone-550-first/3.jpg
+  - /media/quads/redstone-550-first/main.webp
+  - /media/quads/redstone-550-first/1.webp
+  - /media/quads/redstone-550-first/2.webp
+  - /media/quads/redstone-550-first/3.webp
 category: Quad
 subcategory: Loisir
 available: true

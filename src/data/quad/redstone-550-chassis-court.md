@@ -9,12 +9,12 @@ description: Le Redstone 550 Châssis Court est un quad maniable et joueur,
 priceLabel: 7.699 € TTC
 featured: true
 order: 3
-image: /media/quads/redstone-550-court/main.jpg
+image: /media/quads/redstone-550-court/main.webp
 gallery:
-  - /media/quads/redstone-550-court/main.jpg
-  - /media/quads/redstone-550-court/1.png
-  - /media/quads/redstone-550-court/2.png
-  - /media/quads/redstone-550-court/3.jpg
+  - /media/quads/redstone-550-court/main.webp
+  - /media/quads/redstone-550-court/1.webp
+  - /media/quads/redstone-550-court/2.webp
+  - /media/quads/redstone-550-court/3.webp
 category: Quad
 subcategory: Loisir
 available: true

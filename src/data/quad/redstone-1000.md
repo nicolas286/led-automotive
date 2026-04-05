@@ -11,12 +11,12 @@ promo: false
 priceLabel: 11.999,00€
 featured: true
 order: 1
-image: /media/quads/redstone-1000/main.png
+image: /media/quads/redstone-1000/main.webp
 gallery:
-  - /media/quads/redstone-1000/main.png
-  - /media/quads/redstone-1000/1.png
-  - /media/quads/redstone-1000/2.jpg
-  - /media/quads/redstone-1000/3.png
+  - /media/quads/redstone-1000/main.webp
+  - /media/quads/redstone-1000/1.webp
+  - /media/quads/redstone-1000/2.webp
+  - /media/quads/redstone-1000/3.webp
 category: Quad
 subcategory: Loisir
 available: true

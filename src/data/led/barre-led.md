@@ -4,9 +4,9 @@ excerpt: Barre LED puissante pour véhicule, quad ou utilitaire.
 description: Barre LED haute performance pour améliorer votre visibilité.
 priceLabel: 149 €
 featured: false
-image: /media/led/barre-led-110w/main.jpg
+image: /media/led/barre-led-110w/main.webp
 gallery:
-  - /media/led/barre-led-110w/main.jpg
+  - /media/led/barre-led-110w/main.webp
 category: Barres LED
 compatibleWith:
   - Auto

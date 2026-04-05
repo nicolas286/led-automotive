@@ -9,12 +9,12 @@ description: Le Redstone 550 est un quad polyvalent et confortable, idéal pour
 priceLabel: 8.499 € TTC
 featured: true
 order: 2
-image: /media/quads/redstone-550/main.jpg
+image: /media/quads/redstone-550/main.webp
 gallery:
-  - /media/quads/redstone-550/main.jpg
-  - /media/quads/redstone-550/1.png
-  - /media/quads/redstone-550/2.jpg
-  - /media/quads/redstone-550/3.png
+  - /media/quads/redstone-550/main.webp
+  - /media/quads/redstone-550/1.webp
+  - /media/quads/redstone-550/2.webp
+  - /media/quads/redstone-550/3.webp
 category: Quad
 subcategory: Loisir
 available: true
