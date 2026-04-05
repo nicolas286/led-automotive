@@ -8,6 +8,10 @@ import ProductShowcase from '~/components/widgets/ProductShowcase.astro';
 import TrustCards from '~/components/widgets/TrustCards.astro';
 import Cta from '~/components/widgets/Cta.astro';
 import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
+import quadFosses from '~/assets/images/home/quad-fosses.webp';
+import ledFosses from '~/assets/images/home/led-fosses.webp';
+import quadBenda from '~/assets/images/home/quad-benda.webp';
 
 const metadata = {
   title: 'Quads BENDA & équipements LED à Fosses-la-Ville | LED Automotive',
@@ -69,21 +73,21 @@ const worldsItems = [
     title: 'Quads BENDA',
     description: 'Modèles route et tout-terrain, adaptés au loisir comme à un usage polyvalent.',
     href: '/quads',
-    image: '/media/global/quad-fosses.webp',
+    image: quadFosses,
     cta: 'Découvrir les quads',
   },
   {
     title: 'Leds & accessoires',
     description: 'Améliorez votre visibilité et équipez votre véhicule avec du matériel fiable.',
     href: '/leds',
-    image: '/media/global/led-fosses.webp',
+    image: ledFosses,
     cta: 'Voir les équipements',
   },
   {
     title: 'Offres promo',
     description: 'Opportunités, arrivages et modèles disponibles immédiatement.',
     href: '/promos',
-    image: '/media/global/quad-benda.webp',
+    image: quadBenda,
     cta: 'Voir les promos',
     badge: 'À découvrir',
   },
@@ -173,18 +177,29 @@ const trustItems = [
           </div>
 
           <div class="heroMiniGalleryViewport">
-            <div class="heroMiniGallery" data-hero-gallery>
-              {featuredItems.map((item) => (
-                <a href={item.href} class="heroMiniCard">
-                  <img src={item.image} alt={item.title} />
-                  <div class="heroMiniCardBody">
-                    <p class="heroMiniCardEyebrow">{item.eyebrow}</p>
-                    <p class="heroMiniCardTitle">{item.title}</p>
-                  </div>
-                </a>
-              ))}
-            </div>
-          </div>
+  <div class="heroMiniGallery" data-hero-gallery>
+    {featuredItems.map((item) => (
+      <a href={item.href} class="heroMiniCard">
+        <div class="heroMiniCardMedia">
+          <Image
+            src={item.image}
+            alt={item.title}
+            width={640}
+            height={360}
+            sizes="(max-width: 768px) 80vw, 220px"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <div class="heroMiniCardBody">
+          <p class="heroMiniCardEyebrow">{item.eyebrow}</p>
+          <p class="heroMiniCardTitle">{item.title}</p>
+        </div>
+      </a>
+    ))}
+  </div>
+</div>
 
         </div>
       )}
@@ -220,3 +235,24 @@ const trustItems = [
 
   <Cta />
 </Layout>
+
+<style>
+  .heroMiniCard {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #050816;
+}
+
+.heroMiniCardMedia {
+  height: 128px;
+  overflow: hidden;
+}
+
+.heroMiniCardMedia :global(img) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+</style>
