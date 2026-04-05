@@ -1,6 +1,6 @@
 site:
   name: Ced Motorsports by Led Automotive
-  site: 'https://astrowind.vercel.app'
+  site: 'https://www.led-automotive.be'
   base: '/'
   trailingSlash: false
 
