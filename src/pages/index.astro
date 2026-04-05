@@ -137,7 +137,7 @@ const trustItems = [
       <span class="block mb-2 font-semibold">
         Quads BENDA & équipements LED à Fosses-la-Ville
       </span>
-      Essai rapide, conseils personnalisés, matériel fiable.
+      Essai rapide, conseils personnalisés, matériel fiable.&nbsp;
       <br class="hidden sm:inline" />
       Prenez la route ou sortez des sentiers.
     </Fragment>
@@ -172,17 +172,20 @@ const trustItems = [
             </div>
           </div>
 
-          <div class="heroMiniGallery" data-hero-gallery>
-            {featuredItems.map((item) => (
-              <a href={item.href} class="heroMiniCard">
-                <img src={item.image} alt={item.title} />
-                <div class="heroMiniCardBody">
-                  <p class="heroMiniCardEyebrow">{item.eyebrow}</p>
-                  <p class="heroMiniCardTitle">{item.title}</p>
-                </div>
-              </a>
-            ))}
+          <div class="heroMiniGalleryViewport">
+            <div class="heroMiniGallery" data-hero-gallery>
+              {featuredItems.map((item) => (
+                <a href={item.href} class="heroMiniCard">
+                  <img src={item.image} alt={item.title} />
+                  <div class="heroMiniCardBody">
+                    <p class="heroMiniCardEyebrow">{item.eyebrow}</p>
+                    <p class="heroMiniCardTitle">{item.title}</p>
+                  </div>
+                </a>
+              ))}
+            </div>
           </div>
+
         </div>
       )}
     </Fragment>

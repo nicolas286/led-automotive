@@ -26,11 +26,11 @@ const {
     </slot>
   </div>
 
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
 
-    <div class="py-12 md:py-20 lg:py-0 lg:flex lg:items-center lg:h-screen lg:gap-8">
-      <div class="basis-1/2 text-center lg:text-left pb-10 md:pb-16 mx-auto">
+    <div class="py-12 md:py-20 lg:py-0 lg:min-h-screen lg:flex lg:items-center lg:gap-12">
+      <div class="w-full lg:w-1/2 text-center lg:text-left pb-10 md:pb-16 lg:pb-0">
         {
           tagline && (
             <p
@@ -49,7 +49,7 @@ const {
           )
         }
 
-        <div class="max-w-3xl mx-auto lg:max-w-none">
+        <div class="max-w-3xl mx-auto lg:mx-0 lg:max-w-none">
           {
             subtitle && (
               <p
@@ -59,56 +59,56 @@ const {
             )
           }
 
-        {
-  (actions || socialLink) && (
-    <div class="intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
-      <div class="w-full sm:w-fit mx-auto lg:mx-0">
-        {
-          actions && (
-            <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 w-full sm:w-auto">
-              {Array.isArray(actions) ? (
-                actions.map((action) => (
-                  <div class="w-full sm:w-auto sm:flex-shrink-0">
-                    <Button {...(action || {})} class="w-full sm:w-auto" />
-                  </div>
-                ))
-              ) : (
-                <Fragment set:html={actions} />
-              )}
-            </div>
-          )
-        }
+          {
+            (actions || socialLink) && (
+              <div class="intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
+                <div class="w-full lg:w-fit mx-auto lg:mx-0">
+                  {
+                    actions && (
+                      <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 w-full sm:w-auto">
+                        {Array.isArray(actions) ? (
+                          actions.map((action) => (
+                            <div class="w-full sm:w-auto sm:flex-shrink-0">
+                              <Button {...(action || {})} class="w-full sm:w-auto" />
+                            </div>
+                          ))
+                        ) : (
+                          <Fragment set:html={actions} />
+                        )}
+                      </div>
+                    )
+                  }
 
-        {
-          socialLink && (
-            <div class="mt-4 flex justify-center">
-              <Fragment set:html={socialLink} />
-            </div>
-          )
-        }
-      </div>
-    </div>
-  )
-}
+                  {
+                    socialLink && (
+                      <div class="mt-4 flex justify-center">
+                        <Fragment set:html={socialLink} />
+                      </div>
+                    )
+                  }
+                </div>
+              </div>
+            )
+          }
         </div>
 
         {content && <Fragment set:html={content} />}
       </div>
 
-      <div class="basis-1/2">
+      <div class="w-full lg:w-1/2">
         {
           image && (
-            <div class="heroImageWrapper relative m-auto max-w-5xl intersect-once intersect-no-queue motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
+            <div class="heroImageWrapper relative mx-auto max-w-3xl lg:max-w-none intersect-once intersect-no-queue motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
               {typeof image === 'string' ? (
                 <Fragment set:html={image} />
               ) : (
                 <Image
                   class="heroImage w-full object-cover contrast-110 brightness-105"
                   widths={[400, 768, 1024, 2040]}
-                  sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
+                  sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 1535px) 1024px, 1400px"
                   loading="eager"
-                  width={600}
-                  height={600}
+                  width={900}
+                  height={700}
                   {...image}
                 />
               )}
@@ -121,18 +121,20 @@ const {
 </section>
 
 <style>
-  .heroImageWrapper {
-    position: relative;
-    isolation: isolate;
-  }
+ .heroImageWrapper {
+  position: relative;
+  isolation: isolate;
+}
 
-  .heroImageWrapper :global(img),
-  .heroImage {
-    position: relative;
-    z-index: 2;
-    border-radius: 18px;
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
-  }
+.heroImageWrapper :global(img),
+.heroImage {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+}
 </style>
 
 <style>
@@ -253,6 +255,26 @@ const {
       flex-basis: 220px;
     }
   }
+
+  :global(.heroMiniGalleryWrap) {
+  margin-top: 2rem;
+  max-width: 100%;
+}
+
+:global(.heroMiniGalleryViewport) {
+  position: relative;
+}
+
+:global(.heroMiniGalleryViewport::after) {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 100%;
+  background: linear-gradient(to right, transparent, #06070b);
+  pointer-events: none;
+}
 </style>
 
 <script is:inline>
