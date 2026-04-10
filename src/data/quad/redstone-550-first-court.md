@@ -4,7 +4,7 @@ brand: BENDA
 model: Redstone 550
 slug: redstone-550-first-court
 excerpt: Quad accessible et facile à prendre en main, idéal pour débuter. Disponible à Fosses-la-Ville avec essai possible.
-description: Le Redstone 550 First Châssis Court est un quad accessible et efficace, idéal pour découvrir le tout-terrain et profiter d’un véhicule fiable à prix maîtrisé. Avec son moteur bicylindre de 42 cv et sa transmission 2x4 / 4x4, il offre une conduite agréable et facile à prendre en main, parfaite pour une première expérience ou un usage loisir. Plus simple que les versions Premium, il conserve l’essentiel : de bonnes performances, un équipement utile et une grande polyvalence. Visible à Fosses-la-Ville, ce modèle est disponible rapidement avec possibilité d’essai sur place. Contactez-nous pour organiser un test.
+description: "Le Redstone 550 First Châssis Court est un quad accessible et efficace, idéal pour découvrir le tout-terrain et profiter d’un véhicule fiable à prix maîtrisé. Avec son moteur bicylindre de 42 cv et sa transmission 2x4 / 4x4, il offre une conduite agréable et facile à prendre en main, parfaite pour une première expérience ou un usage loisir. Plus simple que les versions Premium, il conserve l’essentiel : de bonnes performances, un équipement utile et une grande polyvalence. Visible à Fosses-la-Ville, ce modèle est disponible rapidement avec possibilité d’essai sur place. Contactez-nous pour organiser un test."
 priceLabel: 6.599 € TTC
 featured: true
 order: 4
@@ -91,7 +91,8 @@ standardEquipment:
   - Boule d’attelage
 seo:
   title: Quad BENDA Redstone 550 First en stock à Fosses-la-Ville | Essai possible
-  description: Découvrez le BENDA Redstone 550 First chez LED Automotive.
+  description: >
+    Découvrez le BENDA Redstone 550 First chez LED Automotive.
     Un quad accessible, fiable et efficace. Demandez un essai.
 ---
 

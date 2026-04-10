@@ -98,8 +98,7 @@ standardEquipment:
   - Boule d’attelage
 seo:
   title: Quad BENDA Redstone 550 Châssis Court en stock à Fosses-la-Ville | Essai possible
-  description: Découvrez le BENDA Redstone 550 Châssis Court chez LED Automotive.
-    Un quad compact, maniable et bien équipé. Demandez un essai.
+  description: Découvrez le BENDA Redstone 550 Châssis Court chez LED Automotive. Un quad compact, maniable et bien équipé. Demandez un essai.
 ---
 
 Le Redstone 550 Edition Premium Châssis Court est un quad compact et agile, pensé pour maximiser le plaisir de conduite et la maniabilité.
