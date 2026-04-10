@@ -112,6 +112,6 @@ export const footerData = {
     { ariaLabel: 'Facebook', icon: 'logos:facebook', href: 'https://www.facebook.com/profile.php?id=61563294435406' },
   ],
   footNote: `
-    © LED Automotive · Fosses-la-Ville · Tous droits réservés. Site web réalisé par <a href="www.feralwebdesign.be" target="_blank">Féral</a>.
+    © LED Automotive · Fosses-la-Ville · Tous droits réservés. Site web réalisé par <a href="https://www.feralwebdesign.be" target="_blank">Féral</a>.
   `,
 };
