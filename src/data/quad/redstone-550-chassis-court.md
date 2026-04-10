@@ -3,9 +3,8 @@ title: REDSTONE 550 EDITION PREMIUM + ABS CHASSIS COURT
 brand: BENDA
 model: Redstone 550
 slug: redstone-550-court
-excerpt: Le plaisir de rouler, en version plus compacte et agile.
-description: Le Redstone 550 Châssis Court est un quad maniable et joueur,
-  idéal pour le loisir et les terrains techniques, avec un excellent niveau d’équipement.
+excerpt: Quad compact et agile, idéal pour terrains techniques et usage loisir dynamique. Disponible à Fosses-la-Ville avec essai possible.
+description: Le Redstone 550 Edition Premium Châssis Court est un quad compact, agile et joueur, idéal pour profiter pleinement du tout-terrain et des terrains techniques. Grâce à son empattement plus court et son poids réduit, il offre une excellente maniabilité, parfaite pour les chemins étroits, les zones techniques ou une conduite plus dynamique. Avec son moteur bicylindre de 42 cv, sa transmission 2x4 / 4x4 et ses suspensions à grand débattement, il reste performant tout en étant accessible et facile à prendre en main. Bien équipé (ABS, écran TFT, modes de conduite, treuil, poignées chauffantes…), il représente un excellent compromis entre plaisir de conduite, confort et budget. Visible à Fosses-la-Ville, ce modèle est disponible rapidement avec possibilité d’essai sur place. Contactez-nous pour organiser un test.
 priceLabel: 7.699 € TTC
 featured: true
 order: 3
@@ -18,7 +17,7 @@ gallery:
 category: Quad
 subcategory: Loisir
 available: true
-ctaLabel: Demander un essai
+ctaLabel: Réserver un essai
 shortSpecs:
   - label: Moteur
     value: Bicylindre en V – 500 cm3
@@ -98,7 +97,7 @@ standardEquipment:
   - Porte-bagages avant et arrière
   - Boule d’attelage
 seo:
-  title: Quad BENDA Redstone 550 Châssis Court à Fosses-la-Ville | LED Automotive
+  title: Quad BENDA Redstone 550 Châssis Court en stock à Fosses-la-Ville | Essai possible
   description: Découvrez le BENDA Redstone 550 Châssis Court chez LED Automotive.
     Un quad compact, maniable et bien équipé. Demandez un essai.
 ---
@@ -110,3 +109,14 @@ Grâce à son empattement plus court et son poids réduit, il est particulièrem
 Son moteur bicylindre de 42 cv, sa transmission 2x4 / 4x4 et ses suspensions à grand débattement lui permettent de rester performant tout en étant accessible et facile à prendre en main.
 
 Avec son équipement complet (ABS, écran TFT, modes de conduite, treuil, poignées chauffantes…), il offre un excellent compromis entre performance, confort et budget.
+
+## Questions fréquentes
+
+### Ce quad est-il adapté aux terrains techniques ?
+Oui, grâce à son châssis court et sa maniabilité, il est particulièrement à l’aise sur les terrains étroits et techniques.
+
+### Peut-on essayer ce quad ?
+Oui, vous pouvez venir tester ce modèle directement à Fosses-la-Ville sur rendez-vous.
+
+### Est-il disponible rapidement ?
+Oui, ce modèle est disponible rapidement. Contactez-nous pour vérifier la disponibilité et organiser un essai.

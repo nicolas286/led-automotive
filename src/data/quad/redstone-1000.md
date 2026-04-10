@@ -3,10 +3,8 @@ title: REDSTONE 1000 EDITION PREMIUM + ABS CHASSIS LONG
 brand: BENDA
 model: Redstone 1000
 slug: redstone-1000
-excerpt: L’exploration du futur, réinventée par BENDA.
-description: Le Redstone 1000 Edition Premium est un quad haut de gamme conçu pour ceux qui veulent à la fois puissance, confort et polyvalence.
-  Avec son bicylindre en V de 102 cv, sa transmission 2x4 / 4x4 et ses suspensions à grand débattement, il est aussi à l’aise en usage loisir qu’en terrain exigeant.
-  Son niveau d’équipement complet (ABS, écran TFT, modes de conduite, treuil, poignées chauffantes…) en fait un véhicule prêt à l’emploi, sans compromis.
+excerpt: Quad puissant et confortable, idéal pour loisirs et tout-terrain exigeant. Disponible à Fosses-la-Ville avec essai possible.
+description: Le Redstone 1000 Edition Premium est un quad puissant et polyvalent, conçu pour ceux qui veulent profiter pleinement de leurs sorties, sur route comme en tout-terrain. Avec ses 102 cv, sa transmission 2x4 / 4x4 et ses suspensions à grand débattement, il offre une conduite confortable et sécurisante, même sur terrains exigeants. Entièrement équipé (ABS, écran TFT, modes de conduite, treuil, poignées chauffantes…), il est prêt à l’emploi dès la première utilisation. Visible à Fosses-la-Ville, ce modèle est disponible immédiatement avec possibilité d’essai sur place. Contactez-nous pour organiser un test rapidement.
 promo: false
 priceLabel: 11.999,00€
 featured: true
@@ -20,7 +18,7 @@ gallery:
 category: Quad
 subcategory: Loisir
 available: true
-ctaLabel: Demander un essai
+ctaLabel: Réserver un essai
 shortSpecs:
   - label: Moteur
     value: Bicylindre en V – 1000 cm3
@@ -97,8 +95,19 @@ standardEquipment:
   - Feux matriciels LED
   - Porte-bagages avant et arrière
 seo:
-  title: Quad BENDA Redstone 1000 à Fosses-la-Ville | LED Automotive
+  title: Quad BENDA Redstone 1000 en stock à Fosses-la-Ville | Essai possible
   description: Découvrez le BENDA Redstone 1000 chez LED Automotive à
     Fosses-la-Ville. Demandez un essai ou plus d’informations.
 ---
 Le Redstone 1000 est un quad premium conçu pour offrir puissance, confort et polyvalence, aussi bien sur route qu’en utilisation tout-terrain.
+
+## Questions fréquentes
+
+### Peut-on essayer ce quad ?
+Oui, vous pouvez venir tester ce modèle directement à Fosses-la-Ville sur rendez-vous.
+
+### Ce quad est-il homologué route ?
+Oui, il est adapté à un usage routier et tout-terrain.
+
+### Le quad est-il disponible immédiatement ?
+Oui, ce modèle est disponible rapidement. Contactez-nous pour vérifier la disponibilité et organiser un essai.
