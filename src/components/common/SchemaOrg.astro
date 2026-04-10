@@ -1,0 +1,70 @@
+---
+export interface Props {
+  type?: 'Organization' | 'LocalBusiness' | 'AutoDealer';
+  name?: string;
+  url?: string;
+  image?: string;
+  telephone?: string;
+  description?: string;
+  streetAddress?: string;
+  addressLocality?: string;
+  postalCode?: string;
+  addressCountry?: string;
+  areaServed?: string | string[];
+  sameAs?: string[];
+}
+
+const {
+  type = 'AutoDealer',
+  name = 'LED Automotive',
+  url = 'https://led-automotive.be',
+  image,
+  telephone,
+  description,
+  streetAddress,
+  addressLocality = 'Fosses-la-Ville',
+  postalCode,
+  addressCountry = 'BE',
+  areaServed = 'Belgique',
+  sameAs = [],
+} = Astro.props as Props;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': type,
+  name,
+  url,
+  ...(image ? { image } : {}),
+  ...(telephone ? { telephone } : {}),
+  ...(description ? { description } : {}),
+  address:
+    streetAddress || addressLocality || postalCode
+      ? {
+          '@type': 'PostalAddress',
+          ...(streetAddress ? { streetAddress } : {}),
+          ...(addressLocality ? { addressLocality } : {}),
+          ...(postalCode ? { postalCode } : {}),
+          ...(addressCountry ? { addressCountry } : {}),
+        }
+      : undefined,
+  ...(areaServed
+    ? {
+        areaServed: Array.isArray(areaServed)
+          ? areaServed.map((area) => ({
+              '@type': 'Place',
+              name: area,
+            }))
+          : {
+              '@type': 'Place',
+              name: areaServed,
+            },
+      }
+    : {}),
+  ...(sameAs.length ? { sameAs } : {}),
+};
+---
+
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify(schema)}
+/>

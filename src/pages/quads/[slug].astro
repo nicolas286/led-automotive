@@ -4,6 +4,9 @@ import PageLayout from '~/layouts/PageLayout.astro';
 import ProductCard from '~/components/widgets/ProductCard.astro';
 import ProductDetailHero from '~/components/widgets/ProductDetailHero.astro';
 import { getQuadUrl, getAccessoryUrl } from '~/utils/catalog';
+import ProductSchema from '~/components/common/ProductSchema.astro';
+import BreadcrumbSchema from '~/components/common/BreadCrumbSchema.astro';
+
 
 export async function getStaticPaths() {
   const quads = await getCollection('quad', ({ data }) => !data.draft);
@@ -37,9 +40,38 @@ const compatibleAccessories = (await getCollection('accessory', ({ data }) => !d
     item.data.compatibleQuads?.includes(quad.data.slug ?? quad.id)
   )
   .sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999));
+
+  const siteUrl = 'https://led-automotive.be';
+  const quadSlug = quad.data.slug ?? quad.id;
+  const quadUrl = new URL(getQuadUrl(quad), siteUrl).toString();
+
+  const rawPrice = quad.data.promoPriceLabel ?? quad.data.priceLabel ?? '';
+  const normalizedPrice = rawPrice
+    .replace(/[^\d,.-]/g, '')
+    .replace(/\./g, '')
+    .replace(',', '.');
+
+  const breadcrumbItems = [
+  { name: 'Accueil', url: siteUrl },
+  { name: 'Quads BENDA', url: `${siteUrl}/quads` },
+  { name: quad.data.title, url: quadUrl },
+];
 ---
 
 <PageLayout metadata={metadata}>
+  <ProductSchema
+    name={quad.data.title}
+    description={quad.data.seo?.description ?? quad.data.description ?? quad.data.excerpt}
+    image={[quad.data.image, ...(quad.data.gallery ?? [])]}
+    brand={quad.data.brand ?? 'BENDA'}
+    sku={quadSlug}
+    url={quadUrl}
+    price={normalizedPrice || undefined}
+    priceCurrency="EUR"
+    availability="https://schema.org/InStock"
+    condition="https://schema.org/NewCondition"
+  />
+    <BreadcrumbSchema items={breadcrumbItems} />
   <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
     <ProductDetailHero
       brand={quad.data.brand ?? 'BENDA'}

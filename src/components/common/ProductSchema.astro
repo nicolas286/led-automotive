@@ -1,0 +1,76 @@
+---
+// src/components/common/ProductSchema.astro
+
+export interface Props {
+  name: string;
+  description?: string;
+  image?: string | { src?: string } | Array<string | { src?: string }>;
+  brand?: string;
+  sku?: string;
+  url: string;
+  price?: string;
+  priceCurrency?: string;
+  availability?: 'https://schema.org/InStock' | 'https://schema.org/OutOfStock' | 'https://schema.org/PreOrder';
+  condition?: 'https://schema.org/NewCondition' | 'https://schema.org/UsedCondition';
+}
+
+const {
+  name,
+  description,
+  image,
+  brand = 'BENDA',
+  sku,
+  url,
+  price,
+  priceCurrency = 'EUR',
+  availability = 'https://schema.org/InStock',
+  condition = 'https://schema.org/NewCondition',
+} = Astro.props as Props;
+
+const normalizeImage = (value: Props['image']) => {
+  if (!value) return undefined;
+
+  if (Array.isArray(value)) {
+    const images = value
+      .map((item) => {
+        if (typeof item === 'string') return item;
+        if (item?.src) return item.src;
+        return undefined;
+      })
+      .filter(Boolean);
+
+    return images.length ? images : undefined;
+  }
+
+  if (typeof value === 'string') return [value];
+  if (value?.src) return [value.src];
+
+  return undefined;
+};
+
+const images = normalizeImage(image);
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name,
+  ...(description ? { description } : {}),
+  ...(images ? { image: images } : {}),
+  ...(sku ? { sku } : {}),
+  brand: {
+    '@type': 'Brand',
+    name: brand,
+  },
+  url,
+  offers: {
+    '@type': 'Offer',
+    url,
+    priceCurrency,
+    ...(price ? { price } : {}),
+    availability,
+    itemCondition: condition,
+  },
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
