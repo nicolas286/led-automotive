@@ -132,7 +132,7 @@ Oui, ce quad est homologué pour circuler sur route en Belgique sous conditions.
 
 ---
 
-## 💰 Prix du Benda Redstone 550 First Châssis Court
+## Prix du Benda Redstone 550 First Châssis Court
 
 Le prix du Benda Redstone 550 First Châssis Court est affiché à 6.599 € TTC.
 
@@ -142,7 +142,7 @@ Cette version First représente une excellente porte d’entrée dans la gamme B
 
 ---
 
-## ⭐ Avis sur le Benda Redstone 550 First
+## Avis sur le Benda Redstone 550 First
 
 Le Redstone 550 First est particulièrement apprécié pour :
 
@@ -157,7 +157,7 @@ Il conviendra aux utilisateurs recherchant un quad fiable, efficace et sans supe
 
 ---
 
-## 🛣️ Quad homologué route en Belgique
+## Quad homologué route en Belgique
 
 Le Benda Redstone 550 First est homologué pour un usage routier en Belgique, à condition de respecter les obligations légales (immatriculation, assurance et permis adapté).
 
@@ -165,7 +165,7 @@ Il peut donc être utilisé aussi bien pour le loisir que pour des trajets sur r
 
 ---
 
-## 📍 Quad disponible à Fosses-la-Ville (Namur)
+## Quad disponible à Fosses-la-Ville (Namur)
 
 Ce modèle est disponible chez LED Automotive à Fosses-la-Ville, facilement accessible depuis Namur, le Hainaut et le Brabant wallon.
 
@@ -173,7 +173,7 @@ Vous pouvez venir voir le véhicule sur place et planifier un essai rapidement.
 
 ---
 
-## 🎯 À qui s’adresse ce modèle ?
+## À qui s’adresse ce modèle ?
 
 Le Redstone 550 First Châssis Court est idéal pour :
 

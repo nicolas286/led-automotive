@@ -115,7 +115,7 @@ Son équipement complet (ABS, écran TFT, modes de conduite, treuil, poignées c
 ---
 
 
-## 💰 Prix du Benda Redstone 550 Châssis Long
+## Prix du Benda Redstone 550 Châssis Long
 
 Le prix du Benda Redstone 550 Edition Premium Châssis Long est affiché à 8.499 € TTC.
 
@@ -125,7 +125,7 @@ Cette version châssis long se positionne comme la plus confortable de la gamme,
 
 ---
 
-## ⭐ Avis sur le Benda Redstone 550 Châssis Long
+## Avis sur le Benda Redstone 550 Châssis Long
 
 Le Redstone 550 en version châssis long est particulièrement apprécié pour :
 
@@ -138,7 +138,7 @@ C’est un excellent choix pour les utilisateurs recherchant un quad polyvalent,
 
 ---
 
-## 🛣️ Quad homologué route en Belgique
+## Quad homologué route en Belgique
 
 Le Benda Redstone 550 est homologué pour circuler sur route en Belgique, sous réserve de respecter les obligations légales (immatriculation, assurance et permis adapté).
 
@@ -146,7 +146,7 @@ Il peut donc être utilisé aussi bien pour les balades que pour des trajets ré
 
 ---
 
-## 📍 Quad disponible à Fosses-la-Ville (Namur)
+## Quad disponible à Fosses-la-Ville (Namur)
 
 Ce modèle est visible chez LED Automotive à Fosses-la-Ville, à proximité de Namur, Charleroi et du Brabant wallon.
 
@@ -154,7 +154,7 @@ Vous pouvez venir le découvrir sur place et organiser un essai rapidement.
 
 ---
 
-## 🎯 À qui s’adresse ce modèle ?
+## À qui s’adresse ce modèle ?
 
 Le Redstone 550 Châssis Long est idéal pour :
 

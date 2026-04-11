@@ -104,7 +104,7 @@ Le Redstone 1000 est un quad premium conçu pour offrir puissance, confort et po
 
 
 
-## 💰 Prix du Benda Redstone 1000
+## Prix du Benda Redstone 1000
 
 Le prix du Benda Redstone 1000 Edition Premium est affiché à 11.999 € TTC.
 
@@ -114,7 +114,7 @@ Ce modèle se positionne comme une solution haut de gamme, offrant des performan
 
 ---
 
-## ⭐ Avis sur le Benda Redstone 1000
+## Avis sur le Benda Redstone 1000
 
 Le Redstone 1000 est particulièrement apprécié pour :
 
@@ -127,7 +127,7 @@ Il s’adresse aux utilisateurs recherchant un quad performant, capable de s’a
 
 ---
 
-## 🛣️ Quad homologué route en Belgique
+## Quad homologué route en Belgique
 
 Le Benda Redstone 1000 est homologué pour un usage routier en Belgique, sous réserve de respecter les obligations légales (immatriculation, assurance et permis adapté).
 
@@ -135,7 +135,7 @@ Il peut être utilisé aussi bien pour des balades que pour des trajets régulie
 
 ---
 
-## 📍 Disponible à Fosses-la-Ville (Namur)
+## Disponible à Fosses-la-Ville (Namur)
 
 Ce modèle est visible chez LED Automotive à Fosses-la-Ville, à proximité de Namur, Charleroi et du Brabant wallon.
 
@@ -143,7 +143,7 @@ Vous pouvez venir le découvrir sur place et organiser un essai rapidement.
 
 ---
 
-## 🎯 À qui s’adresse ce modèle ?
+## À qui s’adresse ce modèle ?
 
 Le Redstone 1000 est idéal pour :
 

@@ -139,7 +139,7 @@ Oui, ce quad est homologué pour circuler sur route en Belgique sous conditions.
 
 ---
 
-## 💰 Prix du Benda Redstone 550 Châssis Court
+## Prix du Benda Redstone 550 Châssis Court
 
 Le prix du Benda Redstone 550 Edition Premium Châssis Court est affiché à 7.699 € TTC.
 
@@ -149,7 +149,7 @@ Ce modèle Premium offre un excellent rapport qualité/prix pour un quad homolog
 
 ---
 
-## ⭐ Avis sur le Benda Redstone 550
+## Avis sur le Benda Redstone 550
 
 Le Redstone 550 est un modèle apprécié pour :
 
@@ -164,7 +164,7 @@ Comme toute marque en développement, certains utilisateurs peuvent s’interrog
 
 ---
 
-## 🛣️ Quad homologué route en Belgique
+## Quad homologué route en Belgique
 
 Le Benda Redstone 550 est homologué pour circuler sur route en Belgique, sous réserve de respecter les obligations légales (immatriculation, assurance et permis adapté).
 
@@ -172,7 +172,7 @@ Cela en fait un quad polyvalent, utilisable aussi bien pour le loisir que pour l
 
 ---
 
-## 📍 Disponible à Fosses-la-Ville (Namur)
+## Disponible à Fosses-la-Ville (Namur)
 
 Ce modèle est visible chez LED Automotive à Fosses-la-Ville, à proximité de Namur, Charleroi et du Brabant wallon.
 
@@ -180,7 +180,7 @@ Vous pouvez venir découvrir le quad sur place et organiser un essai sur rendez-
 
 ---
 
-## 🎯 À qui s’adresse ce quad ?
+## À qui s’adresse ce quad ?
 
 Le Redstone 550 Châssis Court est idéal pour :
 
