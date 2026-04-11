@@ -11,26 +11,26 @@ const quads = (await getCollection('quad', ({ data }) => !data.draft)).sort(
 );
 
 const metadata = {
-  title: 'Quads BENDA en Belgique | LED Automotive',
+  title: 'Quad Belgique | Quads BENDA 4x4 en stock à Fosses-la-Ville',
   description:
-    'Découvrez nos quads BENDA disponibles chez LED Automotive à Fosses-la-Ville, en Belgique. Consultez les modèles, leurs caractéristiques et demandez un essai.',
+    'Découvrez nos quads BENDA 4x4 disponibles en Belgique chez LED Automotive à Fosses-la-Ville. Comparez les modèles, consultez les caractéristiques et demandez un essai rapidement.',
 };
 
 const quadInfoBlocks = [
   {
-    title: 'Pourquoi choisir un quad BENDA ?',
+    title: 'Quad BENDA en Belgique : des modèles 4x4 pour route et loisir',
     text:
-      'Les quads BENDA séduisent par leur style, leur polyvalence et leur positionnement adapté à celles et ceux qui recherchent un véhicule à la fois plaisant à conduire et capable de s’adapter à différents usages. Selon le modèle, vous pouvez profiter d’un quad pensé pour la route, les loisirs ou une utilisation mixte.',
+      'LED Automotive vous propose une sélection de quads BENDA disponibles en Belgique, à Fosses-la-Ville. Selon les modèles, vous retrouvez des quads 4x4 adaptés à la balade, au loisir, à un usage régulier ou à une conduite plus technique. La gamme comprend aussi bien des modèles accessibles pour débuter que des versions Premium plus puissantes, confortables et équipées.',
   },
   {
-    title: 'Essai quad à Fosses-la-Ville',
+    title: 'Quel quad choisir selon votre usage ?',
     text:
-      'Chez LED Automotive, nous vous accueillons en Belgique, à Fosses-la-Ville, pour vous présenter nos quads BENDA et vous aider à trouver le modèle le plus adapté à votre besoin. Vous pouvez consulter les fiches produits, nous contacter pour obtenir plus d’informations ou demander un essai selon les disponibilités.',
+      'Le choix du bon quad dépend surtout de votre besoin. Certains modèles privilégient la maniabilité et le plaisir sur terrains techniques, d’autres misent davantage sur le confort, la stabilité ou la polyvalence route et tout-terrain. Sur cette page, vous pouvez comparer les quads BENDA disponibles, consulter leurs points forts et repérer rapidement le modèle le plus adapté à votre budget et à votre utilisation.',
   },
   {
-    title: 'Vente de quads en Belgique avec accompagnement local',
+    title: 'Essai quad à Fosses-la-Ville, près de Namur',
     text:
-      'Notre approche est simple : proposer des quads et équipements fiables, avec un interlocuteur local, disponible et capable de vous conseiller clairement. Cette page vous permet de découvrir les modèles BENDA disponibles, leurs caractéristiques principales et les opportunités en cours.',
+      'Notre showroom est situé à Fosses-la-Ville, près de Namur, avec un accès facile depuis Charleroi et le Brabant wallon. Vous pouvez venir découvrir les modèles disponibles, poser vos questions et demander un essai sur rendez-vous. L’objectif est simple : vous aider à choisir un quad avec des conseils clairs, un interlocuteur local et un accompagnement concret.',
   },
 ];
 ---
@@ -40,24 +40,77 @@ const quadInfoBlocks = [
     <CatalogHero
       eyebrow="Catalogue quads"
       title="Quads BENDA en Belgique"
-      intro="Découvrez notre sélection de quads BENDA disponibles chez LED Automotive à Fosses-la-Ville. Consultez les modèles, comparez les caractéristiques et demandez un essai rapidement."
-      body="Que vous cherchiez un quad pour la route, le loisir ou un usage plus polyvalent, nous vous accompagnons avec des conseils clairs, un service local et des modèles sélectionnés avec soin."
+      intro="Découvrez notre sélection de quads BENDA 4x4 disponibles chez LED Automotive à Fosses-la-Ville. Comparez les modèles, consultez les caractéristiques et demandez un essai rapidement."
+      body="Que vous recherchiez un quad accessible pour débuter, un modèle polyvalent pour la route et le loisir ou un quad plus puissant pour un usage exigeant, nous vous aidons à trouver la bonne version selon votre budget, votre usage et les disponibilités."
     />
 
-    <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-  {quads.map((quad) => (
-    <ProductCard
-      href={getQuadUrl(quad)}
-      title={quad.data.title}
-      image={quad.data.image}
-      description={quad.data.excerpt}
-      priceLabel={quad.data.priceLabel}
-      promoPriceLabel={quad.data.promoPriceLabel}
-      badge={quad.data.promo ? 'Promo' : undefined}
-      eyebrow="Quad BENDA"
-    />
-  ))}
-</div>
+    <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      {quads.map((quad) => (
+        <ProductCard
+          href={getQuadUrl(quad)}
+          title={quad.data.title}
+          image={quad.data.image}
+          description={quad.data.excerpt}
+          priceLabel={quad.data.priceLabel}
+          promoPriceLabel={quad.data.promoPriceLabel}
+          badge={quad.data.promo ? 'Promo' : undefined}
+          eyebrow="Quad BENDA"
+        />
+      ))}
+    </div>
+
+    <div class="mx-auto mt-16 max-w-4xl space-y-6">
+      <h2 class="text-2xl font-semibold">Pourquoi choisir un quad BENDA ?</h2>
+      <p>
+        Les quads BENDA se distinguent par leur style, leur niveau d’équipement et leur polyvalence.
+        La gamme permet de répondre à plusieurs profils : débutant, usage loisir, balades à deux,
+        conduite tout-terrain ou recherche d’un modèle plus puissant et confortable.
+      </p>
+      <p>
+        Selon les versions, vous profitez d’un quad 4x4 avec transmission sélectionnable, d’un bon
+        niveau de confort et d’un équipement complet. C’est une solution intéressante pour celles et
+        ceux qui cherchent un quad en Belgique avec un bon compromis entre prix, plaisir de conduite
+        et usage réel.
+      </p>
+
+      <h2 class="text-2xl font-semibold">Quad 4x4 en Belgique : comment bien choisir ?</h2>
+      <p>
+        Le bon modèle dépend surtout de votre usage. Un châssis court sera plus maniable et plus joueur,
+        tandis qu’un châssis long offrira davantage de stabilité et de confort, notamment pour les balades
+        ou une utilisation à deux. Les versions d’entrée de gamme conviendront mieux à un premier achat,
+        alors que les versions Premium viseront un usage plus régulier ou plus exigeant.
+      </p>
+      <p>
+        Cette page vous permet de comparer rapidement les modèles BENDA disponibles chez LED Automotive,
+        puis d’accéder à chaque fiche produit pour voir le prix, les caractéristiques, l’équipement
+        et les possibilités d’essai.
+      </p>
+
+      <h2 class="text-2xl font-semibold">Questions fréquentes sur nos quads</h2>
+
+      <h3 class="text-xl font-medium">Peut-on essayer un quad avant achat ?</h3>
+      <p>
+        Oui, il est possible de demander un essai sur rendez-vous à Fosses-la-Ville selon les modèles disponibles.
+      </p>
+
+      <h3 class="text-xl font-medium">Proposez-vous des quads en Belgique avec accompagnement local ?</h3>
+      <p>
+        Oui, LED Automotive vous accompagne localement en Belgique avec présentation des modèles,
+        conseils et orientation selon votre budget et votre usage.
+      </p>
+
+      <h3 class="text-xl font-medium">Quel quad choisir pour débuter ?</h3>
+      <p>
+        Pour débuter, il vaut mieux privilégier un modèle accessible, facile à prendre en main et
+        bien équilibré. Certaines versions de la gamme Redstone 550 sont particulièrement adaptées à cet usage.
+      </p>
+
+      <h3 class="text-xl font-medium">Quel quad choisir pour plus de confort ?</h3>
+      <p>
+        Si vous privilégiez le confort, les balades et la stabilité, les versions à châssis long sont en général
+        les plus adaptées.
+      </p>
+    </div>
   </section>
 
   <InfoSplitSection
@@ -66,7 +119,7 @@ const quadInfoBlocks = [
     asideTitle="Demandez un essai ou plus d’infos"
     asideText="Vous hésitez entre plusieurs quads BENDA ? Nous pouvons vous orienter selon votre usage, votre budget et les modèles disponibles."
     primaryCtaHref="/contact"
-    primaryCtaText="Demander un essai"
+    primaryCtaText="Réserver un essai"
     secondaryCtaHref="/contact"
     secondaryCtaText="Nous contacter"
   />
