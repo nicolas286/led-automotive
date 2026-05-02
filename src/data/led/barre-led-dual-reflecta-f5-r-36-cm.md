@@ -2,7 +2,7 @@
 title: Barre LED double rangée 36 cm Reflecta F5-R
 excerpt: Barre LED 36 cm double rangée avec éclairage combo puissant, idéale pour voiture, 4x4 et utilitaire.
 description: La barre LED Dual Reflecta F5-R 36 cm est une solution d’éclairage puissante et polyvalente pour améliorer la visibilité de votre véhicule. Grâce à son éclairage combo (large + longue portée), elle offre une excellente couverture, idéale pour la route, les chemins et le tout-terrain. Compacte, robuste et facile à installer, elle convient parfaitement aux voitures, 4x4 et utilitaires. Disponible à Fosses-la-Ville avec possibilité de conseil sur place.
-priceLabel: 151,99 €
+priceLabel: 151,99 € TTC
 featured: true
 image: /media/led/dual-reflecta-f5r/36cm.jpg
 gallery:

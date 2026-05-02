@@ -2,7 +2,7 @@
 title: Barre LED 52 cm Reflecta S6 EVO
 excerpt: Barre LED 52 cm fine et puissante avec éclairage combo, idéale pour voiture, moto et utilitaire.
 description: La barre LED Reflecta S6 EVO 52 cm est une solution d’éclairage performante pour améliorer votre visibilité sur route comme en tout-terrain. Grâce à son format extra fin et son éclairage combo (large + longue portée), elle offre une excellente couverture lumineuse tout en restant discrète. Idéale pour voiture, moto et utilitaire, elle convient parfaitement aux installations en pare-chocs ou calandre. Disponible à Fosses-la-Ville avec conseil sur place.
-priceLabel: 141,99 €
+priceLabel: 141,99 € TTC
 featured: true
 image: /media/led/reflecta-s6-evo/52cm.jpg
 gallery:
