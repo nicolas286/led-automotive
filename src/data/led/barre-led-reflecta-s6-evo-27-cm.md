@@ -1,46 +1,35 @@
 ---
 title: Barre LED 27 cm Reflecta S6 EVO
 excerpt: Barre LED 27 cm fine et discrète avec éclairage combo, idéale pour voiture, moto et utilitaire.
-description: La barre LED Reflecta S6 EVO 27 cm est une solution d’éclairage compacte et performante pour améliorer votre visibilité. Grâce à son format extra fin et son éclairage combo (large + longue portée), elle s’intègre facilement sur tout type de véhicule. Parfaite pour moto, voiture ou utilitaire, elle offre un excellent compromis entre discrétion et efficacité. Disponible à Fosses-la-Ville avec conseil sur place.
+description: La barre LED Reflecta S6 EVO 27 cm est une solution d’éclairage compacte et performante pour améliorer votre visibilité. Grâce à son format extra fin et son éclairage combo, elle s’intègre facilement sur tout type de véhicule.
 priceLabel: 91,99 € TTC
 featured: true
 image: /media/led/reflecta-s6-evo/27cm.jpg
 gallery:
   - /media/led/reflecta-s6-evo/27cm.jpg
 category: Barres LED
-subcategory: Simple rangée
-available: true
+compatibleWith:
+  - Auto
+  - Moto
+  - Utilitaire
 ctaLabel: Demander un devis
-shortSpecs:
+specs:
   - label: Type
     value: Simple rangée
   - label: Longueur
     value: 27 cm
   - label: Éclairage
-    value: Combo (large + longue portée)
+    value: Combo large + longue portée
+  - label: Faisceau
+    value: Large 35° + loin 30°
+  - label: Technologie
+    value: LED haute intensité
+  - label: Tension
+    value: 12V / 24V
+  - label: Format
+    value: Ultra fin (intégration discrète)
   - label: Utilisation
     value: Route et tout-terrain
-technicalSpecs:
-  - section: Éclairage
-    items:
-      - label: Type de faisceau
-        value: Combo (large 35° + longue portée 30°)
-      - label: Technologie
-        value: LED haute intensité
-  - section: Installation
-    items:
-      - label: Format
-        value: Ultra fin (intégration discrète)
-      - label: Compatibilité
-        value: 12V / 24V
-  - section: Utilisation
-    items:
-      - label: Véhicules compatibles
-        value: Auto, moto, utilitaire
-standardEquipment:
-  - Support de fixation
-  - Barre LED prémontée
-  - Compatible faisceau relais (option)
 seo:
   title: Barre LED 27 cm Reflecta S6 EVO à Fosses-la-Ville | LED Automotive
   description: Barre LED 27 cm fine et puissante pour moto et voiture. Disponible à Fosses-la-Ville avec conseils sur place.
@@ -77,7 +66,7 @@ Il est particulièrement adapté aux véhicules nécessitant une solution simple
 
 Cette barre LED est idéale pour :
 
-- motos (intégration facile)  
+- motos  
 - voitures  
 - utilitaires  
 
@@ -85,7 +74,7 @@ Elle peut être installée sur pare-chocs, calandre ou support spécifique.
 
 ---
 
-## Disponible à Fosses-la-Ville (Namur)
+## Disponible à Fosses-la-Ville
 
 Ce modèle est disponible chez LED Automotive à Fosses-la-Ville, à proximité de Namur, Charleroi et du Brabant wallon.
 
@@ -93,29 +82,22 @@ Vous pouvez obtenir des conseils personnalisés pour choisir le bon modèle.
 
 ---
 
-## À qui s’adresse cette barre LED ?
-
-Cette barre LED est idéale pour :
-
-- les conducteurs recherchant un éclairage discret  
-- les utilisateurs de moto  
-- les trajets de nuit occasionnels  
-- les installations compactes  
-
----
-
 ## Questions fréquentes
 
 ### Cette barre LED est-elle adaptée pour une moto ?
+
 Oui, son format compact la rend parfaite pour une installation sur moto.
 
 ### Est-elle facile à installer ?
+
 Oui, elle peut être installée facilement avec un support adapté.
 
 ### Peut-on l’utiliser sur route ?
+
 Oui, en respectant la réglementation en vigueur.
 
 ### Quelle est la différence avec une double rangée ?
+
 La simple rangée est plus discrète, tandis que la double rangée est plus puissante.
 
 ---
