@@ -21,6 +21,9 @@ gallery:
   - /media/motos/benda-napoleon-125/20240314奔达2377-copie-r1mrjze8bmr5bpvp2g6lnk4bytcipclsejqglu1nnk.jpg
   - /media/motos/benda-napoleon-125/20240314奔达2410-copie-r1mrjo461mbpgec2wbb2tmysu6w44zd0czwmuiidq8.jpg
   - /media/motos/benda-napoleon-125/20240314奔达2356-copie-r1mrjxijxyokohyfdfdcikles1ls9yebqafhna4g00.jpg
+  - /media/motos/benda-napoleon-125/20240314奔达2273-copie-r1mrjkctaa6k5yhji9okjnwygnena6y30haoxenyf4.jpg
+  - /media/motos/benda-napoleon-125/20240314奔达2275-copie-r1mrjpzufaea3m9clc4bymhq0ymukdkh197lt2flds.jpg
+  - /media/motos/benda-napoleon-125/20240314奔达2346-copie-r1mrjvmvkam01a15oek3dl2hl9v1uk6v214ioq78cg.jpg
 license: B
 engine: "Moteur : bicylindre en V, 4 temps"
 displacement: 124,6 cm³
