@@ -1,0 +1,82 @@
+---
+import { getCollection } from 'astro:content';
+import PageLayout from '~/layouts/PageLayout.astro';
+import CatalogHero from '~/components/widgets/CatalogHero.astro';
+import ProductCard from '~/components/widgets/ProductCard.astro';
+import InfoSplitSection from '~/components/widgets/InfoSplitSection.astro';
+import { getMotoUrl } from '~/utils/catalog';
+
+export async function getStaticPaths() {
+  return [
+    { params: { brand: 'benda' }, props: { brand: 'BENDA' } },
+    { params: { brand: 'mag-power' }, props: { brand: 'MAG POWER' } },
+  ];
+}
+
+const { brand } = Astro.props;
+
+const allMotos = await getCollection('moto', ({ data }) => !data.draft);
+
+const motos = allMotos
+  .filter((moto) => moto.data.brand === brand)
+  .sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999));
+
+const metadata = {
+  title: `Moto ${brand} Belgique | LED Automotive`,
+  description: `Découvrez nos motos ${brand} disponibles chez LED Automotive à Fosses-la-Ville. Comparez les modèles et demandez un essai.`,
+};
+
+const motoInfoBlocks = [
+  {
+    title: `Motos ${brand} en Belgique`,
+    text: `LED Automotive vous propose une sélection de motos ${brand} disponibles en Belgique, à Fosses-la-Ville.`,
+  },
+  {
+    title: 'Quelle moto choisir selon votre usage ?',
+    text:
+      'Le choix de votre moto dépend de votre permis, de votre expérience, de votre budget et de l’utilisation prévue.',
+  },
+  {
+    title: 'Essai moto à Fosses-la-Ville, près de Namur',
+    text:
+      'Notre showroom est situé à Fosses-la-Ville, près de Namur, Charleroi et le Brabant wallon.',
+  },
+];
+---
+
+<PageLayout metadata={metadata}>
+  <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <CatalogHero
+      eyebrow="Catalogue motos"
+      title={`Motos ${brand} en Belgique`}
+      intro={`Découvrez notre sélection de motos ${brand} disponibles chez LED Automotive à Fosses-la-Ville.`}
+      body={`Comparez les modèles ${brand}, consultez les caractéristiques et demandez un essai rapidement.`}
+    />
+
+    <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      {motos.map((moto) => (
+        <ProductCard
+          href={getMotoUrl(moto)}
+          title={moto.data.title}
+          image={moto.data.image}
+          description={moto.data.excerpt}
+          priceLabel={moto.data.priceLabel}
+          promoPriceLabel={moto.data.promoPriceLabel}
+          badge={moto.data.promo ? 'Promo' : undefined}
+          eyebrow={`Moto ${moto.data.brand}`}
+        />
+      ))}
+    </div>
+  </section>
+
+  <InfoSplitSection
+    blocks={motoInfoBlocks}
+    asideEyebrow="Besoin d’un conseil ?"
+    asideTitle="Demandez un essai ou plus d’infos"
+    asideText={`Vous hésitez entre plusieurs motos ${brand} ? Nous pouvons vous orienter selon votre permis, votre budget et les modèles disponibles.`}
+    primaryCtaHref="/contact"
+    primaryCtaText="Réserver"
+    secondaryCtaHref="/contact"
+    secondaryCtaText="Nous contacter"
+  />
+</PageLayout>

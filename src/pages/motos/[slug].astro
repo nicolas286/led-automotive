@@ -1,0 +1,169 @@
+---
+import { getCollection, render } from 'astro:content';
+import PageLayout from '~/layouts/PageLayout.astro';
+import ProductCard from '~/components/widgets/ProductCard.astro';
+import ProductDetailHero from '~/components/widgets/ProductDetailHero.astro';
+import { getMotoUrl } from '~/utils/catalog';
+import ProductSchema from '~/components/common/ProductSchema.astro';
+import BreadcrumbSchema from '~/components/common/BreadCrumbSchema.astro';
+
+export async function getStaticPaths() {
+  const motos = await getCollection('moto', ({ data }) => !data.draft);
+
+  return motos.map((moto) => ({
+    params: { slug: moto.data.slug ?? moto.id },
+    props: { moto },
+  }));
+}
+
+const { moto } = Astro.props;
+const { Content } = await render(moto);
+
+const metadata = {
+  title: moto.data.seo?.title ?? `${moto.data.title} | LED Automotive`,
+  description:
+    moto.data.seo?.description ??
+    moto.data.description ??
+    moto.data.excerpt ??
+    'Découvrez cette moto disponible chez LED Automotive.',
+};
+
+const relatedEntries = (await getCollection('moto', ({ data }) => !data.draft))
+  .filter((item) => item.id !== moto.id)
+  .sort((a, b) => {
+    if (a.data.brand === moto.data.brand && b.data.brand !== moto.data.brand) return -1;
+    if (a.data.brand !== moto.data.brand && b.data.brand === moto.data.brand) return 1;
+    return (a.data.order ?? 999) - (b.data.order ?? 999);
+  })
+  .slice(0, 3);
+
+const siteUrl = 'https://led-automotive.be';
+const motoSlug = moto.data.slug ?? moto.id;
+const motoUrl = new URL(getMotoUrl(moto), siteUrl).toString();
+
+const rawPrice = moto.data.promoPriceLabel ?? moto.data.priceLabel ?? '';
+const normalizedPrice = rawPrice
+  .replace(/[^\d,.-]/g, '')
+  .replace(/\./g, '')
+  .replace(',', '.');
+
+const breadcrumbItems = [
+  { name: 'Accueil', url: siteUrl },
+  { name: 'Motos', url: `${siteUrl}/motos` },
+  { name: `Motos ${moto.data.brand}`, url: `${siteUrl}/motos/${moto.data.brand === 'MAG POWER' ? 'mag-power' : 'benda'}` },
+  { name: moto.data.title, url: motoUrl },
+];
+---
+
+<PageLayout metadata={metadata}>
+  <ProductSchema
+    name={moto.data.title}
+    description={moto.data.seo?.description ?? moto.data.description ?? moto.data.excerpt}
+    image={[moto.data.image, ...(moto.data.gallery ?? [])]}
+    brand={moto.data.brand}
+    sku={motoSlug}
+    url={motoUrl}
+    price={normalizedPrice || undefined}
+    priceCurrency="EUR"
+    availability="https://schema.org/InStock"
+    condition="https://schema.org/NewCondition"
+  />
+
+  <BreadcrumbSchema items={breadcrumbItems} />
+
+  <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <ProductDetailHero
+      brand={moto.data.brand}
+      title={moto.data.title}
+      excerpt={moto.data.excerpt}
+      priceLabel={moto.data.priceLabel}
+      promoPriceLabel={moto.data.promoPriceLabel}
+      image={moto.data.image}
+      gallery={moto.data.gallery ?? []}
+      primaryCtaHref="/contact"
+      primaryCtaText={moto.data.ctaLabel ?? 'Demander un essai'}
+      secondaryCtaHref="/contact"
+      secondaryCtaText="Nous contacter"
+      shortSpecs={moto.data.shortSpecs ?? []}
+    />
+
+    {moto.data.description && (
+      <section class="mt-16 max-w-4xl">
+        <h2 class="text-2xl font-bold text-white md:text-3xl">Description</h2>
+        <p class="mt-4 text-base leading-8 text-slate-300">{moto.data.description}</p>
+      </section>
+    )}
+
+    {moto.data.technicalSpecs && moto.data.technicalSpecs.length > 0 && (
+      <section class="mt-16">
+        <h2 class="text-2xl font-bold text-white md:text-3xl">
+          Caractéristiques techniques
+        </h2>
+
+        <div class="mt-8 grid gap-6 lg:grid-cols-2">
+          {moto.data.technicalSpecs.map((section) => (
+            <div class="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-6 shadow-[0_18px_40px_rgba(0,0,0,0.18)]">
+              {section.section && (
+                <h3 class="mb-5 text-xl font-semibold text-primary">
+                  {section.section}
+                </h3>
+              )}
+
+              <div class="space-y-3">
+                {section.items.map((item) => (
+                  <div class="border-b border-white/10 pb-3 last:border-b-0 last:pb-0">
+                    <p class="text-sm text-slate-400">{item.label}</p>
+                    <p class="font-medium text-white">{item.value}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {moto.data.standardEquipment && moto.data.standardEquipment.length > 0 && (
+      <section class="mt-16">
+        <h2 class="text-2xl font-bold text-white md:text-3xl">
+          Équipements de série
+        </h2>
+
+        <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {moto.data.standardEquipment.map((item) => (
+            <div class="rounded-[1.25rem] border border-white/10 bg-white/[0.03] p-4 text-white shadow-[0_18px_40px_rgba(0,0,0,0.18)]">
+              ✓ {item}
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <section class="prose prose-invert mt-16 max-w-4xl prose-p:text-slate-300 prose-li:text-slate-300 prose-headings:text-white">
+      <Content />
+    </section>
+
+    {relatedEntries.length > 0 && (
+      <section class="mt-16">
+        <h2 class="text-2xl font-bold text-white md:text-3xl">
+          Autres motos
+        </h2>
+
+        <div class="mt-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+          {relatedEntries.map((item) => (
+            <ProductCard
+              href={getMotoUrl(item)}
+              title={item.data.title}
+              image={item.data.image}
+              description={item.data.excerpt}
+              priceLabel={item.data.priceLabel}
+              promoPriceLabel={item.data.promoPriceLabel}
+              badge={item.data.promo ? 'Promo' : undefined}
+              eyebrow={`Moto ${item.data.brand}`}
+            />
+          ))}
+        </div>
+      </section>
+    )}
+  </section>
+</PageLayout>

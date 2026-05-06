@@ -135,6 +135,72 @@ const quadCollection = defineCollection({
   }),
 });
 
+const motoCollection = defineCollection({
+  loader: glob({ pattern: ['*.md', '*.mdx'], base: 'src/data/moto' }),
+  schema: z.object({
+    draft: z.boolean().optional(),
+
+    title: z.string(),
+    brand: z.enum(['BENDA', 'MAG POWER']),
+    model: z.string().optional(),
+    slug: z.string().optional(),
+
+    excerpt: z.string().optional(),
+    description: z.string().optional(),
+
+    price: z.number().optional(),
+    priceLabel: z.string().optional(),
+    promoPriceLabel: z.string().optional(),
+    promo: z.boolean().optional(),
+
+    featured: z.boolean().optional(),
+    order: z.number().optional(),
+
+    image: z.string(),
+    gallery: z.array(z.string()).optional(),
+
+    category: z.string().optional(), // ex: "Moto", "Roadster", "Custom", "125cc"
+    subcategory: z.string().optional(),
+
+    license: z.string().optional(), // ex: "Permis A1", "Permis A2", "Permis A"
+    engine: z.string().optional(), // ex: "125cc", "300cc", "500cc"
+    displacement: z.string().optional(),
+
+    available: z.boolean().optional(),
+    ctaLabel: z.string().optional().default('Demander un essai'),
+
+    shortSpecs: z
+      .array(
+        z.object({
+          label: z.string(),
+          value: z.string(),
+        })
+      )
+      .optional(),
+
+    technicalSpecs: z
+      .array(
+        z.object({
+          section: z.string().optional(), // ex: "Moteur", "Dimensions", "Freinage"
+          items: z.array(
+            z.object({
+              label: z.string(),
+              value: z.string(),
+            })
+          ),
+        })
+      )
+      .optional(),
+
+    standardEquipment: z.array(z.string()).optional(),
+
+    related: z.array(z.string()).optional(),
+
+    seo: seoDefinition(),
+    metadata: metadataDefinition(),
+  }),
+});
+
 const ledCollection = defineCollection({
   loader: glob({ pattern: ['*.md', '*.mdx'], base: 'src/data/led' }),
   schema: z.object({
@@ -225,6 +291,7 @@ const accessoryCollection = defineCollection({
 export const collections = {
   post: postCollection,
   quad: quadCollection,
+  moto: motoCollection,
   led: ledCollection,
   accessory: accessoryCollection,
 };

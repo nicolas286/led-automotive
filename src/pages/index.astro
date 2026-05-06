@@ -9,24 +9,33 @@ import TrustCards from '~/components/widgets/TrustCards.astro';
 import Cta from '~/components/widgets/Cta.astro';
 import { Icon } from 'astro-icon/components';
 import { Image } from 'astro:assets';
-import quadFosses from '~/assets/images/home/quad-fosses.webp';
 import ledFosses from '~/assets/images/home/led-fosses.webp';
 import quadBenda from '~/assets/images/home/quad-benda.webp';
+import motoBenda from '~/assets/images/home/quad-benda.webp';
 
 const metadata = {
-  title: 'Quads BENDA & équipements LED à Fosses-la-Ville | LED Automotive',
+  title: 'Motos BENDA, MAG POWER, quads BENDA & équipements LED à Fosses-la-Ville | LED Automotive',
   description:
-    'Découvrez nos quads BENDA, équipements LED et offres du moment à Fosses-la-Ville. Essais sur demande, conseils personnalisés et matériel fiable.',
+    'Découvrez nos motos BENDA et MAG POWER, quads BENDA, équipements LED et offres du moment à Fosses-la-Ville. Essais sur demande et conseils personnalisés.',
   ignoreTitleTemplate: true,
 };
 
 const sortByOrder = (a, b) => (a.data.order ?? 999) - (b.data.order ?? 999);
 
 const featuredQuads = (await getCollection('quad', ({ data }) => !data.draft && !!data.featured)).sort(sortByOrder);
+const featuredMotos = (await getCollection('moto', ({ data }) => !data.draft && !!data.featured)).sort(sortByOrder);
 const featuredLeds = (await getCollection('led', ({ data }) => !data.draft && !!data.featured)).sort(sortByOrder);
 
 const featuredItems = [
-  ...featuredQuads.slice(0, 4).map((item) => ({
+  ...featuredMotos.slice(0, 3).map((item) => ({
+    type: 'moto',
+    title: item.data.title,
+    eyebrow: `Moto ${item.data.brand}`,
+    href: `/motos/${item.data.slug ?? item.id}`,
+    image: item.data.image,
+    order: item.data.order ?? 999,
+  })),
+  ...featuredQuads.slice(0, 3).map((item) => ({
     type: 'quad',
     title: item.data.title,
     eyebrow: 'Quad BENDA',
@@ -57,6 +66,17 @@ const featuredQuadCards = featuredQuads.slice(0, 3).map((item) => ({
   badge: item.data.promo ? 'Promo' : undefined,
 }));
 
+const featuredMotoCards = featuredMotos.slice(0, 3).map((item) => ({
+  title: item.data.title,
+  description: item.data.excerpt ?? item.data.description,
+  href: `/motos/${item.data.slug ?? item.id}`,
+  image: item.data.image,
+  priceLabel: item.data.priceLabel,
+  promoPriceLabel: item.data.promoPriceLabel,
+  eyebrow: `Moto ${item.data.brand}`,
+  badge: item.data.promo ? 'Promo' : undefined,
+}));
+
 const featuredLedCards = featuredLeds.slice(0, 3).map((item) => ({
   title: item.data.title,
   description: item.data.excerpt ?? item.data.description,
@@ -70,10 +90,18 @@ const featuredLedCards = featuredLeds.slice(0, 3).map((item) => ({
 
 const worldsItems = [
   {
+    title: 'Motos BENDA & MAG POWER',
+    description: 'Roadsters, customs et motos accessibles pour le plaisir, les trajets et les balades.',
+    href: '/motos',
+    image: motoBenda,
+    cta: 'Découvrir les motos',
+    badge: 'Nouveau',
+  },
+  {
     title: 'Quads BENDA',
     description: 'Modèles route et tout-terrain, adaptés au loisir comme à un usage polyvalent.',
     href: '/quads',
-    image: quadFosses,
+    image: quadBenda,
     cta: 'Découvrir les quads',
   },
   {
@@ -82,14 +110,6 @@ const worldsItems = [
     href: '/leds',
     image: ledFosses,
     cta: 'Voir les équipements',
-  },
-  {
-    title: 'Offres promo',
-    description: 'Opportunités, arrivages et modèles disponibles immédiatement.',
-    href: '/promos',
-    image: quadBenda,
-    cta: 'Voir les promos',
-    badge: 'À découvrir',
   },
 ];
 
@@ -131,18 +151,18 @@ const trustItems = [
         href: '/contact',
       },
     ]}
-    image={{ src: '~/assets/images/led-automotive.webp', alt: 'Quads BENDA à Fosses-la-Ville' }}
+    image={{ src: '~/assets/images/led-automotive.webp', alt: 'Motos et quads BENDA & MAGPOWER à Fosses-la-Ville' }}
   >
     <Fragment slot="title">
-      Envie d’un quad ? Essayez un BENDA avant d’acheter
-    </Fragment>
+  Motos, quads et équipements LED à Fosses-la-Ville
+</Fragment>
 
-    <Fragment slot="subtitle">
-      <span class="block mb-2 font-semibold">
-        Quad BENDA en stock – Essai rapide à Fosses-la-Ville
-      </span>
-      Appelez-nous et venez tester un quad cette semaine&nbsp;
-    </Fragment>
+<Fragment slot="subtitle">
+  <span class="block mb-2 font-semibold">
+    Motos BENDA, motos MAG POWER et quads BENDA disponibles sur demande
+  </span>
+  Découvrez nos véhicules, demandez une offre ou réservez un essai près de Fosses-la-Ville.
+</Fragment>
 
     <Fragment slot="socialLink">
   <a
@@ -154,7 +174,7 @@ const trustItems = [
     <span class="flex h-8 w-8 items-center justify-center rounded-full bg-[#1877F2] text-white">
       <Icon name="logos:facebook" class="h-4 w-4" />
     </span>
-    <span>Voir nos quads en action</span>
+    <span>Voir nos véhicules en action</span>
   </a>
 </Fragment>
 
@@ -205,6 +225,16 @@ const trustItems = [
   </Hero2>
 
   <Worlds items={worldsItems} />
+
+
+  <ProductShowcase
+  tagline="Motos à découvrir"
+  title="Nos motos à découvrir"
+  subtitle="Une sélection de motos BENDA et MAG POWER mises en avant."
+  items={featuredMotoCards}
+  ctaHref="/motos"
+  ctaText="Voir toutes les motos"
+/>
 
   <ProductShowcase
     tagline="Quads à découvrir"

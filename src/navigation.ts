@@ -4,13 +4,7 @@ import { getPermalink } from './utils/permalinks';
 export async function getHeaderData() {
   const quads = await getCollection('quad', ({ data }) => !data.draft);
   const leds = await getCollection('led', ({ data }) => !data.draft);
-
-  const quadLinks = quads
-    .sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999))
-    .map((item) => ({
-      text: item.data.title,
-      href: getPermalink(`/quads/${item.data.slug ?? item.id}`),
-    }));
+  const motos = await getCollection('moto', ({ data }) => !data.draft);
 
   const ledLinks = leds
     .sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999))
@@ -19,7 +13,7 @@ export async function getHeaderData() {
       href: getPermalink(`/leds/${item.data.slug ?? item.id}`),
     }));
 
-  const promoLinks = [...quads, ...leds]
+  const promoLinks = [...quads, ...motos, ...leds]
     .filter((item) => item.data.promo)
     .sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999))
     .map((item) => ({
@@ -27,20 +21,20 @@ export async function getHeaderData() {
       href:
         item.collection === 'quad'
           ? getPermalink(`/quads/${item.data.slug ?? item.id}`)
-          : getPermalink(`/leds/${item.data.slug ?? item.id}`),
+          : item.collection === 'moto'
+            ? getPermalink(`/motos/${item.data.slug ?? item.id}`)
+            : getPermalink(`/leds/${item.data.slug ?? item.id}`),
     }));
 
   return {
     links: [
+      { text: 'Accueil', href: '/' },
       {
-        text: 'Accueil',
-        href: '/',
-      },
-      {
-        text: 'Quads BENDA',
+        text: 'Véhicules',
         links: [
-          { text: 'Voir tous les quads', href: '/quads' },
-          ...quadLinks,
+          { text: 'Quads BENDA', href: '/quads' },
+          { text: 'Motos BENDA', href: '/motos/benda' },
+          { text: 'Motos MAG POWER', href: '/motos/mag-power' },
         ],
       },
       {
@@ -51,16 +45,14 @@ export async function getHeaderData() {
         ],
       },
       {
-        text: 'Offres promo',
+        text: 'Promos',
         links: [
           { text: 'Voir toutes les promos', href: '/promos' },
           ...promoLinks,
         ],
       },
-      {
-        text: 'Infos & Contact',
-        href: '/contact',
-      },
+      { text: 'Contact', href: '/contact' },
+      { text: 'Actualités', href: '/blog' },
     ],
     actions: [
       {
@@ -77,14 +69,17 @@ export const footerData = {
       title: 'Navigation',
       links: [
         { text: 'Accueil', href: '/' },
-        { text: 'Infos & Contact', href: '/contact' },
+        { text: 'Contact', href: '/contact' },
         { text: 'Offres promo', href: '/promos' },
+        { text: 'Actualités', href: '/blog' },
       ],
     },
     {
       title: 'Catalogue',
       links: [
         { text: 'Quads BENDA', href: '/quads' },
+        { text: 'Motos BENDA', href: '/motos/benda' },
+        { text: 'Motos MAG POWER', href: '/motos/mag-power' },
         { text: 'Leds & accessoires', href: '/leds' },
       ],
     },
@@ -109,7 +104,11 @@ export const footerData = {
     { text: 'Politique de confidentialité', href: '/privacy' },
   ],
   socialLinks: [
-    { ariaLabel: 'Facebook', icon: 'logos:facebook', href: 'https://www.facebook.com/profile.php?id=61563294435406' },
+    {
+      ariaLabel: 'Facebook',
+      icon: 'logos:facebook',
+      href: 'https://www.facebook.com/profile.php?id=61563294435406',
+    },
   ],
   footNote: `
     © LED Automotive · Fosses-la-Ville · Tous droits réservés. Site web réalisé par <a href="https://www.feralwebdesign.be" target="_blank">Féral</a>.
