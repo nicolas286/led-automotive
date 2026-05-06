@@ -2,10 +2,20 @@
 title: REDSTONE 550 FIRST CHASSIS COURT
 brand: BENDA
 model: Redstone 550
-slug: redstone-550-first-court
-excerpt: Quad accessible et facile à prendre en main, idéal pour débuter. Disponible à Fosses-la-Ville avec essai possible.
-description: "Le Redstone 550 First Châssis Court est un quad homologué route en Belgique accessible et efficace, idéal pour découvrir le tout-terrain et profiter d’un véhicule fiable à prix maîtrisé. Avec son moteur bicylindre de 42 cv et sa transmission 2x4 / 4x4, il offre une conduite agréable et facile à prendre en main, parfaite pour une première expérience ou un usage loisir. Plus simple que les versions Premium, il conserve l’essentiel : de bonnes performances, un équipement utile et une grande polyvalence. Visible à Fosses-la-Ville, ce modèle est disponible rapidement avec possibilité d’essai sur place. Contactez-nous pour organiser un test."
+excerpt: Quad accessible et facile à prendre en main, idéal pour débuter.
+  Disponible à Fosses-la-Ville avec essai possible.
+description: "Le Redstone 550 First Châssis Court est un quad homologué route en
+  Belgique accessible et efficace, idéal pour découvrir le tout-terrain et
+  profiter d’un véhicule fiable à prix maîtrisé. Avec son moteur bicylindre de
+  42 cv et sa transmission 2x4 / 4x4, il offre une conduite agréable et facile à
+  prendre en main, parfaite pour une première expérience ou un usage loisir.
+  Plus simple que les versions Premium, il conserve l’essentiel : de bonnes
+  performances, un équipement utile et une grande polyvalence. Visible à
+  Fosses-la-Ville, ce modèle est disponible rapidement avec possibilité d’essai
+  sur place. Contactez-nous pour organiser un test."
 priceLabel: 6.599 € TTC
+promoPriceLabel: 5499 € ttc
+promo: true
 featured: true
 order: 4
 image: /media/quads/redstone-550-first/main.webp
@@ -14,10 +24,11 @@ gallery:
   - /media/quads/redstone-550-first/1.webp
   - /media/quads/redstone-550-first/2.webp
   - /media/quads/redstone-550-first/3.webp
-category: Quad
-subcategory: Loisir
 available: true
 ctaLabel: Réserver un essai
+slug: redstone-550-first-court
+category: Quad
+subcategory: Loisir
 shortSpecs:
   - label: Moteur
     value: Bicylindre en V – 500 cm3
@@ -92,10 +103,9 @@ standardEquipment:
 seo:
   title: Quad BENDA Redstone 550 First en stock à Fosses-la-Ville | Essai possible
   description: >
-    Découvrez le BENDA Redstone 550 First chez LED Automotive.
-    Un quad accessible, fiable et efficace. Demandez un essai.
+    Découvrez le BENDA Redstone 550 First chez LED Automotive. Un quad
+    accessible, fiable et efficace. Demandez un essai.
 ---
-
 Le Redstone 550 First Châssis Court est une version accessible de la gamme, idéale pour découvrir le quad ou profiter d’un véhicule fiable et efficace sans se ruiner.
 
 Avec son moteur bicylindre de 42 cv et sa transmission 2x4 / 4x4, il offre déjà largement de quoi se faire plaisir, que ce soit en balade ou sur terrain plus exigeant.
@@ -107,55 +117,63 @@ Un excellent choix pour débuter ou pour un usage loisir avec un budget maîtris
 ## Questions fréquentes
 
 ### Ce quad est-il adapté pour débuter ?
+
 Oui, le Redstone 550 First est idéal pour une première expérience grâce à sa prise en main facile et son prix accessible.
 
 ### Peut-on essayer ce quad ?
+
 Oui, vous pouvez venir tester ce modèle directement à Fosses-la-Ville sur rendez-vous.
 
 ### Est-il disponible rapidement ?
+
 Oui, ce modèle est disponible rapidement. Contactez-nous pour vérifier la disponibilité et organiser un essai.
 
 ### Quelle différence avec la version Premium ?
+
 La version First est plus simple et plus accessible, avec moins d’équipements que la Premium, mais conserve les bases essentielles pour un usage loisir.
 
 ### Ce quad est-il suffisant pour un usage régulier ?
+
 Oui, il est parfaitement adapté à un usage régulier en loisir ou pour des déplacements occasionnels.
 
 ### Peut-on évoluer vers un modèle plus équipé ensuite ?
+
 Oui, la gamme Benda propose plusieurs versions, dont des modèles plus équipés comme la version Premium.
 
 ### Ce quad est-il un 4x4 ?
+
 Oui, ce modèle dispose d’une transmission 2x4 / 4x4 sélectionnable.
 
 ### Est-il homologué en Belgique ?
+
 Oui, ce quad est homologué pour circuler sur route en Belgique sous conditions.
 
----
+- - -
 
 ## Prix du Benda Redstone 550 First Châssis Court
 
-Le prix du Benda Redstone 550 First Châssis Court est affiché à 6.599 € TTC.
+Le prix du Benda Redstone 550 First Châssis Court est affiché à ~~6.599 € TTC~~ **MAINTENANT A 5499 € TTC**
 
 En Belgique, les quads 500cc comme le Redstone 550 se situent généralement entre 6 500 € et 8 500 € selon les versions et équipements.
 
 Cette version First représente une excellente porte d’entrée dans la gamme Benda, avec un tarif accessible tout en conservant de bonnes performances.
 
----
+- - -
 
 ## Avis sur le Benda Redstone 550 First
 
 Le Redstone 550 First est particulièrement apprécié pour :
 
-- son accessibilité, idéale pour débuter  
-- son moteur souple et facile à exploiter  
-- son bon rapport qualité/prix  
-- sa simplicité d’utilisation  
+* son accessibilité, idéale pour débuter  
+* son moteur souple et facile à exploiter  
+* son bon rapport qualité/prix  
+* sa simplicité d’utilisation  
 
 C’est un modèle parfait pour une première expérience ou pour un usage loisir sans complexité.
 
 Il conviendra aux utilisateurs recherchant un quad fiable, efficace et sans superflu.
 
----
+- - -
 
 ## Quad homologué route en Belgique
 
@@ -163,7 +181,7 @@ Le Benda Redstone 550 First est homologué pour un usage routier en Belgique, à
 
 Il peut donc être utilisé aussi bien pour le loisir que pour des trajets sur route.
 
----
+- - -
 
 ## Quad disponible à Fosses-la-Ville (Namur)
 
@@ -171,15 +189,13 @@ Ce modèle est disponible chez LED Automotive à Fosses-la-Ville, facilement acc
 
 Vous pouvez venir voir le véhicule sur place et planifier un essai rapidement.
 
----
+- - -
 
 ## À qui s’adresse ce modèle ?
 
 Le Redstone 550 First Châssis Court est idéal pour :
 
-- les débutants souhaitant découvrir le quad  
-- les utilisateurs à la recherche d’un modèle simple et efficace  
-- les personnes avec un budget maîtrisé  
-- les amateurs de balades et loisirs tout-terrain  
-
-
+* les débutants souhaitant découvrir le quad  
+* les utilisateurs à la recherche d’un modèle simple et efficace  
+* les personnes avec un budget maîtrisé  
+* les amateurs de balades et loisirs tout-terrain
