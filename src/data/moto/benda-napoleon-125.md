@@ -17,7 +17,7 @@ promo: false
 featured: false
 image: /media/motos/benda-napoleon-125/20240314奔达2377-copie-r1mrjze8bmr5bpvp2g6lnk4bytcipclsejqglu1nnk.jpg
 gallery:
-  - https://www.benda-moto.com/napoleon-125/
+  - /media/motos/benda-napoleon-125/20240314奔达2442-copie-r1mrk19wpatpyxsyrgzusjn95l394qt92t1fkdyvb4.jpg
   - /media/motos/benda-napoleon-125/20240314奔达2377-copie-r1mrjze8bmr5bpvp2g6lnk4bytcipclsejqglu1nnk.jpg
   - /media/motos/benda-napoleon-125/20240314奔达2410-copie-r1mrjo461mbpgec2wbb2tmysu6w44zd0czwmuiidq8.jpg
   - /media/motos/benda-napoleon-125/20240314奔达2356-copie-r1mrjxijxyokohyfdfdcikles1ls9yebqafhna4g00.jpg
