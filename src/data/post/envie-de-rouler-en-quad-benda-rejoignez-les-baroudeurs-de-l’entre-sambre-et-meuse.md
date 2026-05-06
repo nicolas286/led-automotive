@@ -5,7 +5,7 @@ excerpt: Vous aimez le quad, les randonnées et les moments conviviaux entre
   passionnés ? Découvrez les Baroudeurs de l’Entre-Sambre-et-Meuse, un club
   chaleureux qui organise des balades mensuelles en quad, dans le respect, la
   bonne humeur et la passion.
-image: /media/posts/envie-de-rouler-en-quad-benda-rejoignez-les-baroudeurs-de-l’entre-sambre-et-meuse/default.png
+image: /media/posts/envie-de-rouler-en-quad-benda-rejoignez-les-baroudeurs-de-l’entre-sambre-et-meuse/capture-d-écran-2026-05-06-150035.png
 category: Quad / Benda / Randonnée quad
 author: LED-Automotive.be
 publishDate: 2026-05-06T15:04:00.000+02:00
