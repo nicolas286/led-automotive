@@ -41,9 +41,19 @@ const metadata = merge(
       follow: blogPostRobots?.follow,
     },
     openGraph: {
-      type: 'article',
-      ...(ogImageUrl ? { images: [ogImageUrl] } : {}),
-    },
+  type: 'article',
+  ...(ogImageUrl
+    ? {
+        images: [
+          {
+            url: ogImageUrl,
+            width: 1200,
+            height: 630,
+          },
+        ],
+      }
+    : {}),
+},
   },
   { ...(post?.metadata ? { ...post.metadata, canonical: post.metadata?.canonical || url } : {}) }
 ) as MetaData;

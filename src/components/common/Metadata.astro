@@ -63,6 +63,20 @@ const seoProps: AstroSeoProps = merge(
     twitter: twitter,
   }
 );
+
+const hasMediaOpenGraphImage = seoProps?.openGraph?.images?.some((image) => {
+  const imageUrl = typeof image === 'string' ? image : image?.url;
+  return typeof imageUrl === 'string' && imageUrl.includes('/media/');
+});
+
+const finalOpenGraph = hasMediaOpenGraphImage
+  ? seoProps.openGraph
+  : await adaptOpenGraphImages(seoProps?.openGraph, Astro.site);
+
+const finalSeoProps = {
+  ...seoProps,
+  openGraph: finalOpenGraph,
+};
 ---
 
-<AstroSeo {...{ ...seoProps, openGraph: await adaptOpenGraphImages(seoProps?.openGraph, Astro.site) }} />
+<AstroSeo {...finalSeoProps} />
