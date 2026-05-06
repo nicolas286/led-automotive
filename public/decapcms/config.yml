@@ -5,7 +5,7 @@ backend:
 local_backend: true
 locale: 'fr'
 
-media_folder: "public/media/uploads"
+media_folder: "/public/media/uploads"
 public_folder: "/media/uploads"
 
 
@@ -19,7 +19,7 @@ collections:
     extension: "md"
     format: "frontmatter"
     summary: "{{title}}"
-    media_folder: "public/media/posts/{{slug}}"
+    media_folder: "/public/media/posts/{{slug}}"
     public_folder: "/media/posts/{{slug}}"
     fields:
       - { label: "Titre", name: "title", widget: "string" }
@@ -98,7 +98,7 @@ collections:
     extension: "md"
     format: "frontmatter"
     summary: "{{title}}"
-    media_folder: "public/media/quads/{{slug}}"
+    media_folder: "/public/media/quads/{{slug}}"
     public_folder: "/media/quads/{{slug}}"
     fields:
       - { label: "Titre", name: "title", widget: "string" }
@@ -202,7 +202,7 @@ collections:
     extension: "md"
     format: "frontmatter"
     summary: "{{title}}"
-    media_folder: "public/media/motos/{{slug}}"
+    media_folder: "/public/media/motos/{{slug}}"
     public_folder: "/media/motos/{{slug}}"
     fields:
       - { label: "Titre", name: "title", widget: "string" }
@@ -318,7 +318,7 @@ collections:
     extension: "md"
     format: "frontmatter"
     summary: "{{title}}"
-    media_folder: "public/media/led/{{slug}}"
+    media_folder: "/public/media/led/{{slug}}"
     public_folder: "/media/led/{{slug}}"
     fields:
       - { label: "Titre", name: "title", widget: "string" }
@@ -407,7 +407,7 @@ collections:
     extension: "md"
     format: "frontmatter"
     summary: "{{title}}"
-    media_folder: "public/media/accessories/{{slug}}"
+    media_folder: "/public/media/accessories/{{slug}}"
     public_folder: "/media/accessories/{{slug}}"
     fields:
       - { label: "Titre", name: "title", widget: "string" }
