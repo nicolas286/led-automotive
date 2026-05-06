@@ -24,11 +24,10 @@ gallery:
   - /media/quads/redstone-550-first/1.webp
   - /media/quads/redstone-550-first/2.webp
   - /media/quads/redstone-550-first/3.webp
+category: Quad
+subcategory: Loisir et Agricole
 available: true
 ctaLabel: Réserver un essai
-slug: redstone-550-first-court
-category: Quad
-subcategory: Loisir
 shortSpecs:
   - label: Moteur
     value: Bicylindre en V – 500 cm3
@@ -38,6 +37,8 @@ shortSpecs:
     value: 46 N·m
   - label: Transmission
     value: 2x4 / 4x4
+related: []
+slug: redstone-550-first-court
 technicalSpecs:
   - section: Moteur
     items:
@@ -185,7 +186,7 @@ Il peut donc être utilisé aussi bien pour le loisir que pour des trajets sur r
 
 ## Quad disponible à Fosses-la-Ville (Namur)
 
-Ce modèle est disponible chez LED Automotive à Fosses-la-Ville, facilement accessible depuis Namur, le Hainaut et le Brabant wallon.
+Ce modèle est disponible chez LED Automotive à Fosses-la-Ville en Belgique, facilement accessible depuis Namur, le Hainaut et le Brabant wallon.
 
 Vous pouvez venir voir le véhicule sur place et planifier un essai rapidement.
 
