@@ -8,6 +8,7 @@ excerpt: Vous aimez le quad, les randonnées et les moments conviviaux entre
 image: /media/posts/envie-de-rouler-en-quad-benda-rejoignez-les-baroudeurs-de-l’entre-sambre-et-meuse/capture-d-écran-2026-05-06-150035.png
 category: Quad / Benda / Randonnée quad
 author: LED-Automotive.be
+publishDate: 2026-05-06T15:04:00.000+02:00
 draft: false
 metadata:
   ignoreTitleTemplate: false
