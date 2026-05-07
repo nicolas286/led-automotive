@@ -12,6 +12,7 @@ description: Découvrez la Benda Napoleon 125, une moto 125cc au style bobber
   elle offre un vrai plaisir de conduite tout en restant accessible. Son design
   bas, large et rétro en fait une moto idéale pour rouler avec style au
   quotidien ou le week-end.
+price: 5499
 priceLabel: 5499 € TTC
 promo: false
 featured: false
@@ -37,3 +38,17 @@ metadata:
     index: true
     follow: true
 ---
+
+
+## Esprit classique, âme moderne
+
+Découvrez votre futur premier bobber.
+
+Le Napoléon 125 est un hommage au style bobber d’antan avec une vision plus contemporaine. Sa selle basse et flottante, sa fourche télescopique, son double amortisseur multibras et son design audacieux offrent une position de conduite confortable, parfaite pour toutes les sorties.
+
+Conçu pour offrir l’équilibre entre style et puissance, le moteur de 125 cm³ dégage un haut niveau de performance tout en conservant une esthétique raffinée. Finitions
+chromées, reflets métalliques…
+
+Que vous rouliez en ville ou sur route, le son profond du moteur et de l’échappement fera tourner les têtes à chaque coin de rue.
+
+Plus qu’une moto, la Napoléon 125 est un art de vivre, un chef-d’œuvre qui invite à l’essayer pour vivre une expérience hors du commun.
