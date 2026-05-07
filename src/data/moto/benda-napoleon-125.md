@@ -15,7 +15,7 @@ description: Découvrez la Benda Napoleon 125, une moto 125cc au style bobber
 priceLabel: 5499 € TTC
 promo: false
 featured: false
-image: /media/motos/benda-napoleon-125/20240314奔达2377-copie-r1mrjze8bmr5bpvp2g6lnk4bytcipclsejqglu1nnk.jpg
+image: /media/motos/benda-napoleon-125/capture-d-écran-2026-05-07-084140.png
 gallery:
   - /media/motos/benda-napoleon-125/20240314奔达2442-copie-r1mrk19wpatpyxsyrgzusjn95l394qt92t1fkdyvb4.jpg
   - /media/motos/benda-napoleon-125/20240314奔达2377-copie-r1mrjze8bmr5bpvp2g6lnk4bytcipclsejqglu1nnk.jpg
@@ -24,6 +24,7 @@ gallery:
   - /media/motos/benda-napoleon-125/20240314奔达2273-copie-r1mrjkctaa6k5yhji9okjnwygnena6y30haoxenyf4.jpg
   - /media/motos/benda-napoleon-125/20240314奔达2275-copie-r1mrjpzufaea3m9clc4bymhq0ymukdkh197lt2flds.jpg
   - /media/motos/benda-napoleon-125/20240314奔达2346-copie-r1mrjvmvkam01a15oek3dl2hl9v1uk6v214ioq78cg.jpg
+  - /media/motos/benda-napoleon-125/20240314奔达2377-copie-r1mrjze8bmr5bpvp2g6lnk4bytcipclsejqglu1nnk.jpg
 license: B
 engine: "Moteur : bicylindre en V, 4 temps"
 displacement: 124,6 cm³
