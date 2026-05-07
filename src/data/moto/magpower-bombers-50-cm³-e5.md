@@ -15,7 +15,7 @@ description: >-
 price: 2099
 priceLabel: 2099 € TTC
 promo: false
-featured: false
+featured: true
 image: /media/motos/magpower-bombers-50-cm³-e5/capture-d-écran-2026-05-07-134437.png
 gallery:
   - /media/motos/magpower-bombers-50-cm³-e5/bombers-50-situation-6-ms-1024x768.jpg

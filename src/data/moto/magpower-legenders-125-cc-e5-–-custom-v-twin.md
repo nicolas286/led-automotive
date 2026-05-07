@@ -15,7 +15,7 @@ description: >-
 price: 3990
 priceLabel: 3990 € TTC
 promo: false
-featured: false
+featured: true
 image: /media/motos/magpower-legenders-125-cc-e5-–-custom-v-twin/capture-d-écran-2026-05-07-090633.png
 gallery:
   - /media/motos/magpower-legenders-125-cc-e5-–-custom-v-twin/img_0880-1-2048x1365.png
