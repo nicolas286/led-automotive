@@ -38,6 +38,7 @@ description: >-
   ✔ Look custom / cruiser
 
 
+
   Disponible chez LED-Automotive.be à Fosses-la-Ville.
 price: 5299
 priceLabel: 5299 €TTC
@@ -51,6 +52,7 @@ gallery:
   - /media/motos/benda-rock-125-cm³-–-custom-bicylindre-en-v/img_4871-scaled.jpg
   - /media/motos/benda-rock-125-cm³-–-custom-bicylindre-en-v/dsc_0147-2048x1365.jpg
   - /media/motos/benda-rock-125-cm³-–-custom-bicylindre-en-v/wechatimg172-scaled.jpeg
+  - /media/motos/benda-rock-125-cm³-–-custom-bicylindre-en-v/capture-d-écran-2026-05-07-083726.png
 license: B
 available: true
 ctaLabel: Demander un essai
