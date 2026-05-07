@@ -38,8 +38,6 @@ metadata:
     index: true
     follow: true
 ---
-
-
 ## Esprit classique, âme moderne
 
 Découvrez votre futur premier bobber.
@@ -52,3 +50,20 @@ chromées, reflets métalliques…
 Que vous rouliez en ville ou sur route, le son profond du moteur et de l’échappement fera tourner les têtes à chaque coin de rue.
 
 Plus qu’une moto, la Napoléon 125 est un art de vivre, un chef-d’œuvre qui invite à l’essayer pour vivre une expérience hors du commun.
+
+
+
+## Un moteur V2 revu
+
+125 cm3 de pur plaisir
+
+Puissance max. annoncée : 10.3 kW (14 ch) – 9000 trs/min
+
+Couple max. annoncé : 11N•m-6500 trs/min
+
+Le cœur de la Napoléon 125 est son robuste moteur bicylindre en V de 125cm3, qui assure une conduite à la fois souple et passionnante. Il délivre 14 ch (10.3 kW) et 11 Nm de couple à 6500 tours / minutes. Conçu pour offrir l’équilibre parfait entre puissance et style, ce moteur offre des performances brutes tout en conservant une esthétique raffinée. Avec ses finitions chromées et ses reflets métalliques, ce moteur ne se contente pas d’être performant, il se distingue. 
+
+
+
+
+![](/media/motos/benda-napoleon-125/发动机渲染-895x1024.webp)
