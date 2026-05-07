@@ -34,8 +34,6 @@ metadata:
     index: true
     follow: true
 ---
-
-
 Bombers 50 cm3 E5
 
 Du fun… et du style !
@@ -48,7 +46,7 @@ Elle bénéficie d’un **riche équipement** (compteur digital, compte-tours,
 
 Homologuée 2 places, la Bombers 50 propose une vraie alternative au scooter. Le **monocylindre 4 temps** de 50cm3 cœur de la Bombers, développe une puissance de 1,8kW à 6000 tours/minute. Il est agrémenté par une **boîte 4 vitesses**. Son look racé, facilement personnalisable, conviendra à de nombreux pilotes. Les disques de frein de 220mm à l’avant et 200mm à l’arrière assurent des performances de freinage importantes. Feux à LED, instrumentation complète, grands rétroviseurs, style inspiré des roadsters italiens… La Bombers a tout d’une grande !
 
-
+![Bombers 50 cm3 E5](/media/motos/magpower-bombers-50-cm³-e5/bomb50.jpg "Du fun… et du style !")
 
 Moteur
 
@@ -109,8 +107,6 @@ Dimensions (L x l x h) : 1780 x 750 x 1030 mm
 **Poids net :** 107 kg
 
 **Compteur :** Digital
-
-
 
 Capacité du réservoir : 11 litres
 
