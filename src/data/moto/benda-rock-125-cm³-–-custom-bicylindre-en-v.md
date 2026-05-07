@@ -10,32 +10,6 @@ description: >-
   Découvrez la Benda Rock 125 cm³, une moto custom au style musclé, idéale pour
   les amateurs de cruiser accessibles en 125.
 
-  Elle reçoit un moteur bicylindre en V 125 cm³, injection électronique, refroidissement liquide, boîte 6 vitesses et transmission par courroie.
-
-
-  Caractéristiques principales :
-
-  ✔ Moteur bicylindre en V 125 cm³
-
-  ✔ 14 CV à 8 500 tr/min
-
-  ✔ Couple 14 Nm à 6 500 tr/min
-
-  ✔ Refroidissement liquide
-
-  ✔ Injection électronique
-
-  ✔ Boîte 6 vitesses
-
-  ✔ Transmission par courroie
-
-  ✔ Réservoir 16 litres
-
-  ✔ Hauteur de selle 72 cm
-
-  ✔ Freinage CBS
-
-  ✔ Look custom / cruiser
 
 
 
@@ -62,3 +36,56 @@ metadata:
     index: true
     follow: true
 ---
+Découvrez la Benda Rock 125 cm³, une moto custom au style musclé, idéale pour les amateurs de cruiser accessibles en 125.
+
+
+
+
+
+Voici un custom de caractère qui a su allier l’élégance, le confort, et l’originalité. Que ce soit en 125 ou en 300 cm3, la ROCK est la moto idéale pour enchaîner les balades en solo comme en duo. BENDA a apporté un soin particulier à l’expérience du passager afin qu’il se sente en sécurité.
+
+ 
+
+Animée par un Bicylindre en V et une transmission par courroie, la ROCK répondra à toutes vos attentes. A peine enjambée, on perçoit la force du détail de cette finition premium, grâce à la qualité des matériaux employés.
+
+ 
+
+Vous la cherchiez depuis longtemps, elle est là, elle vous attend ! 
+
+
+
+
+
+Elle reçoit un moteur bicylindre en V 125 cm³, injection électronique, refroidissement liquide, boîte 6 vitesses et transmission par courroie.
+
+
+
+Caractéristiques principales :
+
+✔ Moteur bicylindre en V 125 cm³
+
+✔ 14 CV à 8 500 tr/min
+
+✔ Couple 14 Nm à 6 500 tr/min
+
+✔ Refroidissement liquide
+
+✔ Injection électronique
+
+✔ Boîte 6 vitesses
+
+✔ Transmission par courroie
+
+✔ Réservoir 16 litres
+
+✔ Hauteur de selle 72 cm
+
+✔ Freinage CBS
+
+✔ Look custom / cruiser
+
+
+
+
+
+Disponible chez LED-Automotive.be à Fosses-la-Ville.
