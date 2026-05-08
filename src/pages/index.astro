@@ -23,7 +23,7 @@ const metadata = {
 const sortByOrder = (a, b) => (a.data.order ?? 999) - (b.data.order ?? 999);
 
 const featuredQuads = (await getCollection('quad', ({ data }) => !data.draft && !!data.featured)).sort(sortByOrder);
-const featuredMotos = (await getCollection('moto', ({ data }) => !data.draft && !!data.featured)).sort(sortByOrder);
+const featuredMotos = (await getCollection('moto', ({ data }) => !data.draft && !!data.featured && data.available)).sort(sortByOrder);
 const featuredLeds = (await getCollection('led', ({ data }) => !data.draft && !!data.featured)).sort(sortByOrder);
 
 const featuredItems = [

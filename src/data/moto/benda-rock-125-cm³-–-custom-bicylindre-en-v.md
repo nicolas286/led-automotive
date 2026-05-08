@@ -28,7 +28,7 @@ gallery:
   - /media/motos/benda-rock-125-cm³-–-custom-bicylindre-en-v/wechatimg172-scaled.jpeg
   - /media/motos/benda-rock-125-cm³-–-custom-bicylindre-en-v/capture-d-écran-2026-05-07-083726.png
 license: B
-available: true
+available: false
 ctaLabel: Demander un essai
 metadata:
   ignoreTitleTemplate: false

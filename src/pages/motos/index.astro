@@ -10,7 +10,7 @@ const rawBrand = Astro.url.searchParams.get('brand');
 const allowedBrands = ['BENDA', 'MAG POWER'];
 const brand = allowedBrands.includes(rawBrand ?? '') ? rawBrand : null;
 
-const allMotos = await getCollection('moto', ({ data }) => !data.draft);
+const allMotos = await getCollection('moto', ({ data }) => !data.draft && data.available);
 
 const motos = allMotos
   .filter((moto) => {

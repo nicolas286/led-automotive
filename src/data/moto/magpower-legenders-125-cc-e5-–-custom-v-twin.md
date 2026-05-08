@@ -26,7 +26,7 @@ gallery:
   - /media/motos/magpower-legenders-125-cc-e5-–-custom-v-twin/feu-arriere-legenders-v-2048x1365.jpg
   - /media/motos/magpower-legenders-125-cc-e5-–-custom-v-twin/dsc_6210-2048x1365.jpg
   - /media/motos/magpower-legenders-125-cc-e5-–-custom-v-twin/dsc_6231-2048x1365.jpg
-available: true
+available: false
 ctaLabel: Demander un essai
 metadata:
   ignoreTitleTemplate: false

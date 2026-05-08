@@ -26,7 +26,7 @@ gallery:
   - /media/motos/r-stunt-50-cm³-e5/capture-d-écran-2026-05-07-132252.png
   - /media/motos/r-stunt-50-cm³-e5/echappement-r-stunt-2048x1365.jpg
   - /media/motos/r-stunt-50-cm³-e5/compteur-rstunt50-2048x1105.jpg
-available: true
+available: false
 ctaLabel: Demander un essai
 metadata:
   ignoreTitleTemplate: false

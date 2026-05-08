@@ -26,7 +26,7 @@ gallery:
   - /media/motos/magpower-bombers-50-cm³-e5/magpower-bombers-50-cadre-aeration-ms.jpg
   - /media/motos/magpower-bombers-50-cm³-e5/magpower-bombers-50-chaine-ms.jpg
   - /media/motos/magpower-bombers-50-cm³-e5/magpower-bombers-50-reservoir-ms.jpg
-available: true
+available: false
 ctaLabel: Demander un essai
 metadata:
   ignoreTitleTemplate: false

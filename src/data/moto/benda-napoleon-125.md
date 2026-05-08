@@ -29,7 +29,7 @@ gallery:
 license: B
 engine: "Moteur : bicylindre en V, 4 temps"
 displacement: 124,6 cm³
-available: true
+available: false
 ctaLabel: Demander un essai
 shortSpecs: []
 metadata:
