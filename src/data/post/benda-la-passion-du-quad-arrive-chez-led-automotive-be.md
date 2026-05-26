@@ -61,7 +61,7 @@ excerpt: >-
   Benda & LED-Automotive.be
 
   La passion du quad commence ici.
-image: /media/posts/benda-la-passion-du-quad-arrive-chez-led-automotive-be/704108164_122198534144443147_6326973045932432723_n.jpg
+image: /media/posts/benda-la-passion-du-quad-arrive-chez-led-automotive-be/704149618_122198645876443147_3000520325051824671_n.jpg
 tags: []
 draft: false
 metadata:
