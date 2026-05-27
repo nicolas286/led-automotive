@@ -28,7 +28,7 @@ gallery:
   - /media/motos/magpower-x-trail-125-cm³-e5-–-trail-125-accessible/magpower-xtrail-feu-avant-ms.jpg
   - /media/motos/magpower-x-trail-125-cm³-e5-–-trail-125-accessible/magpower-xtrail-roue-arriere-2-ms.jpg
   - /media/motos/magpower-x-trail-125-cm³-e5-–-trail-125-accessible/magpower-xtrail-echappement-2048x1330.jpg
-available: false
+available: true
 ctaLabel: Demander un essai
 metadata:
   ignoreTitleTemplate: false

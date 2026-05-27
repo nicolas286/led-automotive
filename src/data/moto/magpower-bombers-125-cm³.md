@@ -30,7 +30,7 @@ gallery:
   - /media/motos/magpower-bombers-50-cm³-e5/magpower-bombers-50-reservoir-ms.jpg
   - /media/motos/magpower-bombers-125-cm³/bomb2.jpg
   - /media/motos/magpower-bombers-125-cm³/bomb1-1024x682.jpg
-available: false
+available: true
 ctaLabel: Demander un essai
 metadata:
   ignoreTitleTemplate: false
