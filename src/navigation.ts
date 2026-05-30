@@ -7,26 +7,34 @@ export async function getHeaderData() {
   const motos = await getCollection('moto', ({ data }) => !data.draft);
 
   const ledLinks = leds
-    .sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999))
-    .map((item) => ({
-      text: item.data.title,
-      href: getPermalink(`/leds/${item.data.slug ?? item.id}`),
-      image: item.data.image,
-    }));
+  .sort((a, b) =>
+    a.data.title.localeCompare(b.data.title, 'fr', {
+      sensitivity: 'base',
+    })
+  )
+  .map((item) => ({
+    text: item.data.title,
+    href: getPermalink(`/leds/${item.data.slug ?? item.id}`),
+    image: item.data.image,
+  }));
 
   const promoLinks = [...quads, ...motos, ...leds]
-    .filter((item) => item.data.promo)
-    .sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999))
-    .map((item) => ({
-      text: item.data.title,
-      href:
-        item.collection === 'quad'
-          ? getPermalink(`/quads/${item.data.slug ?? item.id}`)
-          : item.collection === 'moto'
-            ? getPermalink(`/motos/${item.data.slug ?? item.id}`)
-            : getPermalink(`/leds/${item.data.slug ?? item.id}`),
-      image: item.data.image,
-    }));
+  .filter((item) => item.data.promo)
+  .sort((a, b) =>
+    a.data.title.localeCompare(b.data.title, 'fr', {
+      sensitivity: 'base',
+    })
+  )
+  .map((item) => ({
+    text: item.data.title,
+    href:
+      item.collection === 'quad'
+        ? getPermalink(`/quads/${item.data.slug ?? item.id}`)
+        : item.collection === 'moto'
+          ? getPermalink(`/motos/${item.data.slug ?? item.id}`)
+          : getPermalink(`/leds/${item.data.slug ?? item.id}`),
+    image: item.data.image,
+  }));
 
   return {
     links: [
