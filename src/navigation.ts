@@ -11,6 +11,7 @@ export async function getHeaderData() {
     .map((item) => ({
       text: item.data.title,
       href: getPermalink(`/leds/${item.data.slug ?? item.id}`),
+      image: item.data.image,
     }));
 
   const promoLinks = [...quads, ...motos, ...leds]
@@ -24,6 +25,7 @@ export async function getHeaderData() {
           : item.collection === 'moto'
             ? getPermalink(`/motos/${item.data.slug ?? item.id}`)
             : getPermalink(`/leds/${item.data.slug ?? item.id}`),
+      image: item.data.image,
     }));
 
   return {
@@ -32,9 +34,9 @@ export async function getHeaderData() {
       {
         text: 'Véhicules',
         links: [
-          { text: 'Quads BENDA', href: '/quads' },
-          { text: 'Motos BENDA', href: '/motos/benda' },
-          { text: 'Motos MAG POWER', href: '/motos/mag-power' },
+          { text: 'Quads BENDA', href: '/quads',  image: '/media/quads/redstone-550-court/main.webp'},
+          { text: 'Motos BENDA', href: '/motos/benda', image: '/media/motos/benda-avengers-125-cc-–-custom-v-twin/avengers.png'},
+          { text: 'Motos MAG POWER', href: '/motos/mag-power', image: '/media/motos/magpower-bombers-50-cm³-e5/bombers-50-situation-6-ms-1024x768.jpg' },
         ],
       },
       {
