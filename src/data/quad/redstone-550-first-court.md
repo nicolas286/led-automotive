@@ -14,7 +14,7 @@ description: "Le Redstone 550 First Châssis Court est un quad homologué route 
   Fosses-la-Ville, ce modèle est disponible rapidement avec possibilité d’essai
   sur place. Contactez-nous pour organiser un test."
 priceLabel: 6.599 € TTC
-promoPriceLabel: 5499 € ttc
+promoPriceLabel: 5990 € ttc
 promo: true
 featured: true
 order: 4
