@@ -1,0 +1,368 @@
+---
+import Button from '~/components/ui/Button.astro';
+
+interface HeroCard {
+  title:string;
+  eyebrow?:string;
+  description:string;
+  href:string;
+  image:string;
+  cta?:string;
+}
+
+interface HeroAction {
+  text: string;
+  href: string;
+  icon?: string;
+  variant?: 'primary' | 'secondary';
+}
+
+interface Props {
+  id?: string;
+  tagline?: string;
+  title?: string;
+  subtitle?: string;
+  videoSrc?: string;
+  poster?: string;
+  actions?: HeroAction[];
+  cards?: HeroCard[];
+}
+
+const {
+  id,
+  tagline = 'CONCESSIONNAIRE BENDA & MAG POWER',
+  title = 'Motos, quads & équipements LED à Fosses-la-Ville',
+  subtitle = 'Motos BENDA, MAG POWER, quads BENDA et équipements LED. Découvrez nos véhicules, demandez une offre ou réservez votre essai.',
+  videoSrc = '/media/videos/hero-led-automotive.mp4',
+  poster = '/images/hero-led-automotive-poster.jpg',
+  actions = [
+    {
+      text: 'Réserver un essai',
+      href: 'tel:+32499610628',
+      icon: 'lucide:phone',
+      variant: 'primary',
+    },
+    {
+      text: 'Nous contacter',
+      href: '/contact',
+      icon: 'lucide:arrow-right',
+      variant: 'secondary',
+    },
+  ],
+  cards = [
+
+{
+  eyebrow:'BENDA • MAG POWER',
+  title:'Motos',
+  description:'Customs, roadsters et motos accessibles.',
+  href:'/motos',
+  image:'/media/motos/benda-avengers-125-cc-–-custom-v-twin/avengers.png',
+  cta:'Découvrir les motos',
+},
+
+{
+  eyebrow:'BENDA',
+  title:'Quads',
+  description:'Route et tout-terrain pour loisir et polyvalence.',
+  href:'/quads',
+  image:'/media/quads/redstone-550-court/main.webp',
+  cta:'Découvrir les quads',
+},
+
+{
+  eyebrow:'ÉQUIPEMENTS',
+  title:'Leds & accessoires',
+  description:'Éclairage, visibilité et accessoires premium.',
+  href:'/leds',
+  image:'/media/led/kit-2-phares-led-moto-code-phare-gx-80w/phare-led-moto-fonction-code-et-phare-64ef3624a2647.jpg',
+  cta:'Voir les équipements',
+},
+
+]
+} = Astro.props;
+---
+
+<section class="heroVideo not-prose relative overflow-hidden" {...id ? { id } : {}}>
+  <video
+    class="heroVideoMedia"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    poster={poster}
+    aria-hidden="true"
+  >
+    <source src={videoSrc} type="video/mp4" />
+  </video>
+
+  <div class="heroVideoOverlay" aria-hidden="true"></div>
+  <div class="heroVideoGlow" aria-hidden="true"></div>
+
+  <div class="relative z-10 mx-auto flex min-h-[calc(100vh-72px)] max-w-7xl flex-col justify-end px-4 pb-8 pt-40 sm:px-6 sm:pb-10 md:pt-44 lg:px-8 lg:pt-48 lg:pb-12">
+    <div class="max-w-4xl">
+      {tagline && (
+        <p class="mb-4 text-sm font-bold uppercase tracking-[0.22em] text-primary">
+          {tagline}
+        </p>
+      )}
+
+      {title && (
+        <h1 class="max-w-5xl text-5xl font-black leading-[0.95] tracking-tight text-white md:text-6xl lg:text-7xl">
+          {title}
+        </h1>
+      )}
+
+      {subtitle && (
+        <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-200 md:text-xl">
+          {subtitle}
+        </p>
+      )}
+
+      {actions.length > 0 && (
+        <div class="heroActions">
+            {actions.map((action) => (
+            <Button
+                href={action.href}
+                variant={action.variant ?? 'secondary'}
+                icon={action.icon}
+            >
+                {action.text}
+            </Button>
+            ))}
+        </div>
+        )}
+    </div>
+
+    {cards.length > 0 && (
+      <div class="mt-14 grid gap-4 lg:grid-cols-3">
+        {cards.map((card) => (
+          <a href={card.href} class="heroVideoCard group">
+
+            <div class="heroCardImage">
+
+                <img
+                src={card.image}
+                alt={card.title}
+                loading="lazy"
+                decoding="async"
+                />
+
+                <div class="heroCardImageOverlay"></div>
+
+            </div>
+
+            <div class="heroCardContent">
+
+                <p class="heroCardEyebrow">
+                {card.eyebrow}
+                </p>
+
+                <h2>
+                {card.title}
+                </h2>
+
+                <p>
+                {card.description}
+                </p>
+
+                <span class="heroCardCta">
+                {card.cta}
+                →
+                </span>
+
+            </div>
+
+            </a>
+        ))}
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .heroVideo {
+    background: #05060a;
+  }
+
+  .heroVideoMedia {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(1.08) contrast(1.08) brightness(0.82);
+  }
+
+  .heroVideoOverlay {
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,.55) 0%,
+      rgba(0,0,0,.28) 45%,
+      rgba(0,0,0,.15) 100%
+    ),
+
+    linear-gradient(
+      to top,
+      rgba(5,6,10,.72) 0%,
+      rgba(5,6,10,.25) 38%,
+      rgba(5,6,10,.06) 100%
+    );
+}
+
+  .heroVideoGlow {
+    position: absolute;
+    left: -12rem;
+    bottom: 4rem;
+    width: 36rem;
+    height: 36rem;
+    border-radius: 999px;
+    background: radial-gradient(circle, rgba(225, 6, 0, 0.2), transparent 62%);
+    pointer-events: none;
+  }
+
+  .heroVideoCard {
+  overflow:hidden;
+  border-radius:28px;
+  position:relative;
+
+  border:1px solid rgba(255,255,255,.08);
+
+  background:rgba(255,255,255,.05);
+
+  backdrop-filter:blur(10px);
+
+  transition:.28s;
+}
+
+.heroVideoCard:hover {
+  transform:translateY(-4px);
+  border-color:rgba(225,6,0,.55);
+}
+
+.heroCardImage {
+  position:relative;
+  height:220px;
+  overflow:hidden;
+}
+
+.heroCardImage img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+
+  transition:.45s;
+
+  filter:
+    brightness(.96)
+    contrast(1.05)
+    saturate(1.08);
+}
+
+.heroVideoCard:hover img {
+  transform:scale(1.05);
+}
+
+.heroCardImageOverlay {
+
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,.72) 0%,
+      rgba(0,0,0,.18) 55%,
+      transparent 100%
+    );
+}
+
+.heroCardContent {
+  padding:1.35rem;
+}
+
+.heroCardEyebrow {
+
+  margin-bottom:.6rem;
+
+  color:rgb(148 163 184);
+
+  font-size:.72rem;
+
+  font-weight:700;
+
+  letter-spacing:.16em;
+
+  text-transform:uppercase;
+}
+
+.heroCardContent h2 {
+
+  color:white;
+
+  font-size:1.85rem;
+
+  font-weight:900;
+}
+
+.heroCardContent p {
+
+  margin-top:.75rem;
+
+  color:rgb(203 213 225);
+
+  line-height:1.8;
+}
+
+.heroCardCta {
+
+  display:inline-flex;
+
+  margin-top:1rem;
+
+  font-weight:700;
+
+  color:white;
+}
+
+.heroActions {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+@media (max-width: 640px) {
+  .heroActions :global(a) {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+  @media (max-width: 767px) {
+    .heroVideoOverlay {
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.66) 0%,
+          rgba(0, 0, 0, 0.42) 34%,
+          rgba(0, 0, 0, 0.84) 72%,
+          rgba(5, 6, 10, 0.98) 100%
+        );
+    }
+
+    .heroVideoMedia {
+      filter: saturate(1.05) contrast(1.04) brightness(0.7);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .heroVideoMedia {
+      display: none;
+    }
+  }
+</style>

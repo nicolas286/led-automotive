@@ -9,6 +9,7 @@ import { getHomePermalink } from '~/utils/permalinks';
 import { trimSlash, getAsset } from '~/utils/permalinks';
 import type { CallToAction } from '~/types';
 
+
 interface Link {
   text?: string;
   href?: string;
@@ -80,21 +81,26 @@ const megaMenuContent: Record<
 <header
   class:list={[
     { sticky: isSticky, relative: !isSticky, dark: isDark },
-    'top-0 z-40 flex-none mx-auto w-full border-b border-white/10 bg-[#06070b]',
+
+    'siteHeader top-0 z-50 flex-none mx-auto w-full',
   ]}
   {...isSticky ? { 'data-aw-sticky-header': true } : {}}
   {...id ? { id } : {}}
 >
   <div
-    class:list={[
-      'relative text-default py-3 px-3 lg:px-6 mx-auto w-full',
-      { 'lg:flex lg:justify-between': position !== 'center' },
-      { 'lg:grid lg:grid-cols-3 lg:items-center': position === 'center' },
-      { 'max-w-7xl': !isFullWidth },
-    ]}
-  >
+  class:list={[
+    'relative text-default py-3 px-3 lg:px-6 mx-auto w-full',
+
+    { 'lg:flex lg:justify-between': position !== 'center' },
+    { 'lg:grid lg:grid-cols-3 lg:items-center': position === 'center' },
+    { 'max-w-7xl': !isFullWidth },
+  ]}
+>
     <div class:list={[{ 'mr-auto rtl:mr-0 rtl:ml-auto': position === 'right' }, 'flex justify-between']}>
-      <a class="flex items-center" href={getHomePermalink()}>
+      <a
+        class="headerLogo flex items-center rounded-2xl px-2 py-1"
+        href={getHomePermalink()}
+      >
         <Logo />
       </a>
 
@@ -278,7 +284,10 @@ const megaMenuContent: Record<
           actions?.length ? (
             <span class="ml-4 rtl:ml-0 rtl:mr-4">
               {actions.map((btnProps) => (
-                <Button {...btnProps} class="ml-2 py-2.5 px-5.5 lg:px-6 font-semibold shadow-none text-sm w-auto" />
+                <Button
+                  {...btnProps}
+                  class="ml-2 py-2.5 px-5.5 lg:px-6 font-semibold shadow-none text-sm w-auto"
+                />
               ))}
             </span>
           ) : (
@@ -289,6 +298,211 @@ const megaMenuContent: Record<
     </div>
   </div>
 </header>
+
+<style>
+
+.siteHeader {
+  position: fixed;
+  inset: 0 0 auto 0;
+  width: 100%;
+  background: transparent;
+  border-bottom: 0;
+  z-index: 50;
+}
+
+.siteHeader::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8,10,16,.42) 0%,
+      rgba(8,10,16,.22) 100%
+    );
+
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+
+  border-bottom: 1px solid rgba(255,255,255,.06);
+
+  transition:
+    background .28s ease,
+    border-color .28s ease,
+    box-shadow .28s ease;
+}
+
+.siteHeader.is-scrolled::before {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8,10,16,.92) 0%,
+      rgba(8,10,16,.86) 100%
+    );
+
+  border-bottom-color: rgba(255,255,255,.08);
+
+  box-shadow: 0 14px 34px rgba(0,0,0,.26);
+}
+
+.siteHeader > div {
+  background: transparent !important;
+}
+
+/* ---------- NAV LINKS ---------- */
+
+.siteHeader nav a,
+.siteHeader nav button {
+
+  position: relative;
+
+  padding: .95rem 1rem;
+
+  color: rgba(255,255,255,.86);
+
+  font-weight: 600;
+
+  letter-spacing: .015em;
+
+  transition:
+    color .22s ease,
+    transform .22s ease,
+    text-shadow .22s ease;
+}
+
+/* trait repos subtil */
+
+.siteHeader nav a::before,
+.siteHeader nav button::before {
+
+  content:'';
+
+  position:absolute;
+
+  left:50%;
+  bottom:5px;
+
+  width:26px;
+  height:2px;
+
+  border-radius:999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(225,6,0,.08),
+      rgba(255,69,58,.22)
+    );
+
+  transform:
+    translateX(-50%)
+    scaleX(.65);
+
+  opacity:.55;
+
+  transition:
+    width .24s ease,
+    opacity .24s ease,
+    transform .24s ease,
+    box-shadow .24s ease;
+}
+
+/* hover */
+
+.siteHeader nav a:hover,
+.siteHeader nav button:hover {
+
+  color:white;
+
+  transform:translateY(-1px);
+
+  text-shadow:
+    0 0 18px rgba(255,255,255,.08);
+}
+
+/* trait actif hover */
+
+.siteHeader nav a:hover::before,
+.siteHeader nav button:hover::before {
+
+  width:72%;
+
+  opacity:1;
+
+  transform:
+    translateX(-50%)
+    scaleX(1);
+
+  background:
+    linear-gradient(
+      90deg,
+      #e10600 0%,
+      #ff453a 100%
+    );
+
+  box-shadow:
+    0 0 14px rgba(225,6,0,.28);
+}
+
+.siteHeader > div {
+
+  background:transparent !important;
+}
+
+/* logo */
+
+.headerLogo {
+
+  background:transparent;
+
+  transition:.22s;
+}
+
+/* IMPORTANT */
+
+.headerLogo :global(img),
+.headerLogo :global(svg) {
+
+  background:transparent !important;
+}
+
+.headerLogo::before {
+
+  content:none;
+}
+
+
+/* CTA desktop */
+
+.siteHeader :global(.btn-primary) {
+
+  backdrop-filter:blur(12px);
+}
+
+/* mega panel */
+
+.megaPanel > div {
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(10,12,18,.96) 0%,
+      rgba(8,10,16,.94) 100%
+    ) !important;
+
+  backdrop-filter:blur(34px);
+  -webkit-backdrop-filter:blur(34px);
+
+  border-top:1px solid rgba(255,255,255,.08);
+  border-bottom:1px solid rgba(255,255,255,.08);
+
+  box-shadow:
+    0 28px 60px rgba(0,0,0,.42);
+}
+
+</style>
 
 <script is:inline>
   const bindMobileSubmenus = () => {
@@ -332,4 +546,33 @@ const megaMenuContent: Record<
 
 document.addEventListener('DOMContentLoaded', bindMegaMenus);
 document.addEventListener('astro:after-swap', bindMegaMenus);
+
+const bindHeaderScroll = () => {
+
+  const header = document.querySelector('.siteHeader');
+
+  if(!header) return;
+
+  const update = () => {
+
+    header.classList.toggle(
+      'is-scrolled',
+      window.scrollY > 24
+    );
+  };
+
+  update();
+
+  window.addEventListener('scroll', update);
+};
+
+document.addEventListener(
+  'DOMContentLoaded',
+  bindHeaderScroll
+);
+
+document.addEventListener(
+  'astro:after-swap',
+  bindHeaderScroll
+);
 </script>

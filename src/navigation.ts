@@ -66,7 +66,7 @@ export async function getHeaderData() {
     ],
     actions: [
       {
-        text: 'Demander une offre',
+        text: 'Nous contacter',
         href: '/contact',
       },
     ],

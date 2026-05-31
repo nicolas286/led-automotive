@@ -2,16 +2,11 @@
 import { getCollection } from 'astro:content';
 
 import Layout from '~/layouts/PageLayout.astro';
-import Hero2 from '~/components/widgets/Hero2.astro';
-import Worlds from '~/components/widgets/Worlds.astro';
+import HeroVideo from '~/components/widgets/HeroVideo.astro';
 import ProductShowcase from '~/components/widgets/ProductShowcase.astro';
 import TrustCards from '~/components/widgets/TrustCards.astro';
 import Cta from '~/components/widgets/Cta.astro';
-import { Icon } from 'astro-icon/components';
-import { Image } from 'astro:assets';
-import ledFosses from '~/assets/images/home/led-fosses.webp';
-import quadBenda from '~/assets/images/home/quad-benda.webp';
-import motoBenda from '~/assets/images/home/moto-benda.webp';
+
 
 const metadata = {
   title: 'Motos BENDA, MAG POWER, quads BENDA & équipements LED à Fosses-la-Ville | LED Automotive',
@@ -26,34 +21,7 @@ const featuredQuads = (await getCollection('quad', ({ data }) => !data.draft && 
 const featuredMotos = (await getCollection('moto', ({ data }) => !data.draft && !!data.featured && data.available)).sort(sortByOrder);
 const featuredLeds = (await getCollection('led', ({ data }) => !data.draft && !!data.featured)).sort(sortByOrder);
 
-const featuredItems = [
-  ...featuredMotos.slice(0, 3).map((item) => ({
-    type: 'moto',
-    title: item.data.title,
-    eyebrow: `Moto ${item.data.brand}`,
-    href: `/motos/${item.data.slug ?? item.id}`,
-    image: item.data.image,
-    order: item.data.order ?? 999,
-  })),
-  ...featuredQuads.slice(0, 3).map((item) => ({
-    type: 'quad',
-    title: item.data.title,
-    eyebrow: 'Quad BENDA',
-    href: `/quads/${item.data.slug ?? item.id}`,
-    image: item.data.image,
-    order: item.data.order ?? 999,
-  })),
-  ...featuredLeds.slice(0, 2).map((item) => ({
-    type: 'led',
-    title: item.data.title,
-    eyebrow: 'Leds & accessoires',
-    href: `/leds/${item.data.slug ?? item.id}`,
-    image: item.data.image,
-    order: item.data.order ?? 999,
-  })),
-]
-  .sort((a, b) => a.order - b.order)
-  .slice(0, 6);
+
 
 const featuredQuadCards = featuredQuads.slice(0, 3).map((item) => ({
   title: item.data.title,
@@ -88,30 +56,7 @@ const featuredLedCards = featuredLeds.slice(0, 3).map((item) => ({
   badge: item.data.promo ? 'Promo' : undefined,
 }));
 
-const worldsItems = [
-  {
-    title: 'Motos BENDA & MAG POWER',
-    description: 'Roadsters, customs et motos accessibles pour le plaisir, les trajets et les balades.',
-    href: '/motos',
-    image: motoBenda,
-    cta: 'Découvrir les motos',
-    badge: 'Nouveau',
-  },
-  {
-    title: 'Quads BENDA',
-    description: 'Modèles route et tout-terrain, adaptés au loisir comme à un usage polyvalent.',
-    href: '/quads',
-    image: quadBenda,
-    cta: 'Découvrir les quads',
-  },
-  {
-    title: 'Leds & accessoires',
-    description: 'Améliorez votre visibilité et équipez votre véhicule avec du matériel fiable.',
-    href: '/leds',
-    image: ledFosses,
-    cta: 'Voir les équipements',
-  },
-];
+
 
 const trustItems = [
   {
@@ -138,93 +83,8 @@ const trustItems = [
 ---
 
 <Layout metadata={metadata}>
-  <Hero2
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Réserver mon essai',
-        href: 'tel:+32499610628',
-        icon: 'lucide:phone',
-      },
-      {
-        text: 'Demander une offre',
-        href: '/contact',
-      },
-    ]}
-    image={{ src: '~/assets/images/led-automotive.webp', alt: 'Motos et quads BENDA & MAGPOWER à Fosses-la-Ville' }}
-  >
-    <Fragment slot="title">
-  Motos, quads et équipements LED à Fosses-la-Ville
-</Fragment>
+  <HeroVideo />
 
-<Fragment slot="subtitle">
-  <span class="block mb-2 font-semibold">
-    Motos BENDA, motos MAG POWER et quads BENDA disponibles sur demande
-  </span>
-  Découvrez nos véhicules, demandez une offre ou réservez un essai près de Fosses-la-Ville.
-</Fragment>
-
-    <Fragment slot="socialLink">
-  <a
-    href="https://www.facebook.com/profile.php?id=61563294435406"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition mx-auto lg:mx-0"
-  >
-    <span class="flex h-8 w-8 items-center justify-center rounded-full bg-[#1877F2] text-white">
-      <Icon name="logos:facebook" class="h-4 w-4" />
-    </span>
-    <span>Voir nos véhicules en action</span>
-  </a>
-</Fragment>
-
-    <Fragment slot="content">
-      {featuredItems.length > 0 && (
-        <div class="heroMiniGalleryWrap">
-          <div class="heroMiniGalleryHeader">
-            <p class="heroMiniGalleryLabel">À découvrir</p>
-
-            <div class="heroMiniGalleryControls">
-              <button type="button" class="heroMiniGalleryBtn" data-hero-gallery-prev aria-label="Précédent">
-                ←
-              </button>
-              <button type="button" class="heroMiniGalleryBtn" data-hero-gallery-next aria-label="Suivant">
-                →
-              </button>
-            </div>
-          </div>
-
-          <div class="heroMiniGalleryViewport">
-  <div class="heroMiniGallery" data-hero-gallery>
-    {featuredItems.map((item) => (
-      <a href={item.href} class="heroMiniCard">
-        <div class="heroMiniCardMedia">
-          <Image
-            src={item.image}
-            alt={item.title}
-            width={640}
-            height={360}
-            sizes="(max-width: 768px) 80vw, 220px"
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
-
-        <div class="heroMiniCardBody">
-          <p class="heroMiniCardEyebrow">{item.eyebrow}</p>
-          <p class="heroMiniCardTitle">{item.title}</p>
-        </div>
-      </a>
-    ))}
-  </div>
-</div>
-
-        </div>
-      )}
-    </Fragment>
-  </Hero2>
-
-  <Worlds items={worldsItems} />
 
 
   <ProductShowcase
