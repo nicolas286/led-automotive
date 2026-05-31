@@ -21,36 +21,242 @@ const motos = allMotos
   .filter((moto) => moto.data.brand === brand)
   .sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999));
 
-const metadata = {
-  title: `Moto ${brand} Belgique | LED Automotive`,
-  description: `Découvrez nos motos ${brand} disponibles chez LED Automotive à Fosses-la-Ville. Comparez les modèles et demandez un essai.`,
+const brandSeo = {
+  BENDA: {
+    title: 'Concessionnaire Benda Belgique | Motos Benda & essai – LED Automotive',
+    description:
+      'LED Automotive est votre concessionnaire Benda en Belgique. Découvrez les motos Benda disponibles à Fosses-la-Ville, près de Namur, et demandez un essai.',
+
+    eyebrow: 'Motos BENDA',
+    heroTitle: 'Concessionnaire BENDA en Belgique',
+    intro:
+      'Découvrez notre sélection de motos Benda disponibles chez LED Automotive à Fosses-la-Ville. Comparez les modèles, consultez les caractéristiques et demandez un essai.',
+    body:
+      'Que vous recherchiez une moto au style custom, un modèle original pour la route ou une machine adaptée à votre permis et votre budget, nous vous aidons à trouver la moto Benda adaptée à votre usage.',
+
+    blocks: [
+      {
+        title: 'Concessionnaire Benda en Belgique : découvrez la gamme moto',
+        text:
+          'LED Automotive est votre concessionnaire Benda en Belgique. Nous vous proposons une sélection de motos Benda disponibles à Fosses-la-Ville, près de Namur, avec accompagnement, informations techniques, comparaison des modèles et possibilité de réserver un essai.',
+      },
+      {
+        title: 'Pourquoi choisir une moto Benda ?',
+        text:
+          'Les motos Benda séduisent par leur design affirmé, leur personnalité et leur approche différente du marché moto. La gamme comprend des modèles au style marqué, adaptés aussi bien aux trajets quotidiens qu’aux balades ou à une utilisation davantage orientée plaisir de conduite.',
+      },
+      {
+        title: 'Moto Benda Belgique : comment choisir votre modèle ?',
+        text:
+          'Le choix du bon modèle dépend de votre permis, de votre expérience, de votre budget et du type de conduite recherché. Certains modèles privilégient le style et le caractère, tandis que d’autres misent davantage sur la polyvalence ou le confort.',
+      },
+      {
+        title: 'Essai Benda à Fosses-la-Ville, près de Namur',
+        text:
+          'Notre showroom situé à Fosses-la-Ville est facilement accessible depuis Namur, Charleroi, le Brabant wallon et plus largement la Wallonie. Vous pouvez découvrir les motos disponibles, poser vos questions et demander un essai selon les modèles proposés.',
+      },
+    ],
+
+    longContent: {
+      title: 'Pourquoi choisir une moto Benda en Belgique ?',
+      paragraphs: [
+        'Les motos Benda se distinguent par leur design affirmé, leur personnalité et leur positionnement original sur le marché moto. LED Automotive vous propose une sélection de motos Benda disponibles en Belgique, avec accompagnement local à Fosses-la-Ville, près de Namur.',
+        'Que vous cherchiez une moto au style custom, une machine pensée pour la route ou un modèle adapté à votre permis et votre budget, la gamme Benda permet de comparer plusieurs approches selon votre usage réel.',
+      ],
+    },
+
+    buyingGuide: {
+      title: 'Concessionnaire Benda Belgique : comment choisir votre modèle ?',
+      paragraphs: [
+        'Le choix d’une moto Benda dépend de plusieurs critères : permis, expérience, budget, position de conduite, confort et style recherché. Une moto destinée aux trajets quotidiens ne répondra pas forcément aux mêmes attentes qu’un modèle orienté balade ou plaisir de conduite.',
+        'Chez LED Automotive, vous pouvez comparer les motos Benda disponibles, consulter leurs caractéristiques, poser vos questions et demander un essai afin de choisir votre modèle avec un interlocuteur local.',
+      ],
+    },
+
+    faqTitle: 'Questions fréquentes sur les motos Benda',
+
+    faq: [
+      {
+        question: 'Où acheter une moto Benda en Belgique ?',
+        answer:
+          'Vous pouvez découvrir les motos Benda chez LED Automotive à Fosses-la-Ville, près de Namur. Nous vous accompagnons dans le choix du modèle, les informations techniques et la demande d’essai.',
+      },
+      {
+        question: 'LED Automotive est-il concessionnaire Benda en Belgique ?',
+        answer:
+          'Oui, LED Automotive propose des motos Benda en Belgique et accompagne les clients dans la découverte, la comparaison et l’achat des modèles disponibles.',
+      },
+      {
+        question: 'Peut-on essayer une moto Benda avant achat ?',
+        answer:
+          'Oui, un essai peut être demandé sur rendez-vous selon les modèles disponibles.',
+      },
+      {
+        question: 'Quel modèle Benda choisir ?',
+        answer:
+          'Le bon modèle dépend de votre permis, de votre expérience, de votre budget et de votre usage. Nous pouvons vous aider à comparer les motos Benda disponibles.',
+      },
+    ],
+
+    asideEyebrow: 'Envie d’essayer une Benda ?',
+    asideTitle: 'Réservez un essai Benda en Belgique',
+    asideText:
+      'Vous cherchez une moto Benda en Belgique ? Nous pouvons vous aider à comparer les modèles, comprendre les différences techniques et choisir selon votre permis, votre budget et votre usage.',
+  },
+
+  'MAG POWER': {
+    title: 'Concessionnaire Mag Power Belgique | Motos Mag Power & essai – LED Automotive',
+    description:
+      'LED Automotive est votre concessionnaire Mag Power en Belgique. Découvrez les motos Mag Power disponibles à Fosses-la-Ville, près de Namur, et demandez un essai.',
+
+    eyebrow: 'Motos Mag Power',
+    heroTitle: 'Concessionnaire Mag Power en Belgique',
+    intro:
+      'Découvrez notre sélection de motos Mag Power disponibles chez LED Automotive à Fosses-la-Ville. Comparez les modèles, consultez les caractéristiques et demandez un essai.',
+    body:
+      'Que vous recherchiez une moto accessible, un modèle adapté au permis A1 ou une machine pensée pour un usage quotidien, nous vous aidons à trouver la moto Mag Power adaptée à vos besoins.',
+
+    blocks: [
+      {
+        title: 'Concessionnaire Mag Power en Belgique : découvrez la gamme',
+        text:
+          'LED Automotive est votre concessionnaire Mag Power en Belgique. Découvrez notre sélection de motos Mag Power disponibles à Fosses-la-Ville, près de Namur, avec conseils, comparaison des modèles et possibilité de demander un essai.',
+      },
+      {
+        title: 'Pourquoi choisir une moto Mag Power ?',
+        text:
+          'Mag Power propose des motos accessibles, polyvalentes et adaptées à différents profils de motards. Selon votre expérience, votre permis et votre utilisation, certains modèles conviendront davantage à un usage urbain, quotidien ou loisir.',
+      },
+      {
+        title: 'Moto Mag Power Belgique : comment bien choisir ?',
+        text:
+          'Le bon modèle dépend surtout de votre besoin. Cylindrée, style, budget, facilité de prise en main, permis disponible et fréquence d’utilisation peuvent influencer votre choix.',
+      },
+      {
+        title: 'Essai Mag Power à Fosses-la-Ville, près de Namur',
+        text:
+          'Notre showroom est situé à Fosses-la-Ville, près de Namur, avec un accès facile depuis Charleroi, le Brabant wallon et le reste de la Wallonie. Vous pouvez découvrir les modèles disponibles, poser vos questions et demander un essai sur rendez-vous.',
+      },
+    ],
+
+    longContent: {
+      title: 'Pourquoi choisir une moto Mag Power en Belgique ?',
+      paragraphs: [
+        'Les motos Mag Power misent sur l’accessibilité, la polyvalence et une approche adaptée à différents profils de motards. LED Automotive vous propose une sélection de motos Mag Power disponibles en Belgique, à Fosses-la-Ville, près de Namur.',
+        'Que vous recherchiez une moto adaptée au permis A1, une machine pensée pour un usage quotidien ou un modèle simple à prendre en main, la gamme Mag Power permet de comparer plusieurs solutions selon votre budget et votre utilisation.',
+      ],
+    },
+
+    buyingGuide: {
+      title: 'Concessionnaire Mag Power Belgique : comment bien choisir ?',
+      paragraphs: [
+        'Le bon modèle dépend surtout de votre besoin. Cylindrée, style, budget, facilité de prise en main, permis disponible et fréquence d’utilisation peuvent influencer votre choix.',
+        'Chez LED Automotive, vous pouvez comparer les motos Mag Power disponibles, découvrir leurs caractéristiques, poser vos questions et demander un essai selon les modèles proposés.',
+      ],
+    },
+
+    faqTitle: 'Questions fréquentes sur les motos Mag Power',
+
+    faq: [
+      {
+        question: 'Où acheter une moto Mag Power en Belgique ?',
+        answer:
+          'Vous pouvez découvrir les motos Mag Power chez LED Automotive à Fosses-la-Ville, près de Namur, avec conseils, accompagnement et informations sur les modèles disponibles.',
+      },
+      {
+        question: 'LED Automotive est-il concessionnaire Mag Power en Belgique ?',
+        answer:
+          'Oui, LED Automotive propose des motos Mag Power en Belgique et accompagne les clients dans la comparaison, le choix du modèle et la demande d’essai.',
+      },
+      {
+        question: 'Peut-on essayer une moto Mag Power ?',
+        answer:
+          'Oui, il est possible de demander un essai sur rendez-vous selon les modèles disponibles.',
+      },
+      {
+        question: 'Quelle moto Mag Power choisir ?',
+        answer:
+          'Le choix dépend principalement de votre permis, de votre expérience, de votre budget et du type d’utilisation recherché.',
+      },
+    ],
+
+    asideEyebrow: 'Envie d’essayer une Mag Power ?',
+    asideTitle: 'Réservez un essai Mag Power en Belgique',
+    asideText:
+      'Vous cherchez une moto Mag Power en Belgique ? Nous pouvons vous orienter selon votre permis, votre budget, votre usage et les modèles actuellement disponibles.',
+  },
 };
 
-const motoInfoBlocks = [
-  {
-    title: `Motos ${brand} en Belgique`,
-    text: `LED Automotive vous propose une sélection de motos ${brand} disponibles en Belgique, à Fosses-la-Ville.`,
+const defaultSeo = {
+  title: `Moto ${brand} Belgique | LED Automotive`,
+  description: `Découvrez nos motos ${brand} disponibles chez LED Automotive à Fosses-la-Ville. Comparez les modèles et demandez un essai.`,
+  eyebrow: 'Catalogue motos',
+  heroTitle: `Motos ${brand} en Belgique`,
+  intro: `Découvrez notre sélection de motos ${brand} disponibles chez LED Automotive à Fosses-la-Ville.`,
+  body: `Comparez les modèles ${brand}, consultez les caractéristiques et demandez un essai rapidement.`,
+  blocks: [
+    {
+      title: `Motos ${brand} en Belgique`,
+      text: `LED Automotive vous propose une sélection de motos ${brand} disponibles en Belgique, à Fosses-la-Ville.`,
+    },
+    {
+      title: 'Quelle moto choisir selon votre usage ?',
+      text:
+        'Le choix de votre moto dépend de votre permis, de votre expérience, de votre budget et de l’utilisation prévue.',
+    },
+    {
+      title: 'Essai moto à Fosses-la-Ville, près de Namur',
+      text:
+        'Notre showroom est situé à Fosses-la-Ville, près de Namur, Charleroi et le Brabant wallon.',
+    },
+  ],
+  longContent: {
+    title: `Pourquoi choisir une moto ${brand} en Belgique ?`,
+    paragraphs: [
+      `LED Automotive vous propose une sélection de motos ${brand} disponibles en Belgique, avec accompagnement local à Fosses-la-Ville, près de Namur.`,
+      `Vous pouvez comparer les modèles disponibles, consulter les caractéristiques et demander un essai selon votre permis, votre budget et votre usage.`,
+    ],
   },
-  {
-    title: 'Quelle moto choisir selon votre usage ?',
-    text:
-      'Le choix de votre moto dépend de votre permis, de votre expérience, de votre budget et de l’utilisation prévue.',
+  buyingGuide: {
+    title: `Moto ${brand} Belgique : comment choisir ?`,
+    paragraphs: [
+      'Le choix du bon modèle dépend de votre permis, de votre expérience, de votre budget et du type d’utilisation recherché.',
+      'Nous pouvons vous accompagner dans la comparaison des modèles disponibles et vous conseiller avant votre achat.',
+    ],
   },
-  {
-    title: 'Essai moto à Fosses-la-Ville, près de Namur',
-    text:
-      'Notre showroom est situé à Fosses-la-Ville, près de Namur, Charleroi et le Brabant wallon.',
-  },
-];
+  faqTitle: `Questions fréquentes sur les motos ${brand}`,
+  faq: [
+    {
+      question: `Où acheter une moto ${brand} en Belgique ?`,
+      answer: `Vous pouvez découvrir les motos ${brand} chez LED Automotive à Fosses-la-Ville, près de Namur.`,
+    },
+    {
+      question: `Peut-on essayer une moto ${brand} ?`,
+      answer: 'Oui, un essai peut être demandé sur rendez-vous selon les modèles disponibles.',
+    },
+  ],
+  asideEyebrow: 'Besoin d’un conseil ?',
+  asideTitle: 'Demandez un essai ou plus d’infos',
+  asideText: `Vous hésitez entre plusieurs motos ${brand} ? Nous pouvons vous orienter selon votre permis, votre budget et les modèles disponibles.`,
+};
+
+const pageSeo = brandSeo[brand] ?? defaultSeo;
+
+const metadata = {
+  title: pageSeo.title,
+  description: pageSeo.description,
+};
+
+const motoInfoBlocks = pageSeo.blocks;
 ---
 
 <PageLayout metadata={metadata}>
   <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
     <CatalogHero
-      eyebrow="Catalogue motos"
-      title={`Motos ${brand} en Belgique`}
-      intro={`Découvrez notre sélection de motos ${brand} disponibles chez LED Automotive à Fosses-la-Ville.`}
-      body={`Comparez les modèles ${brand}, consultez les caractéristiques et demandez un essai rapidement.`}
+      eyebrow={pageSeo.eyebrow}
+      title={pageSeo.heroTitle}
+      intro={pageSeo.intro}
+      body={pageSeo.body}
     />
 
     <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
@@ -67,15 +273,32 @@ const motoInfoBlocks = [
         />
       ))}
     </div>
+
+    <div class="mx-auto mt-16 max-w-4xl space-y-6">
+      <h2 class="text-2xl font-semibold">{pageSeo.longContent.title}</h2>
+      {pageSeo.longContent.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+
+      <h2 class="text-2xl font-semibold">{pageSeo.buyingGuide.title}</h2>
+      {pageSeo.buyingGuide.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+
+      <h2 class="text-2xl font-semibold">{pageSeo.faqTitle}</h2>
+
+      {pageSeo.faq.map((item) => (
+        <>
+          <h3 class="text-xl font-medium">{item.question}</h3>
+          <p>{item.answer}</p>
+        </>
+      ))}
+    </div>
   </section>
 
   <InfoSplitSection
     blocks={motoInfoBlocks}
-    asideEyebrow="Besoin d’un conseil ?"
-    asideTitle="Demandez un essai ou plus d’infos"
-    asideText={`Vous hésitez entre plusieurs motos ${brand} ? Nous pouvons vous orienter selon votre permis, votre budget et les modèles disponibles.`}
+    asideEyebrow={pageSeo.asideEyebrow}
+    asideTitle={pageSeo.asideTitle}
+    asideText={pageSeo.asideText}
     primaryCtaHref="/contact"
-    primaryCtaText="Réserver"
+    primaryCtaText="Réserver un essai"
     secondaryCtaHref="/contact"
     secondaryCtaText="Nous contacter"
   />

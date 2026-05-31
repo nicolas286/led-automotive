@@ -6,61 +6,31 @@ import ProductCard from '~/components/widgets/ProductCard.astro';
 import InfoSplitSection from '~/components/widgets/InfoSplitSection.astro';
 import { getMotoUrl } from '~/utils/catalog';
 
-const rawBrand = Astro.url.searchParams.get('brand');
-const allowedBrands = ['BENDA', 'MAG POWER'];
-const brand = allowedBrands.includes(rawBrand ?? '') ? rawBrand : null;
-
-const allMotos = await getCollection('moto', ({ data }) => !data.draft && data.available);
-
-const motos = allMotos
-  .filter((moto) => {
-    if (!brand) return true;
-    return moto.data.brand === brand;
-  })
-  .sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999));
-
-const brandLabel = brand ?? 'BENDA & MAG POWER';
-
-const isBenda = brand === 'BENDA';
-const isMagPower = brand === 'MAG POWER';
-
-const heroTitle = isBenda
-  ? 'Motos BENDA en Belgique'
-  : isMagPower
-    ? 'Motos MAG POWER en Belgique'
-    : 'Motos BENDA & MAG POWER en Belgique';
-
-const heroIntro = isBenda
-  ? 'Découvrez notre sélection de motos BENDA disponibles chez LED Automotive à Fosses-la-Ville.'
-  : isMagPower
-    ? 'Découvrez notre sélection de motos MAG POWER disponibles chez LED Automotive à Fosses-la-Ville.'
-    : 'Découvrez notre sélection de motos BENDA et MAG POWER disponibles chez LED Automotive à Fosses-la-Ville.';
-
-const heroBody = isBenda
-  ? 'Comparez les modèles BENDA, consultez les caractéristiques et demandez un essai rapidement.'
-  : isMagPower
-    ? 'Comparez les modèles MAG POWER, consultez les caractéristiques et demandez un essai rapidement.'
-    : 'Comparez les modèles, consultez les caractéristiques et demandez un essai rapidement.';
+const motos = (await getCollection('moto', ({ data }) => !data.draft && data.available)).sort(
+  (a, b) => (a.data.order ?? 999) - (b.data.order ?? 999)
+);
 
 const metadata = {
-  title: `Moto ${brandLabel} Belgique | LED Automotive`,
-  description: `Découvrez nos motos ${brandLabel} disponibles chez LED Automotive à Fosses-la-Ville. Comparez les modèles et demandez un essai.`,
+  title: 'Concessionnaire moto Belgique | BENDA & MAG POWER – LED Automotive',
+  description:
+    'Découvrez nos motos BENDA et MAG POWER disponibles en Belgique chez LED Automotive à Fosses-la-Ville, près de Namur. Comparez les modèles et demandez un essai.',
 };
 
 const motoInfoBlocks = [
   {
-    title: `Motos ${brandLabel} en Belgique`,
-    text: `LED Automotive vous propose une sélection de motos ${brandLabel} disponibles en Belgique, à Fosses-la-Ville. Selon les modèles, vous retrouvez des motos accessibles, stylées et adaptées aux trajets du quotidien, aux balades ou à un premier achat plaisir.`,
+    title: 'Motos BENDA & MAG POWER en Belgique',
+    text:
+      'LED Automotive vous propose une sélection de motos BENDA et MAG POWER disponibles en Belgique, à Fosses-la-Ville, près de Namur. Notre showroom vous permet de découvrir les modèles, comparer les caractéristiques et demander un essai selon votre permis, votre budget et votre usage.',
   },
   {
     title: 'Quelle moto choisir selon votre usage ?',
     text:
-      'Le choix de votre moto dépend de votre permis, de votre expérience, de votre budget et de l’utilisation prévue. Certains modèles sont pensés pour une conduite facile et rassurante, tandis que d’autres misent davantage sur le style, le confort ou le plaisir de conduite.',
+      'Le choix du bon modèle dépend de votre permis, de votre expérience, de votre budget et de votre utilisation. Certaines motos sont pensées pour un usage simple et accessible, tandis que d’autres misent davantage sur le style, le confort ou le plaisir de conduite.',
   },
   {
-    title: 'Essai moto à Fosses-la-Ville, près de Namur',
+    title: 'Essai moto près de Namur',
     text:
-      'Notre showroom est situé à Fosses-la-Ville, près de Namur, Charleroi et le Brabant wallon. Vous pouvez venir découvrir les modèles disponibles, poser vos questions et demander un essai sur rendez-vous.',
+      'Notre showroom est situé à Fosses-la-Ville, près de Namur, avec un accès facile depuis Charleroi, le Brabant wallon et le reste de la Wallonie. Vous pouvez venir découvrir les motos disponibles, poser vos questions et demander un essai sur rendez-vous.',
   },
 ];
 ---
@@ -68,11 +38,11 @@ const motoInfoBlocks = [
 <PageLayout metadata={metadata}>
   <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
     <CatalogHero
-  eyebrow="Catalogue motos"
-  title={heroTitle}
-  intro={heroIntro}
-  body={heroBody}
-/>
+      eyebrow="Catalogue motos"
+      title="Concessionnaire moto en Belgique"
+      intro="Découvrez notre sélection de motos BENDA et MAG POWER disponibles chez LED Automotive à Fosses-la-Ville, près de Namur."
+      body="Comparez les modèles disponibles, consultez les caractéristiques et trouvez une moto adaptée à votre permis, votre budget et votre usage."
+    />
 
     <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
       {motos.map((moto) => (
@@ -90,29 +60,29 @@ const motoInfoBlocks = [
     </div>
 
     <div class="mx-auto mt-16 max-w-4xl space-y-6">
-      <h2 class="text-2xl font-semibold">Pourquoi choisir une moto BENDA ou MAG POWER ?</h2>
+      <h2 class="text-2xl font-semibold">Pourquoi choisir une moto chez LED Automotive ?</h2>
       <p>
-        Les motos BENDA et MAG POWER permettent de répondre à plusieurs profils : premier achat,
-        balade, trajet régulier ou recherche d’un modèle avec une vraie personnalité visuelle.
-        L’objectif est de proposer des motos accessibles, agréables à conduire et bien placées
-        niveau rapport équipement/prix.
+        LED Automotive vous propose une sélection de motos BENDA et MAG POWER en Belgique, avec un
+        accompagnement local à Fosses-la-Ville, près de Namur. L’objectif est de vous aider à comparer
+        les modèles disponibles et à choisir une moto cohérente avec votre permis, votre budget et votre
+        utilisation réelle.
       </p>
       <p>
-        Selon les modèles, vous profitez d’un style roadster, custom ou plus urbain, avec des
-        motorisations adaptées à différents usages et différents permis. C’est une solution intéressante
-        pour celles et ceux qui cherchent une moto en Belgique avec un accompagnement local.
+        Que vous cherchiez une moto accessible pour débuter, un modèle adapté aux trajets du quotidien
+        ou une machine avec une vraie personnalité visuelle, vous pouvez consulter les fiches produits,
+        comparer les caractéristiques et demander un essai selon les disponibilités.
       </p>
 
-      <h2 class="text-2xl font-semibold">Moto 125, A1, A2 ou permis A : comment bien choisir ?</h2>
+      <h2 class="text-2xl font-semibold">Magasin moto près de Namur : comparer avant d’acheter</h2>
       <p>
-        Le bon modèle dépend d’abord de votre permis et de votre expérience. Une 125cc conviendra
-        souvent mieux à un usage simple, économique et accessible, tandis qu’un modèle plus puissant
-        pourra offrir davantage de confort, de reprise et de polyvalence pour les balades.
+        Notre showroom situé à Fosses-la-Ville est facilement accessible depuis Namur, Charleroi,
+        le Brabant wallon et le reste de la Wallonie. Vous pouvez venir découvrir les motos disponibles,
+        poser vos questions et obtenir des conseils avant votre achat.
       </p>
       <p>
-        Cette page vous permet de comparer rapidement les modèles disponibles chez LED Automotive,
-        puis d’accéder à chaque fiche produit pour voir le prix, les caractéristiques, l’équipement
-        et les possibilités d’essai.
+        Cette page vous permet de comparer rapidement les motos disponibles chez LED Automotive, puis
+        d’accéder à chaque fiche produit pour voir le prix, les caractéristiques, l’équipement et les
+        possibilités d’essai.
       </p>
 
       <h2 class="text-2xl font-semibold">Questions fréquentes sur nos motos</h2>
@@ -122,33 +92,52 @@ const motoInfoBlocks = [
         Oui, il est possible de demander un essai sur rendez-vous à Fosses-la-Ville selon les modèles disponibles.
       </p>
 
-      <h3 class="text-xl font-medium">Proposez-vous des motos en Belgique avec accompagnement local ?</h3>
+      <h3 class="text-xl font-medium">Où trouver un magasin moto près de Namur ?</h3>
       <p>
-        Oui, LED Automotive vous accompagne localement avec présentation des modèles, conseils
-        et orientation selon votre permis, votre budget et votre usage.
+        LED Automotive est situé à Fosses-la-Ville, près de Namur. Vous pouvez y découvrir les motos
+        BENDA et MAG POWER disponibles, comparer les modèles et demander un conseil personnalisé.
       </p>
 
       <h3 class="text-xl font-medium">Quelle moto choisir pour débuter ?</h3>
       <p>
-        Pour débuter, il vaut mieux privilégier une moto facile à prendre en main, rassurante,
-        adaptée à votre permis et cohérente avec votre usage réel.
+        Pour débuter, il vaut mieux privilégier une moto facile à prendre en main, adaptée à votre permis,
+        cohérente avec votre budget et rassurante pour votre usage quotidien ou loisir.
       </p>
 
       <h3 class="text-xl font-medium">Vendez-vous des motos BENDA et MAG POWER ?</h3>
       <p>
-        Oui, LED Automotive propose désormais des motos BENDA et MAG POWER, en plus des quads BENDA
+        Oui, LED Automotive propose des motos BENDA et MAG POWER en Belgique, en plus des quads BENDA
         et des équipements LED.
       </p>
     </div>
+
+    <div class="mt-9 rounded-2xl border border-default bg-muted/30 p-6">
+  <h2 class="text-xl font-semibold">
+    Vous venez de Namur ou des environs ?
+  </h2>
+
+    <p class="mt-3 text-muted">
+    Notre showroom situé à Fosses-la-Ville est accessible depuis Namur,
+    Charleroi, Sambreville, Gembloux et le Brabant wallon.
+    Découvrez où voir les motos disponibles et organiser un essai.
+  </p>
+
+    <a
+    href="/motos/magasin-moto-namur"
+    class="mt-4 inline-flex items-center font-medium text-primary hover:underline"
+  >
+    Voir notre showroom proche de Namur →
+  </a>
+</div>
   </section>
 
   <InfoSplitSection
     blocks={motoInfoBlocks}
     asideEyebrow="Besoin d’un conseil ?"
     asideTitle="Demandez un essai ou plus d’infos"
-    asideText={`Vous hésitez entre plusieurs motos ${brandLabel} ? Nous pouvons vous orienter selon votre permis, votre budget et les modèles disponibles.`}
+    asideText="Vous hésitez entre plusieurs motos BENDA ou MAG POWER ? Nous pouvons vous orienter selon votre permis, votre budget et les modèles disponibles."
     primaryCtaHref="/contact"
-    primaryCtaText="Réserver"
+    primaryCtaText="Réserver un essai"
     secondaryCtaHref="/contact"
     secondaryCtaText="Nous contacter"
   />
