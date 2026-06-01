@@ -3,7 +3,7 @@ title: LED-Automotive.be s'associe aux Baroudeurs de l'Entre-Sambre-et-Meuse
   pour la Rando pour Basile
 excerpt: Chez LED-Automotive.be, nous sommes convaincus que la passion du quad
   et du buggy peut aussi servir une belle cause.
-image: /media/posts/chatgpt-image-1-juin-2026-15_45_01.png
+image: /media/posts/led-automotive-be-sassocie-aux-baroudeurs-de-lentre-sambre-et-meuse-pour-la-rando-pour-basile/chatgpt-image-1-juin-2026-15_56_05.png
 draft: false
 metadata:
   ignoreTitleTemplate: false
