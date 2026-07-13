@@ -6,7 +6,7 @@ excerpt: >-
   avec un véhicule de moins de 3,5 tonnes.
 
   Bonne nouvelle pour les amateurs de deux et quatre roues de loisirs : les motos et les quads seront officiellement exonérés.
-image: /media/posts/chatgpt-image-13-juil.-2026-09_53_28.png
+image: /media/posts/une-vignette-routière-en-belgique-à-partir-de-mai-2027/chatgpt-image-13-juil.-2026-09_42_37.png
 category: Actualités Taxe
 tags:
   - vignette routière
