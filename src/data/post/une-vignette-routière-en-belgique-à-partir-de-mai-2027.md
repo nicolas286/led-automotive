@@ -32,9 +32,19 @@ Cette mesure concernera aussi bien les conducteurs belges que les automobilistes
 
 Le montant annuel annoncé devrait se situer **entre 90 et 125 euros par an**, selon le type de véhicule et sa catégorie.
 
-
-
 ## Motos et quads officiellement exonérés
+Véhicules exemptés
+
+Plusieurs types de véhicules seront exemptés de vignette :
+
+les motos ;
+les quads ;
+les camions, déjà concernés par une redevance kilométrique ;
+les tracteurs agricoles ;
+les autocars ;
+les véhicules des services d’urgence ;
+les véhicules de la défense ;
+les véhicules de police.
 
 Bonne nouvelle pour les passionnés de loisirs motorisés : **les motos et les quads sont officiellement exonérés** de cette future vignette routière interrégionale belge.
 
