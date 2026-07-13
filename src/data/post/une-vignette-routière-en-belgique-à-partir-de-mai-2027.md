@@ -26,3 +26,16 @@ metadata:
     index: true
     follow: true
 ---
+À partir du **1er mai 2027**, une vignette routière numérique devrait devenir obligatoire pour circuler sur les autoroutes et les routes régionales belges.
+
+Cette mesure concernera aussi bien les conducteurs belges que les automobilistes étrangers. Les personnes qui circulent uniquement sur les routes locales ne devraient pas devoir acheter de vignette. Le dispositif concernera principalement les véhicules à quatre roues dont la masse maximale autorisée ne dépasse pas 3,5 tonnes.
+
+Le montant annuel annoncé devrait se situer **entre 90 et 125 euros par an**, selon le type de véhicule et sa catégorie.
+
+
+
+## Motos et quads officiellement exonérés
+
+Bonne nouvelle pour les passionnés de loisirs motorisés : **les motos et les quads sont officiellement exonérés** de cette future vignette routière interrégionale belge.
+
+Autrement dit, cette vignette **ne s’appliquera pas** aux motos ni aux quads, contrairement aux voitures et utilitaires légers concernés par le système.
