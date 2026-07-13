@@ -26,7 +26,6 @@ metadata:
     index: true
     follow: true
 ---
-
 Le montant annuel annoncé devrait se situer **entre 90 et 125 euros par an**, selon le type de véhicule et sa catégorie.
 
 ## Motos et quads officiellement exonérés
