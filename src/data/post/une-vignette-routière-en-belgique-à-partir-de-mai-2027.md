@@ -39,3 +39,4 @@ Le montant annuel annoncé devrait se situer **entre 90 et 125 euros par an**, s
 Bonne nouvelle pour les passionnés de loisirs motorisés : **les motos et les quads sont officiellement exonérés** de cette future vignette routière interrégionale belge.
 
 Autrement dit, cette vignette **ne s’appliquera pas** aux motos ni aux quads, contrairement aux voitures et utilitaires légers concernés par le système.
+Source de la RTBF 2026
