@@ -5,7 +5,7 @@ excerpt: Le BENDA Redstone 1000 MUD ABS arrive en Belgique et au Benelux. Avec
   ses pneus de 30 pouces sur jantes Beadlock, il est conçu pour affronter les
   terrains les plus difficiles. Précommandes ouvertes chez LED-Automotive.be au
   prix  de 12 990 € TVAC.
-image: /media/posts/benda-redstone-1000-mud-abs-les-précommandes-sont-ouvertes/unnamed-1-.png
+image: /media/posts/benda-redstone-1000-mud-abs-les-précommandes-sont-ouvertes/chatgpt-image-17-juil.-2026-10_29_41.png
 category: Quads BENDA MUD
 tags:
   - BENDA
