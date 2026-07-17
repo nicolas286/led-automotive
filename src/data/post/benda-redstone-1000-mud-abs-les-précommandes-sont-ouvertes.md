@@ -24,3 +24,14 @@ metadata:
     index: true
     follow: true
 ---
+# BENDA Redstone 1000 MUD ABS : les précommandes sont ouvertes
+
+Le nouveau **BENDA Redstone 1000 MUD ABS** est désormais homologué en Europe et disponible en précommande pour la Belgique, la France et le Benelux.
+
+Pensé pour les amateurs de franchissement et de sorties tout-terrain exigeantes, le Redstone 1000 MUD représente la version la plus radicale de la gamme quad BENDA.
+
+## Un quad conçu pour les terrains extrêmes
+
+Là où les autres s’arrêtent, le **Redstone 1000 MUD** continue.
+
+Il reçoit un puissant moteur bicylindre en V de **997 cm³**, développant **102 ch** et **98 Nm de couple**. Sa garde au sol de **365 mm**, ses pneus tout-terrain de **30 pouces** et ses jantes aluminium Beadlock de 14 pouces lui permettent d’affronter la boue, les gués, les ornières profondes et les terrains accidentés.
