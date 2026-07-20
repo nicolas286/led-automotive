@@ -18,7 +18,7 @@ description: Le Redstone 550 Edition Premium Châssis Court est un quad homologu
   organiser un test.
 priceLabel: 7.699 € TTC
 featured: true
-order: 3
+order: 4
 category: Quad
 subcategory: Loisir
 available: true
