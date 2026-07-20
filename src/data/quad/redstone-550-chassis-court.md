@@ -2,22 +2,36 @@
 title: REDSTONE 550 EDITION PREMIUM + ABS CHASSIS COURT
 brand: BENDA
 model: Redstone 550
-slug: redstone-550-court
-excerpt: Quad compact et agile, idéal pour terrains techniques et usage loisir dynamique. Disponible à Fosses-la-Ville avec essai possible.
-description: Le Redstone 550 Edition Premium Châssis Court est un quad homologué route en Belgique compact, agile et joueur, idéal pour profiter pleinement du tout-terrain et des terrains techniques. Grâce à son empattement plus court et son poids réduit, il offre une excellente maniabilité, parfaite pour les chemins étroits, les zones techniques ou une conduite plus dynamique. Avec son moteur bicylindre de 42 cv, sa transmission 2x4 / 4x4 et ses suspensions à grand débattement, il reste performant tout en étant accessible et facile à prendre en main. Bien équipé (ABS, écran TFT, modes de conduite, treuil, poignées chauffantes…), il représente un excellent compromis entre plaisir de conduite, confort et budget. Visible à Fosses-la-Ville, ce modèle est disponible rapidement avec possibilité d’essai sur place. Contactez-nous pour organiser un test.
+excerpt: Quad compact et agile, idéal pour terrains techniques et usage loisir
+  dynamique. Disponible à Fosses-la-Ville avec essai possible.
+description: Le Redstone 550 Edition Premium Châssis Court est un quad homologué
+  route en Belgique compact, agile et joueur, idéal pour profiter pleinement du
+  tout-terrain et des terrains techniques. Grâce à son empattement plus court et
+  son poids réduit, il offre une excellente maniabilité, parfaite pour les
+  chemins étroits, les zones techniques ou une conduite plus dynamique. Avec son
+  moteur bicylindre de 42 cv, sa transmission 2x4 / 4x4 et ses suspensions à
+  grand débattement, il reste performant tout en étant accessible et facile à
+  prendre en main. Bien équipé (ABS, écran TFT, modes de conduite, treuil,
+  poignées chauffantes…), il représente un excellent compromis entre plaisir de
+  conduite, confort et budget. Visible à Fosses-la-Ville, ce modèle est
+  disponible rapidement avec possibilité d’essai sur place. Contactez-nous pour
+  organiser un test.
 priceLabel: 7.699 € TTC
 featured: true
 order: 3
+category: Quad
+subcategory: Loisir
+available: true
+ctaLabel: Réserver un essai
+slug: redstone-550-court
 image: /media/quads/redstone-550-court/main.webp
 gallery:
   - /media/quads/redstone-550-court/main.webp
   - /media/quads/redstone-550-court/1.webp
   - /media/quads/redstone-550-court/2.webp
   - /media/quads/redstone-550-court/3.webp
-category: Quad
-subcategory: Loisir
-available: true
-ctaLabel: Réserver un essai
+  - /media/quads/redstone-550-edition-premium-abs-chassis-court/capture-d-écran-2026-07-20-094408.png
+  - /media/quads/redstone-550-edition-premium-abs-chassis-court/capture-d-écran-2026-07-20-094543.png
 shortSpecs:
   - label: Moteur
     value: Bicylindre en V – 500 cm3
@@ -63,9 +77,11 @@ technicalSpecs:
       - label: Freinage
         value: Double disque 220 mm avec ABS
       - label: Suspension avant
-        value: Double bras triangulaire avec barre stabilisatrice, course 230 mm, amortisseurs à gaz réglables
+        value: Double bras triangulaire avec barre stabilisatrice, course 230 mm,
+          amortisseurs à gaz réglables
       - label: Suspension arrière
-        value: Bras oscillant indépendant à torsion, course 250 mm, amortisseurs à gaz réglables
+        value: Bras oscillant indépendant à torsion, course 250 mm, amortisseurs à gaz
+          réglables
   - section: Dimensions, poids et capacités
     items:
       - label: Dimensions
@@ -97,8 +113,10 @@ standardEquipment:
   - Porte-bagages avant et arrière
   - Boule d’attelage
 seo:
-  title: Quad BENDA Redstone 550 Châssis Court en stock à Fosses-la-Ville | Essai possible
-  description: Découvrez le BENDA Redstone 550 Châssis Court chez LED Automotive. Un quad compact, maniable et bien équipé. Demandez un essai.
+  title: Quad BENDA Redstone 550 Châssis Court en stock à Fosses-la-Ville | Essai
+    possible
+  description: Découvrez le BENDA Redstone 550 Châssis Court chez LED Automotive.
+    Un quad compact, maniable et bien équipé. Demandez un essai.
 ---
 
 Le Redstone 550 Edition Premium Châssis Court est un quad compact et agile, pensé pour maximiser le plaisir de conduite et la maniabilité.
