@@ -17,7 +17,7 @@ priceLabel: 6.599 € TTC
 promoPriceLabel: 5990 € ttc
 promo: true
 featured: true
-order: 4
+order: 5
 image: /media/quads/redstone-550-first/main.webp
 gallery:
   - /media/quads/redstone-550-first/main.webp
