@@ -16,7 +16,7 @@ description: Le Redstone 1000 Edition Premium est un quad homologué route en
 priceLabel: 11.999,00€
 promo: false
 featured: true
-order: 1
+order: 2
 image: /media/quads/redstone-1000/main.webp
 gallery:
   - /media/quads/redstone-1000/main.webp
