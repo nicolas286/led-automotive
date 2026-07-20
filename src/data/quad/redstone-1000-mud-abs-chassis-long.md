@@ -26,7 +26,7 @@ gallery:
 category: Quad
 available: true
 ctaLabel: Réserver un essai
-slug: redstone-1000
+slug: redstone-1000-mud
 subcategory: Loisir
 shortSpecs:
   - label: Moteur
