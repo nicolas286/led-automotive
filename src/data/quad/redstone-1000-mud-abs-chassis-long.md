@@ -1,7 +1,7 @@
 ---
 title: REDSTONE 1000 MUD + ABS CHASSIS LONG EN PRéCOMMANDE
 brand: BENDA
-model: Redstone 1000 MUD
+model: Redstone 1000 MUD EN PRECOMMANDE
 excerpt: >-
   La version Extrême des quads BENDA
 
