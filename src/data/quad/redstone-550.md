@@ -2,22 +2,32 @@
 title: REDSTONE 550 EDITION PREMIUM + ABS CHASSIS LONG
 brand: BENDA
 model: Redstone 550
-slug: redstone-550
-excerpt: Quad polyvalent et confortable, idéal pour balades et usage quotidien. Disponible à Fosses-la-Ville avec essai possible.
-description: Le Redstone 550 Edition Premium est un quad homologué route en Belgique polyvalent et accessible, idéal pour les balades, les trajets du quotidien et une utilisation tout-terrain légère. Avec son moteur bicylindre de 42 cv, sa transmission 2x4 / 4x4 et ses suspensions confortables, il offre une conduite agréable et facile à prendre en main, même pour une première expérience en quad. Bien équipé (ABS, écran TFT, modes de conduite, treuil, poignées chauffantes…), il est prêt à l’emploi et convient parfaitement à un usage loisir ou régulier. Visible à Fosses-la-Ville, ce modèle est disponible rapidement avec possibilité d’essai sur place. Contactez-nous pour organiser un test.
+excerpt: Quad polyvalent et confortable, idéal pour balades et usage quotidien.
+  Disponible à Fosses-la-Ville avec essai possible.
+description: Le Redstone 550 Edition Premium est un quad homologué route en
+  Belgique polyvalent et accessible, idéal pour les balades, les trajets du
+  quotidien et une utilisation tout-terrain légère. Avec son moteur bicylindre
+  de 42 cv, sa transmission 2x4 / 4x4 et ses suspensions confortables, il offre
+  une conduite agréable et facile à prendre en main, même pour une première
+  expérience en quad. Bien équipé (ABS, écran TFT, modes de conduite, treuil,
+  poignées chauffantes…), il est prêt à l’emploi et convient parfaitement à un
+  usage loisir ou régulier. Visible à Fosses-la-Ville, ce modèle est disponible
+  rapidement avec possibilité d’essai sur place. Contactez-nous pour organiser
+  un test.
 priceLabel: 8.499 € TTC
 featured: true
-order: 2
+order: 3
+category: Quad
+subcategory: Loisir
+available: true
+ctaLabel: Réserver un essai
+slug: redstone-550
 image: /media/quads/redstone-550/main.webp
 gallery:
   - /media/quads/redstone-550/main.webp
   - /media/quads/redstone-550/1.webp
   - /media/quads/redstone-550/2.webp
   - /media/quads/redstone-550/3.webp
-category: Quad
-subcategory: Loisir
-available: true
-ctaLabel: Réserver un essai
 shortSpecs:
   - label: Moteur
     value: Bicylindre en V – 500 cm3
@@ -63,9 +73,11 @@ technicalSpecs:
       - label: Freinage
         value: Double disque 220 mm avec ABS
       - label: Suspension avant
-        value: Double bras triangulaire avec barre stabilisatrice, course 230 mm, amortisseurs à gaz réglables
+        value: Double bras triangulaire avec barre stabilisatrice, course 230 mm,
+          amortisseurs à gaz réglables
       - label: Suspension arrière
-        value: Bras oscillant indépendant à torsion, course 250 mm, amortisseurs à gaz réglables
+        value: Bras oscillant indépendant à torsion, course 250 mm, amortisseurs à gaz
+          réglables
   - section: Dimensions, poids et capacités
     items:
       - label: Dimensions
@@ -103,7 +115,8 @@ standardEquipment:
 seo:
   title: Quad BENDA Redstone 550 en stock à Fosses-la-Ville | Essai possible
   description: Découvrez le BENDA Redstone 550 chez LED Automotive à
-    Fosses-la-Ville. Un quad polyvalent, confortable et bien équipé. Demandez un essai.
+    Fosses-la-Ville. Un quad polyvalent, confortable et bien équipé. Demandez un
+    essai.
 ---
 
 Le Redstone 550 Edition Premium est un quad polyvalent conçu pour offrir confort, accessibilité et efficacité au quotidien comme en tout-terrain.
