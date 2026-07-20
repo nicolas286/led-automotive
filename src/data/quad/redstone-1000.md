@@ -2,11 +2,19 @@
 title: REDSTONE 1000 EDITION PREMIUM + ABS CHASSIS LONG
 brand: BENDA
 model: Redstone 1000
-slug: redstone-1000
-excerpt: Quad puissant et confortable, idéal pour loisirs et tout-terrain exigeant. Disponible à Fosses-la-Ville avec essai possible.
-description: Le Redstone 1000 Edition Premium est un quad homologué route en Belgique puissant et polyvalent, conçu pour ceux qui veulent profiter pleinement de leurs sorties, sur route comme en tout-terrain. Avec ses 102 cv, sa transmission 2x4 / 4x4 et ses suspensions à grand débattement, il offre une conduite confortable et sécurisante, même sur terrains exigeants. Entièrement équipé (ABS, écran TFT, modes de conduite, treuil, poignées chauffantes…), il est prêt à l’emploi dès la première utilisation. Visible à Fosses-la-Ville, ce modèle est disponible immédiatement avec possibilité d’essai sur place. Contactez-nous pour organiser un test rapidement.
-promo: false
+excerpt: Quad puissant et confortable, idéal pour loisirs et tout-terrain
+  exigeant. Disponible à Fosses-la-Ville avec essai possible.
+description: Le Redstone 1000 Edition Premium est un quad homologué route en
+  Belgique puissant et polyvalent, conçu pour ceux qui veulent profiter
+  pleinement de leurs sorties, sur route comme en tout-terrain. Avec ses 102 cv,
+  sa transmission 2x4 / 4x4 et ses suspensions à grand débattement, il offre une
+  conduite confortable et sécurisante, même sur terrains exigeants. Entièrement
+  équipé (ABS, écran TFT, modes de conduite, treuil, poignées chauffantes…), il
+  est prêt à l’emploi dès la première utilisation. Visible à Fosses-la-Ville, ce
+  modèle est disponible immédiatement avec possibilité d’essai sur place.
+  Contactez-nous pour organiser un test rapidement.
 priceLabel: 11.999,00€
+promo: false
 featured: true
 order: 1
 image: /media/quads/redstone-1000/main.webp
@@ -15,10 +23,14 @@ gallery:
   - /media/quads/redstone-1000/1.webp
   - /media/quads/redstone-1000/2.webp
   - /media/quads/redstone-1000/3.webp
+  - /media/quads/redstone-1000-edition-premium-abs-chassis-long/capture-d-écran-2026-07-20-093716.png
+  - /media/quads/redstone-1000-edition-premium-abs-chassis-long/capture-d-écran-2026-07-20-093854.png
+  - /media/quads/redstone-1000-edition-premium-abs-chassis-long/capture-d-écran-2026-07-20-093935.png
 category: Quad
-subcategory: Loisir
 available: true
 ctaLabel: Réserver un essai
+slug: redstone-1000
+subcategory: Loisir
 shortSpecs:
   - label: Moteur
     value: Bicylindre en V – 1000 cm3
@@ -56,9 +68,11 @@ technicalSpecs:
       - label: Freinage
         value: Double disque 220 mm
       - label: Suspension avant
-        value: Double bras triangulaire avec barre stabilisatrice, course 230 mm, amortisseurs à gaz réglables
+        value: Double bras triangulaire avec barre stabilisatrice, course 230 mm,
+          amortisseurs à gaz réglables
       - label: Suspension arrière
-        value: Bras oscillant indépendant à torsion, course 250 mm, amortisseurs à gaz réglables
+        value: Bras oscillant indépendant à torsion, course 250 mm, amortisseurs à gaz
+          réglables
   - section: Dimensions, poids et capacités
     items:
       - label: Dimensions
