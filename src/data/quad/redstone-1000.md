@@ -1,5 +1,5 @@
 ---
-title: REDSTONE 1000 EDITION PREMIUM + ABS CHASSIS LONG
+title: "REDSTONE 1000 EDITION PREMIUM + ABS CHASSIS LONG "
 brand: BENDA
 model: Redstone 1000
 excerpt: Quad puissant et confortable, idéal pour loisirs et tout-terrain
