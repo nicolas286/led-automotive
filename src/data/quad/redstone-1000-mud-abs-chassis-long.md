@@ -1,5 +1,5 @@
 ---
-title: REDSTONE 1000 MUD + ABS CHASSIS LONG
+title: REDSTONE 1000 MUD + ABS CHASSIS LONG EN PRéCOMMANDE
 brand: BENDA
 model: Redstone 1000 MUD
 excerpt: >-
