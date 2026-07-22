@@ -23,6 +23,7 @@ image: /media/quads/redstone-1000-mud-abs-chassis-long/images.jpeg
 gallery:
   - /media/quads/redstone-1000-mud-abs-chassis-long/unnamed-2-.png
   - /media/quads/redstone-1000-mud-abs-chassis-long/chatgpt-image-16-juil.-2026-13_28_08.png
+  - https://www.facebook.com/reel/1666970978332252?locale=fr_FR
 category: Quad
 available: true
 ctaLabel: Réserver un essai
