@@ -5,8 +5,8 @@ slug: "coffre-quad-chassis-court"
 excerpt: "Coffre robuste spécialement conçu pour quads à châssis court."
 description: "Coffre de rangement solide et étanche, idéal pour transporter vos outils et équipements en toute sécurité. Fixation simple et rapide sur quads à châssis court."
 
-price: 349
-priceLabel: "349 € TTC"
+price: 399.99
+priceLabel: "399,99 € TTC"
 
 promo: false
 

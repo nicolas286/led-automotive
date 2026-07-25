@@ -20,6 +20,9 @@ order: 2
 compatibleQuads:
   - redstone-550-court
   - redstone-550-first-court
+  - redstone-550
+  - redstone-1000-mud
+  - redstone-1000
 
 ctaLabel: "Demander un devis"
 ---
