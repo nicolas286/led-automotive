@@ -21,3 +21,46 @@ metadata:
     index: true
     follow: true
 ---
+### Journée Test de la gamme BENDA
+
+Envie de sensations fortes et de grands espaces ? LED Automotive organise une **journée test exclusive** dédiée à la gamme de quads BENDA. Une occasion unique de découvrir ces machines performantes sur un terrain d'exception.
+
+####  Infos pratiques
+
+* **Date :**
+
+   6 septembre 2026
+* **Heure :**
+
+   dès 10h00
+* **Lieu :**
+
+   Domaine de la Vallée du Treko, Fosses-la-Ville
+
+#### Pourquoi venir ?
+
+* **Moteur V-Twin performant**
+
+   pour une puissance et un couple exceptionnels
+* **3 modes de conduite**
+
+   : Standard / Work / Sport, adaptés à chaque usage
+* **Garde au sol de 365 mm**
+
+   pour franchir tous les obstacles
+* **Éclairage Full LED et écran TFT**
+
+   pour un confort et une sécurité optimale
+
+Venez tester par vous-même l'aventure BENDA sur les sentiers du Treko, dans un cadre naturel idéal pour révéler tout le potentiel de ces quads.
+
+####  Contact
+
+* **Lieu :**
+
+   Fosses-la-Ville
+* **Téléphone :**
+
+   0499 61 06 28
+
+Places limitées – ne manquez pas cette occasion de découvrir la gamme BENDA en conditions réelles !
