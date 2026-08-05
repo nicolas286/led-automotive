@@ -58,7 +58,14 @@ Venez tester par vous-même l'aventure BENDA sur les sentiers du Treko, dans un 
 
 * **Lieu :**
 
-   Fosses-la-Ville
+    
+
+  **Vallée du Treko**
+
+
+  Rue de la Carrière
+  5070 Vitrival (Fosses-la-Ville)
+  Belgique
 * **Téléphone :**
 
    0499 61 06 28
