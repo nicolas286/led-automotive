@@ -1,4 +1,6 @@
 ---
+publishDate: 2026-07-12
+
 title: Envie de rouler en quad Benda ? Rejoignez les Baroudeurs de
   l’Entre-Sambre-et-Meuse
 excerpt: Vous aimez le quad, les randonnées et les moments conviviaux entre

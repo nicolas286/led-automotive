@@ -2,12 +2,27 @@
 import Button from '~/components/ui/Button.astro';
 
 interface HeroCard {
-  title:string;
-  eyebrow?:string;
-  description:string;
-  href:string;
-  image:string;
-  cta?:string;
+  title: string;
+  eyebrow?: string;
+  description: string;
+  href: string;
+  image: string;
+  cta?: string;
+}
+
+interface HeroSlide {
+  tagline?: string;
+  title: string;
+  subtitle?: string;
+
+  mediaType?: 'image' | 'video';
+
+  image?: string;
+
+  videoSrc?: string;
+  poster?: string;
+
+  actions?: HeroAction[];
 }
 
 interface HeroAction {
@@ -19,120 +34,190 @@ interface HeroAction {
 
 interface Props {
   id?: string;
-  tagline?: string;
-  title?: string;
-  subtitle?: string;
-  videoSrc?: string;
-  poster?: string;
-  actions?: HeroAction[];
+  slides: HeroSlide[];
   cards?: HeroCard[];
 }
 
 const {
   id,
-  tagline = 'CONCESSIONNAIRE BENDA & MAG POWER',
-  title = 'Motos, quads & équipements LED à Fosses-la-Ville',
-  subtitle = 'Motos BENDA, MAG POWER, quads BENDA et équipements LED. Découvrez nos véhicules, demandez une offre ou réservez votre essai.',
-  videoSrc = '/media/videos/hero-led-automotive.mp4',
-  poster = '/images/hero-led-automotive-poster.jpg',
-  actions = [
+  slides,
+  cards = [
     {
-      text: 'Réserver un essai',
-      href: 'tel:+32499610628',
-      icon: 'lucide:phone',
-      variant: 'primary',
+      eyebrow: 'BENDA • MAG POWER',
+      title: 'Motos',
+      description: 'Customs, roadsters et motos accessibles.',
+      href: '/motos',
+      image: '/media/motos/benda-avengers-125-cc-–-custom-v-twin/avengers.png',
+      cta: 'Découvrir les motos',
     },
+
     {
-      text: 'Nous contacter',
-      href: '/contact',
-      icon: 'lucide:arrow-right',
-      variant: 'secondary',
+      eyebrow: 'BENDA',
+      title: 'Quads',
+      description: 'Route et tout-terrain pour loisir et polyvalence.',
+      href: '/quads',
+      image: '/media/quads/redstone-550-court/main.webp',
+      cta: 'Découvrir les quads',
+    },
+
+    {
+      eyebrow: 'ÉQUIPEMENTS',
+      title: 'Leds & accessoires',
+      description: 'Éclairage, visibilité et accessoires premium.',
+      href: '/leds',
+      image: '/media/led/kit-2-phares-led-moto-code-phare-gx-80w/phare-led-moto-fonction-code-et-phare-64ef3624a2647.jpg',
+      cta: 'Voir les équipements',
     },
   ],
-  cards = [
-
-{
-  eyebrow:'BENDA • MAG POWER',
-  title:'Motos',
-  description:'Customs, roadsters et motos accessibles.',
-  href:'/motos',
-  image:'/media/motos/benda-avengers-125-cc-–-custom-v-twin/avengers.png',
-  cta:'Découvrir les motos',
-},
-
-{
-  eyebrow:'BENDA',
-  title:'Quads',
-  description:'Route et tout-terrain pour loisir et polyvalence.',
-  href:'/quads',
-  image:'/media/quads/redstone-550-court/main.webp',
-  cta:'Découvrir les quads',
-},
-
-{
-  eyebrow:'ÉQUIPEMENTS',
-  title:'Leds & accessoires',
-  description:'Éclairage, visibilité et accessoires premium.',
-  href:'/leds',
-  image:'/media/led/kit-2-phares-led-moto-code-phare-gx-80w/phare-led-moto-fonction-code-et-phare-64ef3624a2647.jpg',
-  cta:'Voir les équipements',
-},
-
-]
 } = Astro.props;
+
+const hasMultipleSlides = slides.length > 1;
 ---
 
-<section class="heroVideo not-prose relative overflow-hidden" {...id ? { id } : {}}>
-  <video
-    class="heroVideoMedia"
-    autoplay
-    muted
-    loop
-    playsinline
-    preload="metadata"
-    poster={poster}
-    aria-hidden="true"
-  >
-    <source src={videoSrc} type="video/mp4" />
-  </video>
+<section
+  class="heroVideo not-prose relative overflow-hidden"
+  {...id ? { id } : {}}
+  data-hero-slider
+>
+  {slides.map((slide, index) => (
+    <div
+      class="heroSlideMedia"
+      data-hero-slide-media
+      data-active={index === 0 ? 'true' : 'false'}
+      aria-hidden="true"
+    >
+      {slide.mediaType === 'video' && slide.videoSrc ? (
+        <video
+          class="heroVideoMedia"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload={index === 0 ? 'metadata' : 'none'}
+          poster={slide.poster}
+          aria-hidden="true"
+        >
+          <source src={slide.videoSrc} type="video/mp4" />
+        </video>
+      ) 
+       : slide.poster ? (
+        <img
+          class="heroVideoMedia"
+          src={slide.poster}
+          alt=""
+          loading={index === 0 ? 'eager' : 'lazy'}
+          decoding="async"
+          aria-hidden="true"
+        />
+      ) : null}
+    </div>
+  ))}
 
   <div class="heroVideoOverlay" aria-hidden="true"></div>
   <div class="heroVideoGlow" aria-hidden="true"></div>
 
   <div class="relative z-10 mx-auto flex min-h-[calc(100vh-72px)] max-w-7xl flex-col justify-end px-4 pb-8 pt-16 sm:px-6 sm:pb-10 md:pt-20 lg:px-8 lg:pt-24 lg:pb-12">
-    <div class="max-w-4xl">
-      {tagline && (
-        <p class="mb-4 text-sm font-bold uppercase tracking-[0.22em] text-primary">
-          {tagline}
-        </p>
-      )}
+    <div>
+  {slides.map((slide, index) => (
+    <div
+      class="heroSlideContent"
+      data-hero-slide-content
+      data-active={index === 0 ? 'true' : 'false'}
+      aria-hidden={index === 0 ? 'false' : 'true'}
+    >
+      <div class:list={[
+        'heroSlideLayout',
+        { 'heroSlideLayoutWithImage': !!slide.image },
+      ]}>
+        <div class="heroSlideText">
+          {slide.tagline && (
+            <p class="mb-4 text-sm font-bold uppercase tracking-[0.22em] text-primary">
+              {slide.tagline}
+            </p>
+          )}
 
-      {title && (
-        <h1 class="max-w-5xl text-5xl font-black leading-[0.95] tracking-tight text-white md:text-6xl">
-          {title}
-        </h1>
-      )}
+          {slide.title && (
+            index === 0 ? (
+              <h1 class="max-w-5xl text-5xl font-black leading-[0.95] tracking-tight text-white md:text-6xl">
+                {slide.title}
+              </h1>
+            ) : (
+              <h2 class="max-w-5xl text-5xl font-black leading-[0.95] tracking-tight text-white md:text-6xl">
+                {slide.title}
+              </h2>
+            )
+          )}
 
-      {subtitle && (
-        <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-200 md:text-xl">
-          {subtitle}
-        </p>
-      )}
+          {slide.subtitle && (
+            <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-200 md:text-xl">
+              {slide.subtitle}
+            </p>
+          )}
 
-      {actions.length > 0 && (
-        <div class="heroActions">
-            {actions.map((action) => (
-            <Button
-                href={action.href}
-                variant={action.variant ?? 'secondary'}
-                icon={action.icon}
-            >
-                {action.text}
-            </Button>
-            ))}
+          {slide.actions && slide.actions.length > 0 && (
+            <div class="heroActions">
+              {slide.actions.map((action) => (
+                <Button
+                  href={action.href}
+                  variant={action.variant ?? 'secondary'}
+                  icon={action.icon}
+                >
+                  {action.text}
+                </Button>
+              ))}
+            </div>
+          )}
         </div>
+
+        {slide.image && (
+          <div class="heroArticleImage">
+            <img
+              src={slide.image}
+              alt={slide.title}
+              loading={index === 0 ? 'eager' : 'lazy'}
+              decoding="async"
+            />
+          </div>
         )}
+      </div>
     </div>
+  ))}
+
+  {hasMultipleSlides && (
+    <div class="heroSliderNavigation">
+      <button
+        type="button"
+        class="heroSliderArrow"
+        data-hero-previous
+        aria-label="Afficher l'actualité précédente"
+      >
+        ←
+      </button>
+
+      <div class="heroSliderDots">
+        {slides.map((slide, index) => (
+          <button
+            type="button"
+            class="heroSliderDot"
+            data-hero-dot
+            data-active={index === 0 ? 'true' : 'false'}
+            aria-label={`Afficher ${slide.title}`}
+            aria-current={index === 0 ? 'true' : 'false'}
+          />
+        ))}
+      </div>
+
+      <button
+        type="button"
+        class="heroSliderArrow"
+        data-hero-next
+        aria-label="Afficher l'actualité suivante"
+      >
+        →
+      </button>
+    </div>
+  )}
+</div>
 
     {cards.length > 0 && (
       <div class="mt-14 grid gap-4 lg:grid-cols-3">
@@ -141,44 +226,239 @@ const {
 
             <div class="heroCardImage">
 
-                <img
+              <img
                 src={card.image}
                 alt={card.title}
                 loading="lazy"
                 decoding="async"
-                />
+              />
 
-                <div class="heroCardImageOverlay"></div>
+              <div class="heroCardImageOverlay"></div>
 
             </div>
 
             <div class="heroCardContent">
 
-                <p class="heroCardEyebrow">
+              <p class="heroCardEyebrow">
                 {card.eyebrow}
-                </p>
+              </p>
 
-                <h2>
+              <h2>
                 {card.title}
-                </h2>
+              </h2>
 
-                <p>
+              <p>
                 {card.description}
-                </p>
+              </p>
 
-                <span class="heroCardCta">
+              <span class="heroCardCta">
                 {card.cta}
                 →
-                </span>
+              </span>
 
             </div>
 
-            </a>
+          </a>
         ))}
       </div>
     )}
   </div>
 </section>
+
+<script>
+  const initializeHeroSlider = () => {
+    const sliders =
+      document.querySelectorAll<HTMLElement>(
+        '[data-hero-slider]'
+      );
+
+    sliders.forEach((slider) => {
+      if (slider.dataset.initialized === 'true') {
+        return;
+      }
+
+      slider.dataset.initialized = 'true';
+
+      const mediaSlides = Array.from(
+        slider.querySelectorAll<HTMLElement>(
+          '[data-hero-slide-media]'
+        )
+      );
+
+      const contentSlides = Array.from(
+        slider.querySelectorAll<HTMLElement>(
+          '[data-hero-slide-content]'
+        )
+      );
+
+      const dots = Array.from(
+        slider.querySelectorAll<HTMLButtonElement>(
+          '[data-hero-dot]'
+        )
+      );
+
+      const previousButton =
+        slider.querySelector<HTMLButtonElement>(
+          '[data-hero-previous]'
+        );
+
+      const nextButton =
+        slider.querySelector<HTMLButtonElement>(
+          '[data-hero-next]'
+        );
+
+      if (mediaSlides.length <= 1) {
+        return;
+      }
+
+      let currentIndex = 0;
+      let autoplayId: number | undefined;
+
+      const AUTOPLAY_DELAY = 6500;
+
+      const updateVideos = () => {
+        mediaSlides.forEach((slide, index) => {
+          const video =
+            slide.querySelector<HTMLVideoElement>('video');
+
+          if (!video) {
+            return;
+          }
+
+          if (index === currentIndex) {
+            void video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
+        });
+      };
+
+      const showSlide = (index: number) => {
+        currentIndex =
+          (index + mediaSlides.length) %
+          mediaSlides.length;
+
+        mediaSlides.forEach((slide, slideIndex) => {
+          slide.dataset.active =
+            slideIndex === currentIndex
+              ? 'true'
+              : 'false';
+        });
+
+        contentSlides.forEach((slide, slideIndex) => {
+          const isActive =
+            slideIndex === currentIndex;
+
+          slide.dataset.active =
+            isActive ? 'true' : 'false';
+
+          slide.setAttribute(
+            'aria-hidden',
+            isActive ? 'false' : 'true'
+          );
+        });
+
+        dots.forEach((dot, dotIndex) => {
+          const isActive =
+            dotIndex === currentIndex;
+
+          dot.dataset.active =
+            isActive ? 'true' : 'false';
+
+          dot.setAttribute(
+            'aria-current',
+            isActive ? 'true' : 'false'
+          );
+        });
+
+        updateVideos();
+      };
+
+      const stopAutoplay = () => {
+        if (autoplayId === undefined) {
+          return;
+        }
+
+        window.clearInterval(autoplayId);
+        autoplayId = undefined;
+      };
+
+      const startAutoplay = () => {
+        stopAutoplay();
+
+        autoplayId = window.setInterval(() => {
+          showSlide(currentIndex + 1);
+        }, AUTOPLAY_DELAY);
+      };
+
+      previousButton?.addEventListener(
+        'click',
+        () => {
+          showSlide(currentIndex - 1);
+          startAutoplay();
+        }
+      );
+
+      nextButton?.addEventListener(
+        'click',
+        () => {
+          showSlide(currentIndex + 1);
+          startAutoplay();
+        }
+      );
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener(
+          'click',
+          () => {
+            showSlide(index);
+            startAutoplay();
+          }
+        );
+      });
+
+      slider.addEventListener(
+        'mouseenter',
+        stopAutoplay
+      );
+
+      slider.addEventListener(
+        'mouseleave',
+        startAutoplay
+      );
+
+      slider.addEventListener(
+        'focusin',
+        stopAutoplay
+      );
+
+      slider.addEventListener(
+        'focusout',
+        (event) => {
+          const nextTarget =
+            event.relatedTarget as Node | null;
+
+          if (
+            !nextTarget ||
+            !slider.contains(nextTarget)
+          ) {
+            startAutoplay();
+          }
+        }
+      );
+
+      showSlide(0);
+      startAutoplay();
+    });
+  };
+
+  initializeHeroSlider();
+
+  document.addEventListener(
+    'astro:page-load',
+    initializeHeroSlider
+  );
+</script>
 
 <style>
   .heroVideo {
@@ -365,4 +645,147 @@ const {
       display: none;
     }
   }
+
+
+  /*
+   * Slider
+   *
+   * Tout ce qui précède est ton CSS original inchangé.
+   */
+
+  .heroSlideMedia {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity .5s ease,
+      visibility .5s ease;
+  }
+
+  .heroSlideMedia[data-active='true'] {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .heroSlideContent {
+    display: none;
+  }
+
+  .heroSlideContent[data-active='true'] {
+    display: block;
+  }
+
+  .heroSliderNavigation {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+  }
+
+  .heroSliderArrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 2.5rem;
+    height: 2.5rem;
+
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 999px;
+
+    background: rgba(255,255,255,.06);
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: .2s;
+  }
+
+  .heroSliderArrow:hover {
+    border-color: rgba(255,255,255,.4);
+    background: rgba(255,255,255,.12);
+  }
+
+  .heroSliderDots {
+    display: flex;
+    align-items: center;
+    gap: .45rem;
+  }
+
+  .heroSliderDot {
+    width: .5rem;
+    height: .5rem;
+
+    padding: 0;
+
+    border: 0;
+    border-radius: 999px;
+
+    background: rgba(255,255,255,.35);
+
+    cursor: pointer;
+
+    transition: .2s;
+  }
+
+  .heroSliderDot[data-active='true'] {
+    width: 1.5rem;
+    background: white;
+  }
+
+  .heroSlideLayout {
+  max-width: 64rem;
+}
+
+.heroSlideLayoutWithImage {
+  max-width: none;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr);
+  align-items: center;
+  gap: 4rem;
+}
+
+.heroSlideText {
+  min-width: 0;
+}
+
+.heroArticleImage {
+  overflow: hidden;
+
+  width: 100%;
+  aspect-ratio: 16 / 10;
+
+  border-radius: 28px;
+
+  border: 1px solid rgba(255,255,255,.1);
+
+  background: rgba(255,255,255,.05);
+
+  box-shadow:
+    0 30px 70px rgba(0,0,0,.35);
+
+  transform: rotate(1.5deg);
+}
+
+.heroArticleImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .heroSlideLayoutWithImage {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .heroArticleImage {
+    max-width: 36rem;
+    aspect-ratio: 16 / 9;
+
+    transform: none;
+  }
+}
 </style>

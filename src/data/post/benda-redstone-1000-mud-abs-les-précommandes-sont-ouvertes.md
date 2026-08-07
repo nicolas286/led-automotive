@@ -1,4 +1,5 @@
 ---
+publishDate: 2026-08-05
 title: "BENDA Redstone 1000 MUD ABS : les précommandes sont ouvertes"
 excerpt: Le BENDA Redstone 1000 MUD ABS arrive en Belgique et au Benelux. Avec
   son moteur V-Twin de 997 cm³ développant 102 ch, sa garde au sol de 365 mm et

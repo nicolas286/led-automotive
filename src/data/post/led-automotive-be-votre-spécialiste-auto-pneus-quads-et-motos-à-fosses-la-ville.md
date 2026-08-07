@@ -1,4 +1,6 @@
 ---
+publishDate: 2026-07-17
+
 title: "LED-Automotive.be : votre spécialiste auto, pneus, quads et motos à
   Fosses-la-Ville"
 excerpt: "Découvrez LED-Automotive.be à Fosses-la-Ville : pneus, entretien,

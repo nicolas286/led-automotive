@@ -1,4 +1,6 @@
 ---
+publishDate: 2026-07-20
+
 title: Location essai de quads Benda Redstone 550 à Fosses-la-Ville
 excerpt: Partez à l’aventure avec les quads Benda Redstone 550 Court et Redstone
   550 R2. Demi-journée à 125 € avec 150 km inclus ou journée à 200 € avec 200 km

@@ -1,4 +1,6 @@
 ---
+publishDate: 2026-07-20
+
 title: Les impressions de LED-AUTOMOTIVE.BE sur le Benda Redstone 550 R2 après
   120 km en nocturne
 excerpt: Après une sortie nocturne de 120 km, le Benda Redstone 550 R2 confirme

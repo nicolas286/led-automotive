@@ -1,4 +1,6 @@
 ---
+publishDate: 2026-07-15
+
 title: LED-Automotive.be s'associe aux Baroudeurs de l'Entre-Sambre-et-Meuse
   pour la Rando pour Basile
 excerpt: Chez LED-Automotive.be, nous sommes convaincus que la passion du quad

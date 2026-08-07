@@ -15,13 +15,84 @@ const metadata = {
   ignoreTitleTemplate: true,
 };
 
+
+
 const sortByOrder = (a, b) => (a.data.order ?? 999) - (b.data.order ?? 999);
+
+const slugify = (value: string) =>
+  value
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
 
 const featuredQuads = (await getCollection('quad', ({ data }) => !data.draft && !!data.featured)).sort(sortByOrder);
 const featuredMotos = (await getCollection('moto', ({ data }) => !data.draft && !!data.featured && data.available)).sort(sortByOrder);
 const featuredLeds = (await getCollection('led', ({ data }) => !data.draft && !!data.featured)).sort(sortByOrder);
 
+const posts = (
+  await getCollection('post', ({ data }) => !data.draft)
+).sort(
+  (a, b) =>
+    (b.data.publishDate?.getTime() ?? 0) -
+    (a.data.publishDate?.getTime() ?? 0)
+);
 
+const latestPost = posts[0];
+
+const heroSlides = [
+  {
+    tagline: 'CONCESSIONNAIRE BENDA & MAG POWER',
+    title: 'Motos, quads & équipements LED à Fosses-la-Ville',
+    subtitle:
+      'Motos BENDA, MAG POWER, quads BENDA et équipements LED. Découvrez nos véhicules, demandez une offre ou réservez votre essai.',
+
+    mediaType: 'video' as const,
+    videoSrc: '/media/videos/hero-led-automotive.mp4',
+    poster: '/images/hero-led-automotive-poster.jpg',
+
+    actions: [
+      {
+        text: 'Réserver un essai',
+        href: 'tel:+32499610628',
+        icon: 'lucide:phone',
+        variant: 'primary' as const,
+      },
+      {
+        text: 'Nous contacter',
+        href: '/contact',
+        icon: 'lucide:arrow-right',
+        variant: 'secondary' as const,
+      },
+    ],
+  },
+
+  ...(latestPost
+    ? [
+        {
+          tagline: 'DERNIÈRE ACTUALITÉ',
+
+          title: latestPost.data.title,
+
+          subtitle: latestPost.data.excerpt,
+
+          // Image affichée dans la slide, à droite
+          image: latestPost.data.image,
+
+          actions: [
+            {
+              text: "Lire l'actualité",
+              href: `/${slugify(latestPost.id)}`,
+              icon: 'lucide:arrow-right',
+              variant: 'primary' as const,
+            },
+          ],
+        },
+      ]
+    : []),
+];
 
 const featuredQuadCards = featuredQuads.slice(0, 3).map((item) => ({
   title: item.data.title,
@@ -83,8 +154,7 @@ const trustItems = [
 ---
 
 <Layout metadata={metadata}>
-  <HeroVideo />
-
+  <HeroVideo slides={heroSlides} />
 
 
   <ProductShowcase

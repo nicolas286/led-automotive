@@ -1,4 +1,6 @@
 ---
+publishDate: 2026-07-05
+
 title: Benda, la passion du quad arrive chez LED-Automotive.be
 excerpt: >
   

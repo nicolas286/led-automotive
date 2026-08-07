@@ -1,4 +1,6 @@
 ---
+publishDate: 2026-07-04
+
 title: Première sortie du BENDA Redstone 550 R2 le 4 juillet
 excerpt: Le 4 juillet, le BENDA Redstone 550 R2 fera sa première sortie
   officielle avec LED-Automotive.be / CED Motorsport pour une sortie spéciale et

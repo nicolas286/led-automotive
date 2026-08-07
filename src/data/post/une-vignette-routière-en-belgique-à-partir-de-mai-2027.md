@@ -1,4 +1,6 @@
 ---
+publishDate: 2026-07-20
+
 title: Une vignette routière en Belgique à partir de mai 2027
 excerpt: >-
   À partir du 1er mai 2027, une vignette routière numérique deviendra
