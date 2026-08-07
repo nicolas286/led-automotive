@@ -23,8 +23,6 @@ gallery:
 available: true
 ctaLabel: Demander un devis
 compatibleQuads:
-  - redstone-550-court
-  - redstone-550-first-court
   - redstone-1000
   - redstone-550
 ---
