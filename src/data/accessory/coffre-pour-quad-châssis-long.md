@@ -25,4 +25,5 @@ ctaLabel: Demander un devis
 compatibleQuads:
   - redstone-1000
   - redstone-550
+  - redstone-1000-mud
 ---
