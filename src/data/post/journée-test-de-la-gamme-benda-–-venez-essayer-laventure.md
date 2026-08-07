@@ -1,4 +1,6 @@
 ---
+publishDate: 2026-08-07
+
 title: Journée Test de la gamme BENDA – Venez essayer l'aventure !
 excerpt: LED Automotive vous invite à découvrir et tester gratuitement toute la
   gamme de quads BENDA, le 6 septembre 2026 dès 10h00, au Domaine de la Vallée
