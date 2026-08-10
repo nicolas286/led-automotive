@@ -13,9 +13,9 @@ description: "Le Redstone 550 First Châssis Court est un quad homologué route 
   performances, un équipement utile et une grande polyvalence. Visible à
   Fosses-la-Ville, ce modèle est disponible rapidement avec possibilité d’essai
   sur place. Contactez-nous pour organiser un test."
-priceLabel: 6.599 € TTC
-promoPriceLabel: 5990 € ttc
-promo: true
+priceLabel: 5990 € TTC
+promoPriceLabel: ""
+promo: false
 featured: true
 order: 5
 image: /media/quads/redstone-550-first/main.webp
@@ -153,7 +153,7 @@ Oui, ce quad est homologué pour circuler sur route en Belgique sous conditions.
 
 ## Prix du Benda Redstone 550 First Châssis Court
 
-Le prix du Benda Redstone 550 First Châssis Court est affiché à ~~6.599 € TTC~~ **MAINTENANT A 5499 € TTC**
+Le prix du Benda Redstone 550 First Châssis Court est affiché à ~~6.599 € TTC~~ **MAINTENANT A 5999 € TTC**
 
 En Belgique, les quads 500cc comme le Redstone 550 se situent généralement entre 6 500 € et 8 500 € selon les versions et équipements.
 
