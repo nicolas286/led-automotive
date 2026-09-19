@@ -22,7 +22,7 @@ gallery:
   - /media/motos/benda-avengers-125-cc-–-custom-v-twin/magpower-avengers-vue-echappement-1024x812.jpg
   - /media/motos/benda-avengers-125-cc-–-custom-v-twin/magpower-avengers-noir-brillante-profil-1024x604.png
 license: B
-available: true
+available: false
 ctaLabel: Demander un essai
 metadata:
   ignoreTitleTemplate: false
