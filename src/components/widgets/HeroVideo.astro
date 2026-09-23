@@ -43,15 +43,6 @@ const {
   slides,
   cards = [
     {
-      eyebrow: 'BENDA • MAG POWER',
-      title: 'Motos',
-      description: 'Customs, roadsters et motos accessibles.',
-      href: '/motos',
-      image: '/media/motos/benda-avengers-125-cc-–-custom-v-twin/avengers.png',
-      cta: 'Découvrir les motos',
-    },
-
-    {
       eyebrow: 'BENDA',
       title: 'Quads',
       description: 'Route et tout-terrain pour loisir et polyvalence.',
@@ -220,7 +211,7 @@ const hasMultipleSlides = slides.length > 1;
 </div>
 
     {cards.length > 0 && (
-      <div class="mt-14 grid gap-4 lg:grid-cols-3">
+      <div class="mt-14 grid gap-4 lg:grid-cols-2">
         {cards.map((card) => (
           <a href={card.href} class="heroVideoCard group">
 

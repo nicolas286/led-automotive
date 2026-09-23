@@ -9,9 +9,9 @@ import Cta from '~/components/widgets/Cta.astro';
 
 
 const metadata = {
-  title: 'Motos BENDA, MAG POWER, quads BENDA & équipements LED à Fosses-la-Ville | LED Automotive',
+  title: 'Quads BENDA & équipements LED à Fosses-la-Ville | LED Automotive',
   description:
-    'Découvrez nos motos BENDA et MAG POWER, quads BENDA, équipements LED et offres du moment à Fosses-la-Ville. Essais sur demande et conseils personnalisés.',
+    'Découvrez nos quads BENDA, équipements LED et offres du moment à Fosses-la-Ville. Essais sur demande et conseils personnalisés.',
   ignoreTitleTemplate: true,
 };
 
@@ -29,7 +29,6 @@ const slugify = (value: string) =>
     .replace(/^-+|-+$/g, '');
 
 const featuredQuads = (await getCollection('quad', ({ data }) => !data.draft && !!data.featured)).sort(sortByOrder);
-const featuredMotos = (await getCollection('moto', ({ data }) => !data.draft && !!data.featured && data.available)).sort(sortByOrder);
 const featuredLeds = (await getCollection('led', ({ data }) => !data.draft && !!data.featured)).sort(sortByOrder);
 
 const posts = (
@@ -44,10 +43,10 @@ const latestPost = posts[0];
 
 const heroSlides = [
   {
-    tagline: 'CONCESSIONNAIRE BENDA & MAG POWER',
-    title: 'Motos, quads & équipements LED à Fosses-la-Ville',
+    tagline: 'CONCESSIONNAIRE BENDA',
+    title: 'Quads & équipements LED à Fosses-la-Ville',
     subtitle:
-      'Motos BENDA, MAG POWER, quads BENDA et équipements LED. Découvrez nos véhicules, demandez une offre ou réservez votre essai.',
+      'Quads BENDA et équipements LED. Découvrez nos produits, demandez une offre ou réservez votre essai.',
 
     mediaType: 'video' as const,
     videoSrc: '/media/videos/hero-led-automotive.mp4',
@@ -105,17 +104,6 @@ const featuredQuadCards = featuredQuads.slice(0, 3).map((item) => ({
   badge: item.data.promo ? 'Promo' : undefined,
 }));
 
-const featuredMotoCards = featuredMotos.slice(0, 3).map((item) => ({
-  title: item.data.title,
-  description: item.data.excerpt ?? item.data.description,
-  href: `/motos/${item.data.slug ?? item.id}`,
-  image: item.data.image,
-  priceLabel: item.data.priceLabel,
-  promoPriceLabel: item.data.promoPriceLabel,
-  eyebrow: `Moto ${item.data.brand}`,
-  badge: item.data.promo ? 'Promo' : undefined,
-}));
-
 const featuredLedCards = featuredLeds.slice(0, 3).map((item) => ({
   title: item.data.title,
   description: item.data.excerpt ?? item.data.description,
@@ -156,15 +144,6 @@ const trustItems = [
 <Layout metadata={metadata}>
   <HeroVideo slides={heroSlides} />
 
-
-  <ProductShowcase
-  tagline="Motos à découvrir"
-  title="Nos motos à découvrir"
-  subtitle="Une sélection de motos BENDA et MAG POWER mises en avant."
-  items={featuredMotoCards}
-  ctaHref="/motos"
-  ctaText="Voir toutes les motos"
-/>
 
   <ProductShowcase
     tagline="Quads à découvrir"
