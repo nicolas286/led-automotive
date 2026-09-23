@@ -1,5 +1,6 @@
 ---
 title: Benda Avengers 125 cc – Custom V-Twin
+draft: true
 brand: BENDA
 model: Avengers 125
 slug: benda-avengers-125

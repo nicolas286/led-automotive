@@ -1,5 +1,6 @@
 ---
 title: "R-Stunt 50 cm³ E5 "
+draft: true
 brand: MAG POWER
 model: R-Stunt 50 E5
 slug: magpower-r-stunt-50-e5

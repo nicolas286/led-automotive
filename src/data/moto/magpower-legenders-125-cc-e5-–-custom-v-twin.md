@@ -1,5 +1,6 @@
 ---
 title: MagPower Legenders 125 cc E5 – Custom V-Twin
+draft: true
 brand: MAG POWER
 model: Legenders 125 E5
 slug: magpower-legenders-125-e5

@@ -1,5 +1,6 @@
 ---
 title: MagPower X-Trail 125 cm³ E5 – Trail 125 accessible
+draft: true
 brand: MAG POWER
 model: X-Trail 125 E5
 slug: magpower-x-trail-125-e5

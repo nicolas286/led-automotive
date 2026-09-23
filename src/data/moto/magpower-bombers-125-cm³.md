@@ -1,5 +1,6 @@
 ---
 title: MagPower Bombers 125 cm³
+draft: true
 brand: MAG POWER
 model: Bombers 125
 slug: magpower-bombers-125-e5

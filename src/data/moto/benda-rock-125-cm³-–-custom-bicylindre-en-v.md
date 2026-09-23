@@ -1,5 +1,6 @@
 ---
 title: Benda Rock 125 cm³ – Custom bicylindre en V
+draft: true
 brand: BENDA
 model: Rock 125
 slug: benda-rock-125

@@ -1,5 +1,6 @@
 ---
 title: Benda Napoleon 125
+draft: true
 brand: BENDA
 model: Napoleon 125
 slug: benda-napoleon-125

@@ -1,5 +1,6 @@
 ---
 title: MagPower Bombers 50 cm³ E5
+draft: true
 brand: MAG POWER
 model: Bombers 50 E5
 slug: magpower-bombers-50-e5
