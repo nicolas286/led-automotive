@@ -4,6 +4,7 @@ import { getCollection } from 'astro:content';
 import Layout from '~/layouts/PageLayout.astro';
 import HeroVideo from '~/components/widgets/HeroVideo.astro';
 import ProductShowcase from '~/components/widgets/ProductShowcase.astro';
+import BendaVideo from '~/components/widgets/BendaVideo.astro';
 import TrustCards from '~/components/widgets/TrustCards.astro';
 import Cta from '~/components/widgets/Cta.astro';
 
@@ -153,6 +154,8 @@ const trustItems = [
     ctaHref="/quads"
     ctaText="Voir tous les quads"
   />
+
+  <BendaVideo />
 
   <ProductShowcase
     tagline="Leds à découvrir"
