@@ -40,7 +40,9 @@ const posts = (
     (a.data.publishDate?.getTime() ?? 0)
 );
 
-const latestPost = posts[0];
+const latestPost = posts.find(
+  (post) => slugify(post.id) !== 'journee-test-de-la-gamme-benda-venez-essayer-laventure'
+);
 
 const heroSlides = [
   {
