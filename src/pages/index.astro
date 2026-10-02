@@ -7,6 +7,9 @@ import ProductShowcase from '~/components/widgets/ProductShowcase.astro';
 import BendaVideo from '~/components/widgets/BendaVideo.astro';
 import TrustCards from '~/components/widgets/TrustCards.astro';
 import Cta from '~/components/widgets/Cta.astro';
+import { homepageConfig } from '~/config/homepage';
+import { fetchPosts } from '~/utils/blog';
+import { getPermalink } from '~/utils/permalinks';
 
 
 const metadata = {
@@ -22,6 +25,8 @@ const sortByOrder = (a, b) => (a.data.order ?? 999) - (b.data.order ?? 999);
 
 const featuredQuads = (await getCollection('quad', ({ data }) => !data.draft && !!data.featured)).sort(sortByOrder);
 const featuredLeds = (await getCollection('led', ({ data }) => !data.draft && !!data.featured)).sort(sortByOrder);
+
+const latestPost = homepageConfig.showLatestNews ? (await fetchPosts())[0] : undefined;
 
 const heroSlides = [
   {
@@ -50,6 +55,24 @@ const heroSlides = [
     ],
   },
 
+  ...(latestPost
+    ? [
+        {
+          tagline: 'DERNIÈRE ACTUALITÉ',
+          title: latestPost.title,
+          subtitle: latestPost.excerpt,
+          image: latestPost.image,
+          actions: [
+            {
+              text: "Lire l'actualité",
+              href: getPermalink(latestPost.permalink, 'post'),
+              icon: 'lucide:arrow-right',
+              variant: 'primary' as const,
+            },
+          ],
+        },
+      ]
+    : []),
 ];
 
 const featuredQuadCards = featuredQuads.slice(0, 3).map((item) => ({
